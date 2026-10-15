@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>양준영 경력기술서 · Product Manager</title>
-<meta name="description" content="경정청구·원천세·연말정산 SaaS PM 양준영의 이력서: 프로필, 경력, 핵심 역량, 경력기술서, 교육·자격, 자기소개서.">
-<meta property="og:title" content="양준영 이력서 · Product Manager">
-<meta property="og:description" content="경정청구·원천세·연말정산 SaaS PM 양준영의 이력서: 프로필, 경력, 핵심 역량, 경력기술서, 교육·자격, 자기소개서.">
+<meta name="description" content="경정청구·원천세·연말정산 SaaS PM 양준영의 경력기술서: 경력 요약, 핵심 역량, 회사별 프로젝트, 2주 스프린트·릴리즈 운영.">
+<meta property="og:title" content="양준영 경력기술서 · Product Manager">
+<meta property="og:description" content="경정청구·원천세·연말정산 SaaS PM 양준영의 경력기술서: 경력 요약, 핵심 역량, 회사별 프로젝트, 2주 스프린트·릴리즈 운영.">
 </head>
 <body>
 
@@ -237,7 +237,7 @@ input.inp,select.inp{font-family:inherit;font-size:12px;color:#1C1C24;width:100%
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 <style>
-/* ===== rs : RESUME deck — base CSS 재사용, 보라 기본 테마 ===== */
+/* ===== rs : 경력기술서 deck — base CSS 재사용, 보라 기본 테마 ===== */
 a.rs-a{color:inherit;text-decoration:none}
 a.rs-a:hover{color:var(--p2)}
 
@@ -255,6 +255,19 @@ a.rs-a:hover{color:var(--p2)}
 .rs-ylg i{width:8px;height:8px;border-radius:2px;flex:none}
 .rs-c1{background:#5E5E5E}.rs-c2{background:var(--p3)}.rs-c3{background:var(--p)}
 .rs-kvl{grid-template-columns:96px 1fr;row-gap:10px}
+.rs-pab{align-content:space-between;row-gap:36px}
+.rs-pab .rs-ybar{height:14px}
+.rs-yco{display:flex;gap:3px;font-size:11.5px;color:#8A8A8A}
+.rs-yco span{white-space:nowrap;padding-left:14px}
+#rs-profile .ab{min-height:552px}
+.rs-kr{display:flex;flex-direction:column;gap:6px}
+.rs-kc{font-family:inherit;text-align:left;cursor:pointer;display:grid;grid-template-columns:132px minmax(0,1fr) minmax(0,1fr) 16px;align-items:center;gap:14px;background:var(--card);border:1px solid transparent;border-radius:10px;padding:8px 16px;color:#fff;transition:border-color .2s,background-color .2s}
+.rs-kc:hover{border-color:var(--p2);background:#2B2940}
+.rs-kc b{font-size:21px;font-weight:800;color:var(--p2);letter-spacing:-0.03em;line-height:1.2;white-space:nowrap}
+.rs-kc span{font-size:13px;font-weight:700;color:#fff;white-space:nowrap}
+.rs-kc span small{margin-left:6px;font-size:12px;font-weight:600;color:var(--p2)}
+.rs-kc>small{font-size:11.5px;color:#A9A9A9;white-space:nowrap}
+.rs-kc em{font-style:normal;font-size:13px;font-weight:700;color:var(--p2);text-align:right}
 
 /* slide header row */
 .rs-ivh{margin-top:34px}
@@ -301,6 +314,19 @@ a.rs-a:hover{color:var(--p2)}
 .rs-cc h4{margin-top:8px;font-size:17px}
 .rs-cc p{font-size:12px;margin:8px 0 14px}
 .rs-cc .rs-go{margin-top:auto;align-self:flex-start}
+.rs-cf{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding-top:12px;border-top:1px solid #3C3C3C}
+.rs-cf .rs-go{margin-top:0;margin-left:auto;align-self:center}
+#rs-core .rs-cf{min-height:54px;align-items:center}
+.rs-cm{display:flex;flex-direction:column;gap:1px;min-width:0}
+.rs-cm b{font-size:20px;font-weight:800;color:var(--p2);letter-spacing:-0.03em;line-height:1.15;white-space:nowrap}
+.rs-cm span{font-size:11px;line-height:1.4;color:#A9A9A9}
+#rs-core .rs-ivh{margin-top:28px}
+#rs-core .rs-c4{margin-top:20px}
+#rs-core .rs-cc{padding:18px 20px 16px}
+#rs-core .rs-cc p{line-height:1.62}
+#rs-core .rs-aiw{margin-top:18px}
+#rs-core .rs-ai .rs-tr{padding:6px 0}
+#rs-core .rs-case{padding:8px 13px}
 .rs-aiw{display:grid;grid-template-columns:300px 1fr;gap:30px;margin-top:22px;align-items:start}
 .rs-aiw h4{margin:4px 0 0;font-size:19px;line-height:1.45;font-weight:700}
 .rs-aiw h4 em{font-style:normal;color:var(--p2)}
@@ -344,6 +370,10 @@ a.rs-a:hover{color:var(--p2)}
 .rs-no{display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--p);color:#fff;font-size:11px;font-weight:800;font-style:normal;line-height:1;margin-right:6px;vertical-align:1px;flex:none}
 .rs-pj small{display:block;margin-top:3px;font-size:11px;color:#9A9A9A}
 .rs-row .rs-r{color:#fff;font-weight:600}
+.rs-row .rs-r em{font-style:normal;color:var(--p2);white-space:nowrap}
+.rs-row.rs-pin{background:rgba(var(--prgb),.1)}
+.rs-row.rs-pin::before{background:var(--p)}
+.rs-tc.rs-pin{border-color:var(--p)}
 .rs-sub{display:flex;align-items:center;gap:10px;padding:9px 0 7px 16px;border-bottom:1px solid #333;font-size:11.5px;font-weight:700;color:var(--p2)}
 .rs-sub span{font-weight:500;color:#8A8A8A}
 .rs-dn .rs-row{font-size:12px;line-height:1.55;padding:9px 0 9px 16px;grid-template-columns:190px 1.1fr 1.35fr .9fr}
@@ -405,6 +435,10 @@ a.rs-a:hover{color:var(--p2)}
 .rs-tight .rs-row{padding:9px 0 9px 16px}
 .rs-tight .rs-row::before{top:9px;bottom:9px}
 .rs-tight .rs-row.rs-hdr{padding:7px 0 7px 16px}
+/* 브릭스웍스 행: 한 일 칸을 넓게 */
+#rs-w1 .rs-row{grid-template-columns:176px .95fr 1.4fr .9fr;padding:8px 0 8px 16px}
+#rs-w1 .rs-row::before{top:8px;bottom:8px}
+#rs-w1 .rs-row.rs-hdr{padding:6px 0 6px 16px}
 
 /* 브릭스웍스 운영 */
 .rs-w2g{display:grid;grid-template-columns:1fr 1.55fr;gap:18px;margin-top:24px}
@@ -451,27 +485,35 @@ a.rs-a:hover{color:var(--p2)}
 .rs-mc i{font-style:normal;color:var(--p2);font-size:13px;line-height:1}
 .rs-mc b.p{color:var(--p2)}
 
-/* education */
-.rs-lic{margin-top:auto;padding-bottom:6px}
-.rs-lic small{display:block;color:var(--p2);font-weight:700;font-size:12px}
-.rs-lic b{display:block;margin-top:8px;font-size:30px;font-weight:600}
-.rs-lic span{display:block;margin-top:6px;font-size:13px;color:#BDBDBD}
-.rs-lic2{margin-top:26px;padding-top:22px;border-top:1px solid #3C3C3C;width:330px}
-.rs-lic2 b{font-size:20px}
-
-/* cover letter */
-.rs-lt h2{margin-top:44px}
-.rs-lg{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr auto;gap:18px}
-.rs-lg .cd{padding:28px 30px 24px}
-.rs-lg .cd small{color:var(--p2);font-weight:700;font-size:12px}
-.rs-lg .cd h4{margin-top:6px;font-size:18px}
-.rs-lg .cd p{margin-top:14px;font-size:13px;line-height:1.85}
-.rs-goal{grid-column:span 2;border-radius:18px;background:linear-gradient(150deg,var(--p2),var(--p) 70%);padding:24px 28px;display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center}
-.rs-goal small{display:block;font-weight:700;font-size:12px;color:rgba(255,255,255,.8)}
-.rs-goal h4{margin:4px 0 0;font-size:22px;font-weight:700}
-.rs-goal p{margin:0;font-size:14px;line-height:1.75;font-weight:600}
-.rs-want{margin-top:auto}
-.rs-want h4{margin:0 0 14px;font-size:15px;font-weight:700}
+/* 지엔터 공통 : 2주 스프린트·릴리즈 / 공통 기획·검증 */
+.rs-cg{display:grid;grid-template-columns:1.62fr 1fr;gap:18px;margin-top:24px;align-items:stretch}
+.rs-cg .rs-tc{padding:20px 22px 18px;display:flex;flex-direction:column}
+.rs-cg h4{margin:6px 0 0;font-size:16px;line-height:1.45}
+.rs-sp{display:grid;grid-template-columns:64px repeat(3,minmax(0,1fr));gap:6px 8px;align-items:center;margin-top:14px}
+.rs-sp .h{font-size:11px;font-weight:700;color:#8A8A8A;text-align:center;padding-bottom:2px;border-bottom:1px solid #3C3C3C}
+.rs-sp b{font-size:11.5px;font-weight:700;color:#BDBDBD;white-space:nowrap}
+.rs-sp i{position:relative;display:flex;align-items:center;justify-content:center;height:28px;border-radius:6px;font-style:normal;font-size:11.5px;font-weight:700;white-space:nowrap}
+.rs-sp i.pm{background:var(--pt);color:var(--ptx)}
+.rs-sp i.dv{background:var(--p);color:#fff}
+.rs-sp i.x{background:transparent;border:1px dashed #555;color:#8A8A8A}
+.rs-sp i.dv::before{content:'';position:absolute;left:-9px;top:-20px;width:10px;height:26px;border-left:1.5px solid var(--p2);border-bottom:1.5px solid var(--p2);border-radius:0 0 0 6px}
+.rs-sp i.dv::after{content:'';position:absolute;left:-2px;top:3px;width:5px;height:5px;border-top:1.5px solid var(--p2);border-right:1.5px solid var(--p2);transform:rotate(45deg)}
+.rs-s2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+.rs-s2 div{display:flex;flex-direction:column;gap:3px;font-size:12px;line-height:1.6;color:#C4C4C4}
+.rs-s2 small{font-size:11px;font-weight:700;color:var(--p2)}
+.rs-cg .rs-ft{margin-top:16px;padding-top:12px;border-top:1px solid #3C3C3C}
+.rs-cg .rs-fl{gap:18px}
+.rs-cg .rs-st{background:#303030;padding:9px 11px 10px}
+.rs-cg .rs-st.on{background:#2B2940}
+.rs-cg .rs-st+.rs-st::before{left:-13px}
+.rs-cg .rs-st span{font-size:11px}
+.rs-doc{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:auto;padding-top:12px;font-size:12px;color:#BDBDBD}
+.rs-doc b{font-size:12.5px;color:#fff;font-weight:700;margin-right:4px}
+.rs-doc .tag{font-size:11px;padding:4px 9px}
+.rs-cg .rs-big span{line-height:1.45}
+.rs-cg .rs-res{margin-top:auto}
+.rs-cg .rs-ol{gap:11px;margin-top:16px}
+.rs-cg .rs-ol li b{display:block;font-size:12.5px;color:#fff;font-weight:700;margin-bottom:1px}
 </style>
 
 <style>
@@ -501,7 +543,7 @@ a.rs-a:hover{color:var(--p2)}
 </section>
 
 <section class="s about" id="rs-profile">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
   <div class="ab">
     <div class="ab-l">
       <h3>PROFILE</h3>
@@ -509,37 +551,33 @@ a.rs-a:hover{color:var(--p2)}
       <div class="rs-hl">
         <p class="eb">세무 실무 5년 + 기획·PM 9년</p>
         <h2>경정청구·원천세·연말정산<br><em>SaaS PM</em></h2>
-        <p class="rs-one">세무 규칙을 제품 요건으로 번역하고,<br>AI로 먼저 만들어 검증한 뒤<br>개발팀과 합의하는 PM이에요.</p>
+        <p class="rs-one">세무 규칙을 제품 요건으로 번역하고,<br>AI로 먼저 만들어 검증한 뒤 개발팀과 협의해<br>2주 스프린트로 배포까지 관리하는 PM이에요.</p>
       </div>
       <div class="nm"><b>양준영</b><span>YANG JUNYOUNG</span></div>
       <div class="ct">
         <div><i>☏</i><a class="rs-a n" id="rs-tel" href="tel:01050903403">010-5090-3403</a></div>
         <div><i>✉</i><a class="rs-a" id="rs-mail" href="mailto:redstar1492@naver.com">redstar1492@naver.com</a></div>
-        <div><i>◎</i>경기 광명시 · 1986년생</div>
       </div>
     </div>
-    <div class="ab-r rs-abr">
+    <div class="ab-r rs-abr rs-pab">
       <h4>CAREER</h4>
       <div class="rs-yr">
         <div class="rs-yt"><b>경력 총 15년</b><span class="n">2011.05 – 재직 중</span></div>
         <div class="rs-ybar"><i class="rs-c1" style="flex:66"></i><i class="rs-c2" style="flex:59"></i><i class="rs-c3" style="flex:55"></i></div>
         <div class="rs-ylg"><span style="flex:66"><i class="rs-c1"></i><b>세무·회계 실무</b>5년 6개월</span><span style="flex:59"><i class="rs-c2"></i><b>서비스기획</b>4년 11개월</span><span style="flex:55"><i class="rs-c3"></i><b>PM</b>4년 7개월</span></div>
+        <div class="rs-yco"><span style="flex:66">세무사사무실 · 기업 재무팀</span><span style="flex:59">더존비즈온</span><span style="flex:55">세친구 · 스마트푸드 · 지엔터</span></div>
       </div>
-      <h4>EDUCATION</h4>
-      <div class="xp">
-        <span class="d n">2021.02 – 2022.07</span><b>학점은행제 · 경영학과</b><span><small>졸업 · 학점 3.5 / 4.0</small></span>
-        <span class="d n">2009.02 – 2011.02</span><b>웅지세무대학 · 국제회계</b><span><small>졸업 · 학점 3.0 / 4.0</small></span>
-        <span class="d n">2004</span><b>성동고등학교</b><span><small>졸업</small></span>
-      </div>
-      <h4>LICENSE</h4>
-      <div class="xp">
-        <span class="d n">2012.12</span><b>전산세무 2급 (국가공인)</b><span><small>한국세무사회</small></span>
-        <span class="d n">2024.05 – 2024.08</span><b>Google Analytics Certification</b><span><small>GA4 교육과정 수료 · 고급 GA 인증 시험 통과</small></span>
+      <h4>KEY RESULTS</h4>
+      <div class="rs-kr">
+        <button class="rs-kc" id="rs-kc-1" type="button" data-to="rs-w1" data-pin="rs-w1-q"><b class="n">40% → 3%</b><span>신고 실패율<small>37%p 감소</small></span><small>브릭스웍스 · 전자신고 대기열</small><em aria-hidden="true">→</em></button>
+        <button class="rs-kc" id="rs-kc-2" type="button" data-to="rs-w3" data-pin="rs-w3-wh"><b class="n">15분 → 9분</b><span>건당 처리시간<small>40% 단축</small></span><small>케어프로 · 원천세 신고 자동화</small><em aria-hidden="true">→</em></button>
+        <button class="rs-kc" id="rs-kc-3" type="button" data-to="rs-w4" data-pin="rs-w4-vf"><b class="n">60분 → 20분</b><span>일일 대조시간<small>약 67% 단축</small></span><small>차별화장부 · 배달 3사 매출 대조</small><em aria-hidden="true">→</em></button>
+        <button class="rs-kc" id="rs-kc-4" type="button" data-to="rs-wc" data-pin="rs-wc-vf"><b class="n">10건 → 6건</b><span>스프린트당 재작업<small>40% 감소</small></span><small>지엔터 공통 · 개발 전 코드 대조</small><em aria-hidden="true">→</em></button>
       </div>
       <h4>SKILLS</h4>
       <div class="kvl rs-kvl">
         <span>세무 도메인</span><span>경정청구, 원천세, 연말정산, 전자신고, 부가세·종소세</span>
-        <span>PM</span><span>PRD, 정책·예외 설계, QA 시나리오, 릴리즈 관리, 이해관계자 조율</span>
+        <span>PM</span><span>PRD, 정책·예외 설계, QA 시나리오, 2주 스프린트·릴리즈 관리, 이해관계자 조율</span>
         <span>AI</span><span>Claude&nbsp;Code, MCP (Jira·Confluence·Slack), Claude Skills, AI 프로토타이핑, Gemini, ChatGPT</span>
         <span>협업 툴</span><span>Jira, Confluence, Slack, Figma, Notion, GitHub, Excel, 더존 ERP</span>
       </div>
@@ -548,7 +586,7 @@ a.rs-a:hover{color:var(--p2)}
 </section>
 
 <section class="s about" id="rs-career">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
   <div class="ivh rs-ivh">
     <div>
       <p class="eb">CAREER SUMMARY</p>
@@ -562,7 +600,7 @@ a.rs-a:hover{color:var(--p2)}
   <div class="rs-eras">
     <button class="rs-era" id="rs-era-1" type="button" data-era="1" aria-pressed="false" style="--rs-c:#5E5E5E"><small class="n">2011 – 2016</small><b>세무·회계 실무</b><span>세무사사무실 기장·신고,<br>기업 재무팀 결산</span></button>
     <button class="rs-era" id="rs-era-2" type="button" data-era="2" aria-pressed="false" style="--rs-c:#A79FFF"><small class="n">2017 – 2022</small><b>서비스기획 · PM 겸임</b><span>더존비즈온 WEHAGO<br>정산 프로그램·부가세 신고 기획</span></button>
-    <button class="rs-era" id="rs-era-3" type="button" data-era="3" aria-pressed="false" style="--rs-c:#5E50FA"><small class="n">2022 – 2024</small><b>PM 시작</b><span>세친구 회계 자동화,<br>상권분석 Sogul</span></button>
+    <button class="rs-era" id="rs-era-3" type="button" data-era="3" aria-pressed="false" style="--rs-c:#5E50FA"><small class="n">2022 – 2024</small><b>서비스기획 · PM 시작</b><span>세친구 회계 자동화,<br>상권분석 Sogul</span></button>
     <button class="rs-era" id="rs-era-4" type="button" data-era="4" aria-pressed="false" style="--rs-c:#5E50FA"><small class="n">2024 – 현재</small><b>세무·매출 SaaS PM</b><span>스마트푸드 차별화장부,<br>지엔터 케어프로·브릭스웍스</span></button>
   </div>
   <div class="rs-dur n"><span>5년 6개월</span><span>4년 11개월</span><span class="w2">PM 4년 7개월</span></div>
@@ -571,7 +609,7 @@ a.rs-a:hover{color:var(--p2)}
     <div class="rs-tr" data-era="4" data-co="ge" style="--c:132px 168px 178px 128px 1fr 96px"><span class="d n">2026.05 – 재직 중</span><b>지엔터프라이즈㈜</b><span>비즈넵 환급제품팀</span><span>PM · 브릭스웍스</span><span class="rs-gt"><i class="now" style="left:95.83%;width:4.17%"></i></span><button class="rs-go" id="rs-go-bw" type="button" data-to="rs-w1">경력기술서 →</button></div>
     <div class="rs-tr" data-era="4" data-co="ge" style="--c:132px 168px 178px 128px 1fr 96px"><span class="d n">2025.08 – 2026.05</span><b class="rs-same">지엔터프라이즈㈜</b><span>비즈넵 기장팀</span><span>PM · 케어프로</span><span class="rs-gt"><i class="rs-c3" style="left:91.15%;width:4.69%"></i></span><button class="rs-go" id="rs-go-cp" type="button" data-to="rs-w3">경력기술서 →</button></div>
     <div class="rs-tr" data-era="4" data-co="sf" style="--c:132px 168px 178px 128px 1fr 96px"><span class="d n">2024.12 – 2025.08</span><b>스마트푸드네트웍스㈜</b><span>Product 기획팀</span><span>PM</span><span class="rs-gt"><i class="rs-c3" style="left:86.98%;width:4.69%"></i></span><button class="rs-go" id="rs-go-sf" type="button" data-to="rs-w4">경력기술서 →</button></div>
-    <div class="rs-tr" data-era="3" data-co="sc" style="--c:132px 168px 178px 128px 1fr 96px"><span class="d n">2022.03 – 2024.11</span><b>㈜세친구</b><span>R&amp;D팀 선임연구원·팀장</span><span>PM 시작</span><span class="rs-gt"><i class="rs-c3" style="left:69.79%;width:17.19%"></i></span><button class="rs-go" id="rs-go-sc" type="button" data-to="rs-w5">경력기술서 →</button></div>
+    <div class="rs-tr" data-era="3" data-co="sc" style="--c:132px 168px 178px 128px 1fr 96px"><span class="d n">2022.03 – 2024.11</span><b>㈜세친구</b><span>R&amp;D팀 선임연구원·팀장</span><span>서비스기획 · PM 시작</span><span class="rs-gt"><i class="rs-c3" style="left:69.79%;width:17.19%"></i></span><button class="rs-go" id="rs-go-sc" type="button" data-to="rs-w5">경력기술서 →</button></div>
     <div class="rs-tr" data-era="2" data-co="dz" style="--c:132px 168px 178px 128px 1fr 96px"><span class="d n">2017.04 – 2022.02</span><b>㈜더존비즈온</b><span>플랫폼사업부문 과장</span><span>서비스기획 (PM 겸임)</span><span class="rs-gt"><i class="rs-c2" style="left:39.06%;width:30.73%"></i></span><button class="rs-go" id="rs-go-dz" type="button" data-to="rs-w7">경력기술서 →</button></div>
     <div class="rs-tr" data-era="1" data-co="gd" style="--c:132px 168px 178px 128px 1fr 96px"><span class="d n">2014.12 – 2016.12</span><b>고덕그린에너지</b><span>경영관리팀</span><span>재무·회계</span><span class="rs-gt"><i class="rs-c1" style="left:24.48%;width:13.02%"></i></span><button class="rs-go" id="rs-go-gd" type="button" data-to="rs-w8">경력기술서 →</button></div>
     <div class="rs-tr" data-era="1" data-co="kd" style="--c:132px 168px 178px 128px 1fr 96px"><span class="d n">2014.01 – 2014.10</span><b>KD운송그룹</b><span>재무관리1팀</span><span>재무·회계</span><span class="rs-gt"><i class="rs-c1" style="left:18.75%;width:5.21%"></i></span><button class="rs-go" id="rs-go-kd" type="button" data-to="rs-w8">경력기술서 →</button></div>
@@ -580,7 +618,7 @@ a.rs-a:hover{color:var(--p2)}
 </section>
 
 <section class="s about" id="rs-core">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
   <div class="ivh rs-ivh">
     <div>
       <p class="eb">CORE COMPETENCY · 핵심 역량 4가지</p>
@@ -589,10 +627,10 @@ a.rs-a:hover{color:var(--p2)}
     <p class="lead">카드의 버튼을 누르면<br>경력기술서에서 관련 경험만 골라 보여드려요.</p>
   </div>
   <div class="rs-c4">
-    <div class="cd rs-cc"><small>01 · TAX → SPEC</small><h4>세무 규칙을<br>제품 요건으로 번역</h4><p>공제·감면, 최저한세·농어촌특별세, 원천세 귀속월, 연말정산 세액 계산 조건을 PRD·데이터 검증 기준·예외 명세로 정리해요.</p><button class="rs-go" id="rs-cc-tax" type="button" data-f="tax" data-to="rs-w1">관련 경력 보기 →</button></div>
-    <div class="cd rs-cc"><small>02 · CONSTRAINT</small><h4>외부 제약을<br>구조로 푸는 설계</h4><p>홈택스 동시 접속 제한, 예금주 확인 API, POS 의존 수집처럼 바꿀 수 없는 조건을 먼저 확인하고 실패 대응까지 설계해요.</p><button class="rs-go" id="rs-cc-ext" type="button" data-f="ext" data-to="rs-w1">관련 경력 보기 →</button></div>
-    <div class="cd rs-cc"><small>03 · AI FIRST</small><h4>AI로 먼저 만들고<br>검증하는 기획</h4><p>동작 프로토타입으로 먼저 합의하고, Claude&nbsp;Code로 실제 코드와 PRD를 대조해요. MCP로 Jira·Confluence·Slack을 연결해 반복 업무를 자동화해요.</p><button class="rs-go" id="rs-cc-ai" type="button" data-f="ai" data-to="rs-w1">관련 경력 보기 →</button></div>
-    <div class="cd rs-cc"><small>04 · DELIVERY</small><h4>파트너와 개발팀 사이의<br>실행 관리</h4><p>회계법인·운영·개발팀과 범위·일정을 조율하고, 정기 배포와 QA 체크리스트로 신고 기한에 맞춰 배포해요.</p><button class="rs-go" id="rs-cc-co" type="button" data-f="co" data-to="rs-w1">관련 경력 보기 →</button></div>
+    <div class="cd rs-cc"><small>01 · TAX → SPEC</small><h4>세무 규칙을<br>제품 요건으로 번역</h4><p>공제·감면, 최저한세·농어촌특별세, 원천세 귀속월, 연말정산 세액 계산 조건을 PRD·데이터 검증 기준·예외 명세로 정리해요.</p><div class="rs-cf"><button class="rs-go" id="rs-cc-tax" type="button" data-f="tax" data-to="rs-w1">관련 경력 보기 →</button></div></div>
+    <div class="cd rs-cc"><small>02 · CONSTRAINT</small><h4>외부 제약을<br>구조로 푸는 설계</h4><p>홈택스 동시 접속 제한, 예금주 확인 API, POS 의존 수집처럼 바꿀 수 없는 조건을 먼저 확인하고 실패 대응까지 설계해요.</p><div class="rs-cf"><div class="rs-cm"><b class="n">40% → 3%</b><span>신고 실패율 · 37%p 감소</span></div><button class="rs-go" id="rs-cc-ext" type="button" data-f="ext" data-to="rs-w1">관련 경력 보기 →</button></div></div>
+    <div class="cd rs-cc"><small>03 · AI FIRST</small><h4>AI로 먼저 만들고<br>검증하는 기획</h4><p>동작 프로토타입으로 범위를 먼저 협의하고, Claude&nbsp;Code로 실제 코드와 PRD를 대조해요. MCP는 Jira·Confluence·Slack의 배포 체크리스트·공지 초안 작성에 활용해요.</p><div class="rs-cf"><div class="rs-cm"><b class="n">10건 → 6건</b><span>스프린트당 재작업 · 40% 감소</span></div><button class="rs-go" id="rs-cc-ai" type="button" data-f="ai" data-to="rs-wc">관련 경력 보기 →</button></div></div>
+    <div class="cd rs-cc"><small>04 · DELIVERY</small><h4>2주 스프린트와<br>릴리즈 관리</h4><p>2주 스프린트로 다음 범위·일정을 한 스프린트 앞서 협의하고, 배포 5일 전 대상 확정 → 전날 코드 동결 → 배포 직후 15분 확인·롤백 판단까지 릴리즈를 관리해요.</p><div class="rs-cf"><button class="rs-go" id="rs-cc-co" type="button" data-f="co" data-to="rs-wc">관련 경력 보기 →</button></div></div>
   </div>
   <div class="rs-aiw">
     <div>
@@ -602,21 +640,21 @@ a.rs-a:hover{color:var(--p2)}
       <div class="rs-case"><b>AI 지적 기각</b>표만 보고 본문의 예외를 놓친 지적은 기각했어요. 지적은 원문과 대조한 뒤에만 반영해요.</div>
     </div>
     <div class="rs-tb rs-ai">
-      <div class="rs-tr rs-th" style="--c:104px 1fr 1.2fr .9fr"><span>단계</span><span>하는 일</span><span>AI 활용</span><span>내가 판단하는 것</span></div>
-      <div class="rs-tr" style="--c:104px 1fr 1.2fr .9fr"><span class="tag">발견</span><span>현장 문제를 건수·빈도로 확인</span><span>누적 오류·이슈 일괄 분류</span><span class="me">무엇을 먼저 풀지</span></div>
-      <div class="rs-tr" style="--c:104px 1fr 1.2fr .9fr"><span class="tag">정의</span><span>PRD에 목표·비목표·성공 지표·예외 정의</span><span>스킬 파일로 PRD 초안, 미확인 항목은 ‘확인 필요’ 표기</span><span class="me">세무 규칙 대조, 스펙 확정</span></div>
-      <div class="rs-tr" style="--c:104px 1fr 1.2fr .9fr"><span class="tag">프로토타입</span><span>동작 화면과 케이스 카탈로그로 먼저 합의</span><span>Gemini·Claude로 프로토타입 제작</span><span class="me">범위와 1차 제외 항목</span></div>
-      <div class="rs-tr" style="--c:104px 1fr 1.2fr .9fr"><span class="tag">검증</span><span>코드 대조와 교차 검증</span><span>Claude&nbsp;Code로 코드↔PRD 대조, 다른 AI로 기획서 공격</span><span class="me">지적의 성립 여부</span></div>
-      <div class="rs-tr" style="--c:104px 1fr 1.2fr .9fr"><span class="tag">배포·개선</span><span>정기 배포·배포 후 QA, 운영 기록으로 다음 과제 선정</span><span>MCP로 배포 체크리스트·공지 초안</span><span class="me">배포 여부, 최종 발송</span></div>
+      <div class="rs-tr rs-th" style="--c:96px 1.25fr 1.1fr .8fr"><span>단계</span><span>하는 일</span><span>AI 활용</span><span>내가 판단하는 것</span></div>
+      <div class="rs-tr" style="--c:96px 1.25fr 1.1fr .8fr"><span class="tag">발견</span><span>현장 문제를 건수·빈도로 확인</span><span>누적 오류·이슈 일괄 분류</span><span class="me">무엇을 먼저 풀지</span></div>
+      <div class="rs-tr" style="--c:96px 1.25fr 1.1fr .8fr"><span class="tag">정의</span><span>PRD에 목표·비목표·성공 지표·예외 정의</span><span>스킬 파일로 PRD 초안, 미확인 항목은 ‘확인 필요’ 표기</span><span class="me">세무 규칙 대조, 스펙 확정</span></div>
+      <div class="rs-tr" style="--c:96px 1.25fr 1.1fr .8fr"><span class="tag">프로토타입</span><span>동작 화면과 케이스 카탈로그로 먼저 협의</span><span>Gemini·Claude로 프로토타입 제작</span><span class="me">범위와 1차 제외 항목</span></div>
+      <div class="rs-tr" style="--c:96px 1.25fr 1.1fr .8fr"><span class="tag">검증</span><span>코드 대조와 교차 검증</span><span>Claude&nbsp;Code로 코드↔PRD 대조, 다른 AI로 기획서 공격</span><span class="me">지적의 성립 여부</span></div>
+      <div class="rs-tr" style="--c:96px 1.25fr 1.1fr .8fr"><span class="tag">배포·개선</span><span>2주 스프린트 배포(D-5 확정 · D-1 동결 · 배포 후 15분 확인)</span><span>MCP로 배포 체크리스트·공지 초안</span><span class="me">배포·롤백 여부, 최종 발송</span></div>
     </div>
   </div>
 </section>
 
 <section class="s about rs-w rs-tight" id="rs-w1">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
   <div class="ivh rs-ivh">
     <div>
-      <p class="eb">WORK HISTORY · 01 · 지엔터프라이즈㈜ · 환급팀</p>
+      <p class="eb">WORK HISTORY · 01 · 지엔터프라이즈㈜ · 환급제품팀</p>
       <h2>실무자가 막히는 곳마다, <em>기능</em>으로 풀었어요.</h2>
     </div>
     <div class="rs-flt">
@@ -628,12 +666,11 @@ a.rs-a:hover{color:var(--p2)}
   </div>
   <div class="rs-co">
     <div class="cn"><b>지엔터프라이즈㈜</b><span>비즈넵 · PM</span></div>
-    <p>개인사업자 세금 환급(경정청구)·기장 대행 서비스 <b>비즈넵</b> 운영사.<br>세무 판단은 협업 회계법인이, 제품·운영은 회사가 맡아요.</p>
-    <div class="rs-tm"><span><b>기장팀 · 케어프로</b><small class="n">2025.08 – 2026.05</small></span><i>→</i><span class="on"><b>환급팀 · 브릭스웍스</b><small class="n">2026.05 – 재직 중</small></span></div>
+    <p>세금 환급·기장 대행 서비스 <b>비즈넵</b> 운영사. 회계법인용 세무 업무 콘솔을 기획·개선해요.<br>브릭스웍스 PM으로 운영·기능을 개선하고, 2주 스프린트 단위로 일정과 릴리즈를 관리해요.</p>
+    <div class="rs-tm"><span><b>기장팀 · 케어프로</b><small class="n">2025.08 – 2026.05</small></span><i>→</i><span class="on"><b>환급제품팀 · 브릭스웍스</b><small class="n">2026.05 – 재직 중</small></span></div>
   </div>
-  <div class="rs-grp"><span class="tag">BRICKSWORKS</span><b>브릭스웍스 · 종소세 경정청구 콘솔</b><span>경정청구 운영 전반을 관리하고, 회계법인 실무자의 요청을 받아 기능으로 만들어요.</span></div>
-  <p class="rs-ft"><b>경정청구 8단계 업무 여정</b><span>고객이 환급 신청·설문·계좌를 입력하면 실무자가 분류부터 전자신고까지 처리하고, 모든 건은 세무사·회계사가 최종 검수해요.</span></p>
-  <div class="rs-fl" style="--n:9">
+  <div class="rs-grp"><span class="tag">BRICKSWORKS</span><b>종소세 경정청구 8단계 업무 여정</b><span>단계마다 저장·잠금·재계산 후 다음 단계로 넘어가고, 모든 건은 세무사·회계사가 최종 검수해요.</span></div>
+  <div class="rs-fl" style="--n:9;margin-top:12px">
     <div class="rs-st"><small class="n">01</small><b>분류</b></div>
     <div class="rs-st"><small class="n">02</small><b>예비검토</b></div>
     <div class="rs-st"><small class="n">03</small><b>사전작업</b></div>
@@ -645,41 +682,41 @@ a.rs-a:hover{color:var(--p2)}
     <div class="rs-st x"><small class="n">08</small><b>추심</b></div>
   </div>
   <div class="rs-jm" style="--n:9">
-    <div style="grid-column:5"><span><i class="rs-no">3</i>환급계좌 검증</span></div>
+    <div style="grid-column:5"><span><i class="rs-no">1</i>재계산 누락 알림</span><span><i class="rs-no">3</i>환급계좌 검증</span></div>
     <div style="grid-column:6"><span><i class="rs-no">4</i>이슈 표시</span></div>
-    <div style="grid-column:7"><span><i class="rs-no">1</i>재계산 누락 알림</span><span><i class="rs-no">2</i>전자신고 대기열</span></div>
+    <div style="grid-column:7"><span><i class="rs-no">2</i>전자신고 대기열</span></div>
   </div>
   <div class="rs-rows">
     <div class="rs-row rs-hdr"><span>PROJECT</span><span>문제</span><span>한 일</span><span>결과</span></div>
-    <div class="rs-row" data-k="tax co">
+    <div class="rs-row" id="rs-w1-rc" data-k="tax co">
       <div class="rs-pj"><b><i class="rs-no">1</i>재계산 누락 알림</b><small class="n">2026.07 · 2주</small></div>
-      <span>값 수정 후 재계산을 빠뜨려 금액이 틀린 신고가 하루 5~10건. 회계법인이 매일 전수조사</span>
-      <span>신고 직전에 누락 단계를 감지해 안내. 전문가 판단을 존중해 막지 않고 경고하고, 무시한 건은 기록</span>
-      <span class="rs-r">배포 완료, 기록을 자동 재계산 과제의 근거로 축적</span>
+      <span>앞 단계 값을 고친 뒤 재계산을 다시 안 돌려 금액이 틀린 신고가 하루 5~10건. 회계법인이 매일 전수조사</span>
+      <span>작성 단계에서 신고·마감을 누르면 단계별 재계산 상태를 검사. 빠진 단계는 ‘그 단계에서 재계산하고 오세요’로 안내하고, 전체 재계산도 바로 실행</span>
+      <span class="rs-r">배포 완료. 재계산이 빠진 건은 신고·마감 전에 걸러 바로잡음</span>
     </div>
-    <div class="rs-row" data-k="tax ext ai">
+    <div class="rs-row" id="rs-w1-q" data-k="tax ext ai">
       <div class="rs-pj"><b><i class="rs-no">2</i>전자신고 대기열</b><small class="n">2026.07 – 09 · BE 2 · FE 1</small></div>
       <span>홈택스는 계정당 동시 접속 1건. 여러 담당자가 같은 계정을 쓰면 신고가 튕기고 중복 제출 위험</span>
-      <span>계정이 신고 파일에 고정된다는 제약을 확인해 계정별 순차 처리로 설계(계정 4개·워커 5개). 자동 재시도는 빼고, 응답 없는 제출은 담당자 확인 후 해제</span>
-      <span class="rs-r">요청만 넣으면 순서대로 자동 처리, 충돌·중복 제출을 구조로 차단</span>
+      <span>신고 파일에 계정이 고정되는 제약을 확인해 계정별 대기열로 설계(같은 계정만 순서대로, 다른 계정은 동시 진행). 응답 없는 제출은 담당자 확인 후 해제. AI 교차 검증으로 멈춘 작업의 해제 주체·복구 조건 누락을 개발 착수 전 보완</span>
+      <span class="rs-r">운영 적용. 같은 계정 동시 접속 충돌을 줄여 신고 실패율 <em>40% → 3%</em>(37%p 감소)</span>
     </div>
-    <div class="rs-row" data-k="tax ext data">
+    <div class="rs-row" id="rs-w1-ac" data-k="tax ext data">
       <div class="rs-pj"><b><i class="rs-no">3</i>환급계좌 검증·동기화</b><small class="n">2026.07 – 08 · BE 1 · FE 1</small></div>
       <span>계좌를 검증 없이 직접 입력. 잘못되면 환급금이 고객에게 가지 않고 신고서를 수기 정정</span>
       <span>전용 입력 화면으로 분리하고, 예금주·계좌 확인을 통과한 계좌만 반영. 은행명은 코드로 정규화</span>
       <span class="rs-r">배포 완료, 콘솔 배포 후 고객 앱과 양방향 동기화</span>
     </div>
-    <div class="rs-row" data-k="tax co">
-      <div class="rs-pj"><b><i class="rs-no">4</i>이슈 표시·최종 검수</b><small>검수 구조 설계</small></div>
+    <div class="rs-row" id="rs-w1-is" data-k="tax co">
+      <div class="rs-pj"><b><i class="rs-no">4</i>이슈 표시·최종 검수</b><small>검수 화면 설계</small></div>
       <span>판단이 필요한(이슈 있는) 건을 목록에서 직접 찾아야 함</span>
-      <span>규칙으로 판단되는 건은 자동으로 다음 단계로 진행하고, 확인이 필요한 건은 ‘이슈 있음’으로 표시. 이슈 건은 검수 때 인정·불인정·증빙요청 중 하나로 결정</span>
-      <span class="rs-r">모든 건은 세무사·회계사가 최종 검수, 이슈 건은 검수 때 먼저 보이게 함</span>
+      <span>규칙으로 판단할 조건과 전문가 확인 조건을 구분. 확인이 필요한 건은 ‘이슈 있음’으로 표시하고 인정·불인정·증빙 요청 흐름 정리</span>
+      <span class="rs-r">모든 건 세무사·회계사 최종 검수, 이슈 건은 먼저 노출<span style="white-space:nowrap">(검수 화면 설계에 반영)</span></span>
     </div>
   </div>
 </section>
 
 <section class="s about rs-w" id="rs-w2">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
   <div class="ivh rs-ivh">
     <div>
       <p class="eb">WORK HISTORY · 01 · 브릭스웍스 운영 관리</p>
@@ -699,7 +736,7 @@ a.rs-a:hover{color:var(--p2)}
       <div class="rs-big"><b class="n">700여 건</b><span>처리되지 않은 오류</span></div>
       <ol class="rs-ol">
         <li><i>1</i><span>AI로 일괄 분류해 공통 원인을 묶었어요.</span></li>
-        <li><i>2</i><span>공통 원인·고위험 건부터 처리했어요.</span></li>
+        <li><i>2</i><span>업무 위험도·반복 원인으로 우선순위를 정했어요.</span></li>
         <li><i>3</i><span>회계법인 팀장단과 주간 미팅을 정례화했어요.</span></li>
       </ol>
       <p class="rs-res">일회성 처리에서 상시 관리 구조로</p>
@@ -711,12 +748,12 @@ a.rs-a:hover{color:var(--p2)}
         <div class="rs-st"><small>요청</small><b>주간 미팅·운영 기록</b></div>
         <div class="rs-st"><small>정리</small><b>설계도에 반영</b></div>
         <div class="rs-st"><small>판단</small><b>우선순위</b></div>
-        <div class="rs-st"><small>실행</small><b>일정·배포</b></div>
+        <div class="rs-st"><small>실행</small><b>2주 스프린트·배포</b></div>
       </div>
       <div class="rs-gn">
         <div class="rs-gr h"><span>2026년 기능</span><span class="n">7월</span><span class="n">8월</span><span class="n">9월</span><span>투입 · 상태</span></div>
         <div class="rs-gr"><b><i class="rs-no">1</i>재계산 누락 알림</b><em class="rs-hm"><i>2주</i></em><em></em><em></em><span class="st">2주 · <b>배포 완료</b></span></div>
-        <div class="rs-gr"><b><i class="rs-no">2</i>전자신고 대기열</b><em class="on"></em><em class="on"></em><em class="on"></em><span class="st">BE 2 · FE 1</span></div>
+        <div class="rs-gr"><b><i class="rs-no">2</i>전자신고 대기열</b><em class="on"></em><em class="on"></em><em class="on"></em><span class="st">BE 2 · FE 1 · <b>운영 적용</b></span></div>
         <div class="rs-gr"><b><i class="rs-no">3</i>환급계좌 검증·동기화</b><em class="on"></em><em class="on"></em><em></em><span class="st">BE 1 · FE 1 · <b>배포 완료</b></span></div>
       </div>
     </div>
@@ -732,8 +769,8 @@ a.rs-a:hover{color:var(--p2)}
   </div>
 </section>
 
-<section class="s about rs-w" id="rs-w3">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
+<section class="s about rs-w rs-tight" id="rs-w3">
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
   <div class="ivh rs-ivh">
     <div>
       <p class="eb">WORK HISTORY · 01 · 지엔터프라이즈㈜ · 기장팀</p>
@@ -749,7 +786,7 @@ a.rs-a:hover{color:var(--p2)}
   <div class="rs-co">
     <div class="cn"><b>지엔터프라이즈㈜</b><span>비즈넵 · PM</span></div>
     <p>입사 후 기장팀에서 기장 대행(비즈넵 케어) 실무 콘솔 <b>케어프로</b>를 맡았어요.<br>고객은 앱에 매출·급여·소득 자료를 내고, 실무자는 장부·급여 정리 후 신고해요.</p>
-    <div class="rs-tm"><span class="on"><b>기장팀 · 케어프로</b><small class="n">2025.08 – 2026.05</small></span><i>→</i><span><b>환급팀 · 브릭스웍스</b><small class="n">2026.05 – 재직 중</small></span></div>
+    <div class="rs-tm"><span class="on"><b>기장팀 · 케어프로</b><small class="n">2025.08 – 2026.05</small></span><i>→</i><span><b>환급제품팀 · 브릭스웍스</b><small class="n">2026.05 – 재직 중</small></span></div>
   </div>
   <p class="rs-ft"><b>원천세 업무 구조</b><span>빨간 글씨가 기존에 손으로 하던 일이에요. 이 지점들을 콘솔 안의 한 흐름으로 이었어요.</span></p>
   <div class="rs-fl" style="--n:7">
@@ -764,30 +801,81 @@ a.rs-a:hover{color:var(--p2)}
   <div class="rs-rows" style="margin-top:16px">
     <div class="rs-row rs-hdr"><span>PROJECT</span><span>문제</span><span>한 일</span><span>결과</span></div>
     <div class="rs-sub">원천세 · 납부서<span>같은 흐름</span></div>
-    <div class="rs-row" data-k="tax ext co">
+    <div class="rs-row" id="rs-w3-wh" data-k="tax ext co">
       <div class="rs-pj"><b>원천세 신고 자동화</b><small>FE·BE 4명</small></div>
       <span>고객이 앱에 올린 소득 자료를 담당자가 다시 입력. 신고 결과도 홈택스에서 내려받아 따로 전달</span>
       <span>귀속·지급 분리 구조를 개발팀과 재설계. 고객 데이터 → 급여 등록 → 세액 계산 → 이행상황신고서까지 연결하고 콘솔 안에서 전자신고·검증. 4대보험 EDI 연동</span>
-      <span class="rs-r">건별 재입력·결과 전달 업무 제거, 고객 앱에서 신고 결과 조회</span>
+      <span class="rs-r">재입력을 없애 조회 → 검토 → 반영으로 이어져 건당 처리시간 <em>15분 → 9분</em>(40% 단축). 신고 결과는 고객 앱 직접 조회로 파일 전달 축소</span>
     </div>
     <div class="rs-row" data-k="tax">
       <div class="rs-pj"><b>납부서 재발급</b><small>원천세 운영 개선</small></div>
       <span>납부기한이 바뀌면 납부서를 인쇄해 지우고 다시 작성</span>
       <span>신고 서류 자동 생성, 기존 납부서 취소 → 신규 발행으로 재발급</span>
-      <span class="rs-r">수기 정정 업무 제거</span>
+      <span class="rs-r">납부서 변경을 시스템 흐름으로 전환해 수기 정정 업무 개선</span>
     </div>
     <div class="rs-sub">연말정산<span>신규 구축</span></div>
     <div class="rs-row" data-k="tax data co">
       <div class="rs-pj"><b>연말정산 신규 구축</b><small>기능 신규 도입</small></div>
       <span>콘솔에 연말정산 기능 자체가 없음</span>
-      <span>간소화 PDF 추출 → 항목 인식 → 세액 계산 → 전자신고 파일 생성. 카드 중복 업로드 감지</span>
-      <span class="rs-r">신고 기한에 맞춰 실제 신고에 적용</span>
+      <span>간소화 PDF 추출 → 항목 인식 → 세액 계산 → 전자신고 파일 생성. 카드 중복 업로드 감지. 공제 순서·한도·계산 결과 검증 항목 정리, 개발팀과 오류 수정·재검증 일정 조율</span>
+      <span class="rs-r">신고 기한에 맞춰 실제 신고에 적용(초기 오류·미지원 예외는 더존과 병행 처리)</span>
+    </div>
+  </div>
+</section>
+
+<section class="s about rs-w" id="rs-wc">
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
+  <div class="ivh rs-ivh">
+    <div>
+      <p class="eb">WORK HISTORY · 01 · 지엔터프라이즈㈜ · 공통</p>
+      <h2>한 스프린트 앞서 기획하고, <em>릴리즈는 순서대로</em> 관리해요.</h2>
+    </div>
+    <div class="rs-flt">
+      <span class="hint rs-fs">역량별로 눌러 보세요</span>
+      <div class="rs-fb" role="group" aria-label="역량별 보기">
+        <button class="rs-fc on" id="rs-wc-all" type="button" data-f="all" aria-pressed="true">전체</button><button class="rs-fc" id="rs-wc-tax" type="button" data-f="tax" aria-pressed="false">세무</button><button class="rs-fc" id="rs-wc-ext" type="button" data-f="ext" aria-pressed="false">외부 제약</button><button class="rs-fc" id="rs-wc-data" type="button" data-f="data" aria-pressed="false">데이터</button><button class="rs-fc" id="rs-wc-ai" type="button" data-f="ai" aria-pressed="false">AI</button><button class="rs-fc" id="rs-wc-co" type="button" data-f="co" aria-pressed="false">협업</button>
+      </div>
+    </div>
+  </div>
+  <div class="rs-cg">
+    <div class="rs-tc" id="rs-wc-sp" data-k="co">
+      <small>2주 스프린트 · 릴리즈 운영</small>
+      <h4>요구사항 협의부터 개발·QA·배포까지 2주 단위로 관리해요</h4>
+      <div class="rs-sp" aria-label="기획과 개발이 한 스프린트씩 겹쳐 진행되는 구조">
+        <span></span><span class="h n">스프린트 N · 2주</span><span class="h n">스프린트 N+1 · 2주</span><span class="h n">스프린트 N+2 · 2주</span>
+        <b>기획 · PM</b><i class="pm">A안 기획 · 범위 협의</i><i class="pm">B안 기획 · 범위 협의</i><i class="pm">C안 기획 · 범위 협의</i>
+        <b>개발팀</b><i class="x">이전 기획안 구현</i><i class="dv">A안 구현</i><i class="dv">B안 구현</i>
+      </div>
+      <div class="rs-s2">
+        <div><small>선행 스프린트 · 기획·개발 준비</small><span>요청사항과 운영 이슈를 기획안으로 구체화하고, 개발팀과 구현 방식·공수·의존성을 검토해 다음 스프린트 범위·일정을 협의해요.</span></div>
+        <div><small>다음 스프린트 · 개발·병행 기획</small><span>개발팀이 구현하는 2주 동안 차기 기획을 진행하며, 개발 중 질문·예외 조건·일정 변경을 조율해요.</span></div>
+      </div>
+      <p class="rs-ft"><b>릴리즈 · 배포 5일 전부터 다음 날까지</b></p>
+      <div class="rs-fl" style="--n:4">
+        <div class="rs-st"><small class="n">D-5 · QA·릴리즈 준비</small><b>대상 확정</b><span>대상 티켓·버전 확정, 운영 환경과 데이터·설정·권한 차이와 미검증 항목 점검</span></div>
+        <div class="rs-st"><small class="n">D-1 · 배포 전날</small><b>코드 동결</b><span>추가 건은 다음 배포로 이월, 사전 공지와 롤백 조건·담당자 확정</span></div>
+        <div class="rs-st on"><small class="n">D-day · 배포 직후</small><b>최소 15분 확인</b><span>오류·응답·배치와 핵심 흐름 확인, 미검증 항목 우선 검증, 이상 시 롤백 판단</span></div>
+        <div class="rs-st"><small class="n">D+1 · 다음 날</small><b>릴리즈 종료</b><span>결과 공지 후 티켓·릴리즈 종료</span></div>
+      </div>
+      <div class="rs-doc"><b>릴리즈 관리 문서로 정리</b><span class="tag">버전 규칙</span><span class="tag">배포 공지 양식</span><span class="tag">핫픽스 등급·최소 검증</span><span class="tag">롤백 판단 기준</span></div>
+    </div>
+    <div class="rs-tc" id="rs-wc-vf" data-k="ai co">
+      <small>공통 기획·검증 방식</small>
+      <h4>개발 착수 전에 코드와 기획서를 맞춰 봐요</h4>
+      <div class="rs-big"><b class="n">10건 → 6건</b><span>스프린트당 재작업<br>40% 감소</span></div>
+      <ol class="rs-ol">
+        <li><i>1</i><span><b>동작 프로토타입</b>Gemini·Claude로 만든 동작 화면으로 개발팀·회계법인과 화면·구현 범위를 협의해요.</span></li>
+        <li><i>2</i><span><b>코드 ↔ PRD 대조</b>Claude&nbsp;Code로 실제 코드와 PRD의 데이터·권한·예외 처리를 대조해요.</span></li>
+        <li><i>3</i><span><b>AI 지적은 직접 판단</b>원문·세무 규칙과 대조해 반영 여부를 정해요.</span></li>
+        <li><i>4</i><span><b>MCP 연결</b>Jira·Confluence·Slack의 배포 체크리스트·공지 초안 작성에 활용해요.</span></li>
+      </ol>
+      <p class="rs-res">개발 착수 전 코드 대조로 누락된 조건을 보완해 재작업을 줄였어요</p>
     </div>
   </div>
 </section>
 
 <section class="s about rs-w rs-tight" id="rs-w4">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
   <div class="ivh rs-ivh">
     <div>
       <p class="eb">WORK HISTORY · 02 · 스마트푸드네트웍스㈜</p>
@@ -829,14 +917,14 @@ a.rs-a:hover{color:var(--p2)}
     <div class="rs-row" data-k="ext data co">
       <div class="rs-pj"><b>프록시 기반 계정 연결</b><small>매출 수집 방식 전환</small></div>
       <span>매장 PC나 POS기에 프로그램을 설치해야 수집 가능. 기기가 꺼지면 수집이 멈춰 온보딩 이탈·데이터 공백</span>
-      <span>프록시(VPN 경유) 기반 계정 연결 방식을 직접 주도해 제안. 스크래핑 개발자들과 수집 위치·방식을 논의하며 온보딩 흐름과 수집 요건 설계</span>
+      <span>프록시(VPN 경유) 기반 계정 연결 방식을 직접 제안하고 전환 주도. 스크래핑 개발자와 수집 위치·방식을 협의하며 온보딩 흐름과 수집 요건 설계</span>
       <span class="rs-r">정식 오픈, 설치·기기 가동 없이 계정 연결만으로 수집</span>
     </div>
-    <div class="rs-row" data-k="ext data">
+    <div class="rs-row" id="rs-w4-vf" data-k="ext data">
       <div class="rs-pj"><b>값 검증 · 배달 3사 대조</b><small>매출 대조·알림</small></div>
-      <span>수집 매출이 플랫폼 실제 매출과 맞는지 알 수 없어, 차이를 고객 문의로 알게 됨</span>
+      <span>수집 매출을 실제 매출과 자동으로 맞춰 볼 기준이 없어, 차이를 고객 문의로 뒤늦게 확인</span>
       <span>배민·쿠팡이츠·요기요 사이트의 실제 매출을 가져와 수집값과 비교 분석. 대조 기준을 정하고, 차액 건은 Slack으로 알린 뒤 안내하는 흐름 기획</span>
-      <span class="rs-r">담당자가 수집 차이를 알림으로 먼저 확인</span>
+      <span class="rs-r">차액 알림으로 담당자가 먼저 확인, 일일 대조시간 <em>60분 → 20분</em>(약 67% 단축)</span>
     </div>
     <div class="rs-row" data-k="data">
       <div class="rs-pj"><b>메뉴 통일화</b><small>메뉴 그룹화·리더보드</small></div>
@@ -854,7 +942,7 @@ a.rs-a:hover{color:var(--p2)}
 </section>
 
 <section class="s about rs-w rs-tight" id="rs-w5">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
   <div class="ivh rs-ivh">
     <div>
       <p class="eb">WORK HISTORY · 03 · ㈜세친구</p>
@@ -868,8 +956,8 @@ a.rs-a:hover{color:var(--p2)}
     </div>
   </div>
   <div class="rs-co">
-    <div class="cn"><b>㈜세친구</b><span>R&amp;D팀 선임연구원·팀장 · PM 시작</span></div>
-    <p>소상공인 대상 회계·세무 자동화와 상권분석 서비스 기업.<br>여기서 PM을 시작해 기획부터 출시·운영까지 맡았어요.</p>
+    <div class="cn"><b>㈜세친구</b><span>R&amp;D팀 선임연구원·팀장 · 서비스기획 · PM 시작</span></div>
+    <p>소상공인 대상 회계·세무 자동화와 상권분석 서비스 기업.<br>서비스 기획을 맡으며 R&amp;D팀 팀장으로 PM 역할을 시작했어요.</p>
     <span class="pd2 n">2022.03 – 2024.11</span>
   </div>
   <p class="rs-ft"><b>AI 자동장부 흐름</b><span>사장님이 한 건씩 입력·분개하던 일을 자료 수집부터 신고서 생성까지 자동으로 이었어요.</span></p>
@@ -912,7 +1000,7 @@ a.rs-a:hover{color:var(--p2)}
 </section>
 
 <section class="s about rs-w" id="rs-w6">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
   <div class="ivh rs-ivh">
     <div>
       <p class="eb">WORK HISTORY · 03 · ㈜세친구 · 상권분석</p>
@@ -957,7 +1045,7 @@ a.rs-a:hover{color:var(--p2)}
 </section>
 
 <section class="s about rs-w" id="rs-w7">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
   <div class="ivh rs-ivh">
     <div>
       <p class="eb">WORK HISTORY · 04 · ㈜더존비즈온</p>
@@ -995,7 +1083,7 @@ a.rs-a:hover{color:var(--p2)}
     <div class="rs-row" data-k="tax co">
       <div class="rs-pj"><b>WEHAGO 부가세 신고·급여 전환</b><small class="n">2017.04 – 2018.12 · 4명</small></div>
       <span>설치형 Smart A의 신고·급여 업무를 클라우드로 옮겨야 하고, 작성 중에는 오류·누락을 알기 어려움</span>
-      <span>Sketch로 부가세 신고서 UI·기능 구체화, 기능설명서·신고서 조회 로직 작성, DB 구조 파악. 급여·인사 흐름, 입력 검증 조건·안내 메시지 설계</span>
+      <span>Sketch로 부가세 신고서 UI·기능 구체화, 기능설명서 작성. 전표 DB 구조를 파악해 신고서 조회 로직을 플로우차트로 정리. 급여·인사 흐름, 입력 검증 조건·안내 메시지 설계</span>
       <span class="rs-r">사용자가 작성 중에 오류를 확인·수정</span>
     </div>
   </div>
@@ -1003,7 +1091,7 @@ a.rs-a:hover{color:var(--p2)}
 </section>
 
 <section class="s about rs-w" id="rs-w8">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
+  <div class="topline"><span>2026 경력기술서</span><span>PRODUCT MANAGER</span></div>
   <div class="ivh rs-ivh">
     <div>
       <p class="eb">WORK HISTORY · 05 – 07 · 세무·회계 실무</p>
@@ -1027,94 +1115,21 @@ a.rs-a:hover{color:var(--p2)}
     <div class="rs-mc"><small>실무 · 세무사사무실</small><b>부가세 신고</b><i>↓</i><b class="p">WEHAGO 부가세 신고서</b><small>더존비즈온</small></div>
     <div class="rs-mc"><small>실무 · 재무팀</small><b>결산·원장 차액 확인</b><i>↓</i><b class="p">WEHAGO 정산·결산 검증</b><small>더존비즈온</small></div>
     <div class="rs-mc"><small>실무 · 세무사사무실</small><b>원천세 신고·4대보험</b><i>↓</i><b class="p">케어프로 원천세·4대보험 EDI</b><small>지엔터 · 기장팀</small></div>
-    <div class="rs-mc"><small>실무 · 세무사사무실</small><b>종소세 신고</b><i>↓</i><b class="p">브릭스웍스 종소세 경정청구</b><small>지엔터 · 환급팀</small></div>
+    <div class="rs-mc"><small>실무 · 세무사사무실</small><b>종소세 신고</b><i>↓</i><b class="p">브릭스웍스 종소세 경정청구</b><small>지엔터 · 환급제품팀</small></div>
   </div>
   <p class="rs-bridge">세무사사무실에서 익힌 4개 세목의 신고 흐름이 이후 세무 서비스 기획의 기반이 됐어요.</p>
-</section>
-
-<section class="s about" id="rs-edu">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
-  <div class="ab">
-    <div class="ab-l">
-      <h3>EDUCATION &amp; LICENSE</h3>
-      <small>( LEARNING THAT STAYS IN THE WORK )</small>
-      <div class="rs-lic">
-        <small>KEY LICENSE</small>
-        <b>전산세무 2급</b>
-        <span>(국가공인) 한국세무사회 · <span class="n" style="display:inline;margin:0">2012.12</span></span>
-        <div class="rs-lic2">
-          <small>DATA</small>
-          <b>Google Analytics Certification</b>
-          <span>GA4 교육과정 수료 · 고급 GA 인증 시험 통과</span>
-        </div>
-      </div>
-    </div>
-    <div class="ab-r rs-abr">
-      <h4>EDUCATION</h4>
-      <div class="xp">
-        <span class="d n">2021.02 – 2022.07</span><b>학점은행제</b><span><small>경영학과 졸업 · 학점 3.5 / 4.0</small></span>
-        <span class="d n">2009.02 – 2011.02</span><b>웅지세무대학</b><span><small>국제회계 졸업 · 학점 3.0 / 4.0</small></span>
-        <span class="d n">2004</span><b>성동고등학교</b><span><small>졸업</small></span>
-      </div>
-      <h4>TRAINING</h4>
-      <div class="xp">
-        <span class="d n">2024.08 – 2024.11</span><b>데이터분석 준전문가 교육과정</b><span><small>데이터 수집·전처리, EDA, 통계 분석, 시각화, 분석 보고서</small></span>
-        <span class="d n">2024.08</span><b>고급 Google 애널리틱스</b><span><small>고급 세그먼트, 전환 경로 분석, GTM 이벤트 추적, 인증 시험 통과</small></span>
-        <span class="d n">2024.05 – 2024.08</span><b>GA4 교육과정 수료</b><span><small>보고서 해석, 외부 도구 연동, Google Analytics Certification</small></span>
-        <span class="d n">2012.12 – 2013.01</span><b>ERP 자격 취득 과정</b><span><small>조세일보</small></span>
-        <span class="d n">2012.10 – 2012.12</span><b>전산세무 자격 취득 과정</b><span><small>조세일보</small></span>
-      </div>
-      <h4>LICENSE</h4>
-      <div class="xp">
-        <span class="d n">2012.12</span><b>전산세무 2급 (국가공인)</b><span><small>한국세무사회</small></span>
-        <span class="d n">2008.08</span><b>자동차운전면허 2종보통</b><span><small></small></span>
-        <span class="d n">2003.12</span><b>양장기능사</b><span><small></small></span>
-        <span class="d n">1994.05</span><b>워드프로세서 1급</b><span><small></small></span>
-      </div>
-      <h4>MILITARY</h4>
-      <div class="xp">
-        <span class="d n">2005.04 – 2007.04</span><b>육군 병장 제대</b><span><small>군필</small></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="s about" id="rs-letter">
-  <div class="topline"><span>2026 RESUME</span><span>PRODUCT MANAGER</span></div>
-  <div class="ab rs-lt">
-    <div class="ab-l">
-      <h3>COVER LETTER</h3>
-      <small>( FROM THE TAX DESK TO THE PRODUCT )</small>
-      <h2>세무 실무에서 출발해,<br><em>AI로 검증하는 PM</em>이<br>되기까지.</h2>
-      <div class="rs-want">
-        <h4>희망 근무 조건</h4>
-        <div class="kvl rs-kvl">
-          <span>희망 직무</span><span>PL·PM·PO &gt; PM, 웹기획 &gt; 서비스기획</span>
-          <span>고용 형태</span><span>정규직</span>
-          <span>근무 지역</span><span>서울·경기 전지역</span>
-          <span>희망 연봉</span><span>면접 후 결정</span>
-          <span>병역</span><span>군필 (2005.04 – 2007.04 육군 병장 제대)</span>
-        </div>
-      </div>
-    </div>
-    <div class="rs-lg">
-      <div class="cd"><small>01 · START</small><h4>세무 책상에서 시작했어요</h4><p>세무사사무실에서 기장과 부가세·원천세·법인세·종소세 신고를 직접 하며 일을 시작했어요. 기업 재무팀에서 결산을 맡은 뒤 더존비즈온에서 WEHAGO 정산 프로그램과 부가세 신고서를 기획했고, 세친구부터 PM으로 일하고 있어요.</p></div>
-      <div class="cd"><small>02 · WHO DECIDES</small><h4>누가 판단하는지부터 나눠요</h4><p>기획할 때는 고객이 입력할 것, 운영자가 확인할 것, 세무사·회계사가 판단할 것을 먼저 나눠요. 재계산 누락 알림을 막지 않고 경고로만 둔 것도 최종 판단자가 회계법인 전문가이기 때문이에요.</p></div>
-      <div class="cd"><small>03 · CONSTRAINT FIRST</small><h4>바꿀 수 없는 제약은 먼저 확인해요</h4><p>대기열을 설계할 때 홈택스 계정이 신고 파일에 고정된다는 사실을 코드에서 확인했어요. 응답 없는 제출은 자동으로 다시 보내지 않고 담당자 확인 후 풀도록 했어요. 두 번 제출되는 사고가 기다리는 불편보다 크다고 판단했어요.</p></div>
-      <div class="cd"><small>04 · BUILD TO AGREE</small><h4>AI로 먼저 만들어 보고 합의해요</h4><p>동작하는 프로토타입으로 개발팀·회계법인과 화면을 먼저 맞추고, Claude&nbsp;Code로 코드와 기획서를 대조해요. AI의 지적은 세무 규칙과 대조해 받아들일지 직접 판단해요.</p></div>
-      <div class="rs-goal"><div><small>05 · GOAL</small><h4>믿고 쓰는 AI 제품</h4></div><p>AI가 들어간 제품을 사용자가 믿고 쓸 수 있게 만드는 것,<br>PM으로서 제 목표예요.</p></div>
-    </div>
-  </div>
 </section>
 
 </div></div>
 <script>
 (function(){
   var NAMES={tax:'세무',ext:'외부 제약',data:'데이터',ai:'AI',co:'협업'};
-  var W=['rs-w1','rs-w2','rs-w3','rs-w4','rs-w5','rs-w6','rs-w7','rs-w8'].map(function(id){return document.getElementById(id);}).filter(Boolean);
+  var W=['rs-w1','rs-w2','rs-w3','rs-wc','rs-w4','rs-w5','rs-w6','rs-w7','rs-w8'].map(function(id){return document.getElementById(id);}).filter(Boolean);
   var RM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function go(id){var t=document.getElementById(id);if(t&&t.scrollIntoView)t.scrollIntoView({behavior:RM?'auto':'smooth',block:'start'});}
+  function clearPin(){document.querySelectorAll('.rs-pin').forEach(function(e){e.classList.remove('rs-pin');});}
   function setF(f){
+    clearPin();
     var per=[],total=0;
     W.forEach(function(sec,i){
       var n=0;
@@ -1137,10 +1152,13 @@ a.rs-a:hover{color:var(--p2)}
   var K=document.getElementById('rs-core');
   if(K){K.querySelectorAll('.rs-go[data-f]').forEach(function(b){b.addEventListener('click',function(){setF(b.getAttribute('data-f'));go(b.getAttribute('data-to'));});});}
 
+  var PF=document.getElementById('rs-profile');
+  if(PF){PF.querySelectorAll('.rs-kc[data-to]').forEach(function(b){b.addEventListener('click',function(){setF('all');var t=document.getElementById(b.getAttribute('data-pin'));if(t)t.classList.add('rs-pin');go(b.getAttribute('data-to'));});});}
+
   var C=document.getElementById('rs-career');
   if(C){
     var eras=C.querySelectorAll('.rs-era'),rows=C.querySelectorAll('.rs-tr[data-era]'),tb=C.querySelector('.rs-ct'),wrap=C.querySelector('.rs-eras'),st=document.getElementById('rs-era-st'),cur='0';
-    var LBL={'1':'2011 – 2016 · 세무·회계 실무','2':'2017 – 2022 · 서비스기획','3':'2022 – 2024 · PM 시작','4':'2024 – 현재 · 세무·매출 SaaS PM'};
+    var LBL={'1':'2011 – 2016 · 세무·회계 실무','2':'2017 – 2022 · 서비스기획 · PM 겸임','3':'2022 – 2024 · 서비스기획 · PM 시작','4':'2024 – 현재 · 세무·매출 SaaS PM'};
     function setE(e){
       cur=(cur===e)?'0':e;var seen={},n=0;
       rows.forEach(function(r){var hit=cur!=='0'&&r.getAttribute('data-era')===cur;r.classList.toggle('rs-hit',hit);if(hit){var co=r.getAttribute('data-co');if(!seen[co]){seen[co]=1;n++;}}});

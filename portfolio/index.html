@@ -236,19 +236,24 @@ input.inp,select.inp{font-family:inherit;font-size:12px;color:#1C1C24;width:100%
 .pbody{flex:1;display:flex;flex-direction:column;gap:10px;padding:6px 14px 14px;min-height:0;overflow:hidden}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
-
 <style>
-.idx h2{margin-top:44px}
-.idx .ilist{margin-top:24px}
-.idx .irow{padding:20px 0;cursor:pointer;transition:background .2s}
+/* about: 슬라이드 높이 788px 유지(3px 넘침 보정), 교육과정 이름이 길어져 2열 폭을 넓힘 */
+.about .ab{margin-top:73px}
+.about .xp{grid-template-columns:150px 252px 1fr}
+</style>
+<style>
+.idx h2{margin-top:36px}
+.idx .ilist{margin-top:20px}
+section.idx{padding-bottom:54px}
+.idx .irow{padding:18px 0;cursor:pointer;transition:background .2s}
 .idx .irow:hover,.idx .irow:focus-visible{background:#F4F3FF}
 .idx .irow:hover b{color:var(--p)}
 /* 01 지엔터프라이즈: 회사 줄 + 브릭스웍스·케어프로 두 줄 (각각 클릭) */
 .idx .irow.idx-co{display:block;padding:0;cursor:default}
 .idx .irow.idx-co:hover{background:transparent}
-.idx-main{display:grid;grid-template-columns:70px 1fr auto;align-items:center;padding:20px 0 12px;cursor:pointer;transition:background .2s}
+.idx-main{display:grid;grid-template-columns:70px 1fr auto;align-items:center;padding:18px 0 12px;cursor:pointer;transition:background .2s}
 .idx-main:hover,.idx-main:focus-visible{background:#F4F3FF}
-.idx-sub{display:flex;flex-direction:column;gap:6px;margin-left:70px;padding-bottom:18px}
+.idx-sub{display:flex;flex-direction:column;gap:6px;margin-left:70px;padding-bottom:14px}
 .idx-sr{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;padding:9px 14px;border-radius:10px;background:#F7F7F9;border-left:3px solid var(--pb);cursor:pointer;transition:background .2s,border-color .2s}
 .idx-sr>div{display:flex;align-items:baseline;gap:14px;min-width:0}
 .idx .irow .idx-sr b{display:inline;font-size:15px;font-weight:600;color:#1C1C1C;white-space:nowrap}
@@ -257,7 +262,9 @@ input.inp,select.inp{font-family:inherit;font-size:12px;color:#1C1C24;width:100%
 .idx-pd{font-size:11px;color:#777;white-space:nowrap}
 .idx .irow .idx-sr:hover,.idx .irow .idx-sr:focus-visible{background:#F0EEFF;border-left-color:var(--p)}
 .idx .irow .idx-sr:hover b{color:var(--p)}
-.idx-hint{position:absolute;left:66px;top:242px;width:330px;margin:0;font-size:12px;line-height:1.75;color:#8A8A8A}
+.idx-sub.idx-sub-h{flex-direction:row;gap:8px}
+.idx-sub-h .idx-sr{flex:1 1 0;min-width:0}
+.idx-hint{position:absolute;left:66px;top:230px;width:330px;margin:0;font-size:12px;line-height:1.75;color:#8A8A8A}
 .idx-hint b{color:var(--p)}
 </style>
 <style>
@@ -504,25 +511,34 @@ button.bwa-pt{appearance:none;border:0;background:none;padding:0;font:inherit;co
 .gzb-q .gzb-it.sent{cursor:default;pointer-events:none}
 .gzb-q .gzb-it.sent:not(.on){opacity:.45}
 .gzb-q .gzb-fix{font-size:11px;padding:9px 12px}
-.gzb-q #gzb-q-send{margin-top:auto;width:100%;height:34px}
+#gzb-q-s1 .mn{gap:8px}
+.gzb-q .gzb-s1n{margin-top:auto;font-size:11px;color:#8B8E99;text-align:center;line-height:1.4}
+.gzb-q #gzb-q-send{margin-top:-2px;width:100%;height:34px}
 .gzb-q #gzb-q-send.g:disabled{opacity:1;cursor:default;color:#1F9A57;border-color:#9ED9B6;background:#F3FBF6}
-/* step 2 */
-.gzb-q .lane{grid-template-columns:44px 1fr 16px}
+/* step 2 : 계정마다 한 줄. 맨 앞(오른쪽) 건이 검증 → 신고 → 완료되면 빠져나가고, 뒤 건이 앞으로 당겨진다 */
+#gzb-q-s2 .mn{gap:8px}
+.gzb-q .gzb-lanes{display:flex;flex-direction:column;gap:5px}
+.gzb-q .lane{grid-template-columns:40px 1fr 14px;gap:7px}
 .gzb-q .lane .n{text-align:right;font-weight:700}
-.gzb-q .bar{height:24px;gap:2px;padding:2px;border-radius:6px}
-.gzb-q .bar i{flex:none;width:calc((100% - 4px) / 3);height:100%;border-radius:4px;font-style:normal;font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;transform-origin:left center;transition:background .25s,color .25s}
-.gzb-q .bar i.l{background:#DCD8FF;color:#3A2F8F}
-.gzb-q .bar i.h{background:#FFD27A;color:#6B4A00}
-.gzb-q .bar i.run{animation:gzbRun 1s ease-in-out infinite}
-.gzb-q .bar i.in,.gzb-q .bar i.run.in{animation:gzbIn .3s ease-out}
+.gzb-q .bar{position:relative;display:block;height:30px;padding:0;border-radius:7px}
+.gzb-q .bar::before{content:"";position:absolute;top:2px;bottom:2px;right:2px;width:calc((100% - 12px) / 3);border:1px dashed #C9C5FF;border-radius:5px;box-sizing:border-box}
+.gzb-q .bar i{position:absolute;top:2px;bottom:2px;right:2px;width:calc((100% - 12px) / 3);height:auto;border-radius:5px;font-style:normal;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;line-height:1.1;white-space:nowrap;overflow:hidden;background:#DCD8FF;color:#3A2F8F;transition:right .4s ease,background .25s,color .25s,box-shadow .25s,opacity .3s}
+.gzb-q .bar i b{font-size:10.5px;font-weight:700}
+.gzb-q .bar i em{font-style:normal;font-size:9.5px;font-weight:600;opacity:.85}
+.gzb-q .bar i.ver{background:#fff;color:var(--p);box-shadow:inset 0 0 0 1.5px var(--p)}
+.gzb-q .bar i.sub{background:var(--p);color:#fff;animation:gzbRun 1s ease-in-out infinite}
+.gzb-q .bar i.ok{background:#1F9A57;color:#fff}
+.gzb-q .bar i.nr{background:#FFD27A;color:#6B4A00}
+.gzb-q .bar i.out{opacity:0}
+.gzb-q .bar i.in{animation:gzbIn .32s ease-out}
 @keyframes gzbRun{50%{opacity:.74}}
-@keyframes gzbIn{from{transform:scaleX(0);opacity:0}}
+@keyframes gzbIn{from{opacity:0;transform:translateX(-12px)}}
 .gzb-q .gzb-wk{display:flex;align-items:center;gap:8px;font-size:11.5px;color:#5A5D6B}
 .gzb-q .gzb-wk span{display:flex;gap:4px}
 .gzb-q .gzb-wk i{width:14px;height:14px;border-radius:4px;background:#E3E4EA;transition:background .2s}
 .gzb-q .gzb-wk i.on{background:var(--p)}
 .gzb-q .gzb-wk b{margin-left:auto;color:#1C1C24;font-size:11.5px}
-.gzb-q .gzb-rule{font-size:11px;margin-top:auto;padding:9px 12px}
+.gzb-q .gzb-rule{font-size:11px;margin-top:auto;padding:8px 12px}
 /* step 3 */
 .gzb-q .gzb-log .tr{padding:6px 10px}
 .gzb-q .gzb-log .tr.in{animation:gzbRow .5s ease-out}
@@ -544,31 +560,72 @@ button.bwa-pt{appearance:none;border:0;background:none;padding:0;font:inherit;co
 .gzb-q .gzb-old .win{position:relative}
 .gzb-q .gzb-old .toast{transition:opacity .3s}
 .gzb-q .gzb-old .toast.off{opacity:0}
+.gzb-q .gzb-old .chip.c-r{animation:gzbShake .45s ease-in-out 2}
+@keyframes gzbShake{20%,60%{transform:translateX(-3px)}40%,80%{transform:translateX(3px)}}
+.bwf-strip p b.bwf-k{color:#fff;font-weight:700;white-space:nowrap}
 
-/* --- ALERT --- */
+/* --- ALERT : 단계마다 저장·잠금·재계산 → 신고·마감 때 재계산이 빠진 단계를 짚어 안내 --- */
 .gzb-a .gzb-ctl2{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:30px}
 .gzb-a .gzb-ctl2 .hint{margin:0;line-height:1.6}
-.gzb-a .gzb-ui{position:relative}
-.gzb-a .gzb-ui>.mn{transition:filter .25s,opacity .25s}
-.gzb-a .gzb-ui.gzb-mo>.mn{filter:blur(1.2px);opacity:.55;pointer-events:none}
+.gzb-a .bwf-aw{left:0;top:24px;width:507px}
+.gzb-a .gzb-ui{position:relative;height:448px}
+.gzb-a .gzb-ui>.mn{height:100%;transition:filter .25s,opacity .25s}
+.gzb-a .gzb-ui.gzb-mo>.mn{pointer-events:none}
+.gzb-a .bwf-pn{transition:filter .25s,opacity .25s}
+.gzb-a .gzb-ui.gzb-mo .bwf-pn,.gzb-a .gzb-ui.gzb-mo .mh{filter:blur(1.2px);opacity:.5}
+/* 단계 띠 */
+.gzb-a .bwf-sb{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gzb-a button.bwf-sg{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;background:#fff;border:1px solid #E6E8F0;border-radius:10px;padding:10px 10px 11px;font:inherit;color:#1C1C24;text-align:left;line-height:normal;cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}
+.gzb-a button.bwf-sg:hover{border-color:#C9C5FF}
+.gzb-a button.bwf-sg:not(:last-child)::after{content:'›';position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:#B4B7C3;font-size:15px;font-weight:700;pointer-events:none}
+.gzb-a button.bwf-sg.on{border-color:var(--p);box-shadow:0 0 0 1px var(--p)}
+.gzb-a button.bwf-sg.y{background:#FFFBF0;border-color:#FFD27A}
+.gzb-a button.bwf-sg.y.on{border-color:#E0A82E;box-shadow:0 0 0 1px #E0A82E}
+.gzb-a .bwf-sgh{display:flex;align-items:baseline;gap:5px}
+.gzb-a .bwf-sgh small{color:#9A9DAA;font-size:10px;font-weight:700}
+.gzb-a .bwf-sgh b{font-size:13px}
+.gzb-a .bwf-fl{display:flex;flex-direction:column;gap:4px}
+.gzb-a .bwf-fl i{display:flex;align-items:center;gap:6px;font-style:normal;font-size:11px;color:#5A5D6B}
+.gzb-a .bwf-fl i::before{content:'✓';flex:none;width:14px;height:14px;border-radius:50%;background:#E3F7EC;color:#1F9A57;font-size:9px;font-weight:800;display:grid;place-items:center}
+.gzb-a .bwf-fl i.y{color:#8A6200;font-weight:700}
+.gzb-a .bwf-fl i.y::before{content:'!';background:#FFD27A;color:#6B4A00}
+.gzb-a .bwf-fl i.w{color:#AEB1BC}
+.gzb-a .bwf-fl i.w::before{content:'';background:#EDEEF2}
+.gzb-a .bwf-fl i.run{color:var(--p);font-weight:700}
+.gzb-a .bwf-fl i.run::before{content:'';background:var(--pl);box-shadow:inset 0 0 0 2px var(--p2);animation:gzbRun 1s ease-in-out infinite}
+/* 단계 화면 */
+.gzb-a .bwf-pn{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #E6E8F0;border-radius:12px;padding:14px}
+.gzb-a .bwf-pnh{display:flex;justify-content:space-between;align-items:center}
+.gzb-a .bwf-pnh b{font-size:14px}
 .gzb-a .fld small{display:flex;align-items:center;gap:6px;min-height:19px}
-.gzb-a input.inp{font-size:13px;font-weight:600;padding:8px 11px;transition:border-color .2s,background .2s}
-.gzb-a input.inp.gzb-dirty{border-color:#FFD27A;background:#FFFBF0}
-.gzb-a input.inp:disabled{background:#F6F7FB;color:#8B8E99}
+.gzb-a .bwf-pn .inp{font-size:13px;font-weight:600;padding:8px 11px;background:#F6F7FB;transition:border-color .2s,background .2s}
+.gzb-a .bwf-pn .inp.y{border-color:#FFD27A;background:#FFFBF0}
+.gzb-a .bwf-nt{font-size:11.5px;line-height:1.6;color:#5A5D6B;background:#F6F7FB;padding:10px 12px}
+.gzb-a .bwf-stt .tr{padding:8px 12px}
+.gzb-a .bwf-stt .y{color:#B07A00;font-weight:700}
+.gzb-a .k3 div{background:#F9F9FC}
 .gzb-a .k3 b{display:block;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .25s}
 .gzb-a .k3.gzb-stale b{color:#AEB1BC}
 .gzb-a .k3.gzb-flash>div{animation:gzbFlash .9s ease-out}
 @keyframes gzbFlash{from{background:#EEEDFF;border-color:#D9D5FF}}
-.gzb-a .gzb-det{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:11.5px;padding:10px 12px;transition:background .2s,border-color .2s}
-.gzb-a .gzb-det small{color:#9A9DAA;font-size:11px;white-space:nowrap}
-.gzb-a .gzb-det.y{background:#FFFBF0;border-color:#FFD27A}
-.gzb-a .gzb-modal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:330px;background:#fff;border-radius:14px;box-shadow:0 20px 50px rgba(20,20,40,.25);padding:20px;display:none;flex-direction:column;gap:10px}
+.gzb-a .bwf-ck{display:flex;flex-direction:column;gap:8px;background:#F9F9FC;padding:11px 12px;transition:background .2s,border-color .2s}
+.gzb-a .bwf-ck small{color:#8B8E99;font-size:11px}
+.gzb-a .bwf-ck.y{background:#FFFBF0;border-color:#FFD27A}
+.gzb-a .bwf-ckw{font-size:11.5px;font-weight:700;color:#8A6200}
+.gzb-a .bwf-acts{margin-top:auto}
+.gzb-a .bwf-acts .btn{height:34px}
+.gzb-a .bwf-pn .toast{margin-top:auto;height:34px}
+/* 신고·마감 때 뜨는 안내 */
+.gzb-a .gzb-modal{position:absolute;left:50%;top:178px;transform:translateX(-50%);width:372px;background:#fff;border-radius:14px;box-shadow:0 20px 50px rgba(20,20,40,.25);padding:20px;display:none;flex-direction:column;gap:12px}
 .gzb-a .gzb-ui.gzb-mo .gzb-modal{display:flex}
-.gzb-a .gzb-err{font-size:11px;color:#D93A2B;margin-top:-4px}
-.gzb-a #gzb-a-acts .btn{height:34px}
-.gzb-a .toast{justify-content:space-between;height:34px;padding:0 5px 0 12px}
-.gzb-a .toast .btn{padding:5px 10px;font-size:11px}
-.gzb-a .gzb-log .tr.in{animation:gzbRow .9s ease-out}
+.gzb-a .bwf-mw{background:#FFFBF0;border-color:#FFD27A;font-size:12.5px;line-height:1.65;color:#6B4A00}
+.gzb-a .bwf-mw b{color:#1C1C24}
+.gzb-a .bwf-mst{display:flex;flex-wrap:wrap;gap:6px}
+.gzb-a .gzb-modal .btn{height:34px}
+/* 범례 */
+.gzb-a .bwf-lgd{position:absolute;left:0;top:500px;display:flex;gap:20px;font-size:11.5px;color:#C4C4C4;white-space:nowrap}
+.gzb-a .bwf-lgd i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#7CDB5C;margin-right:7px;vertical-align:1px}
+.gzb-a .bwf-lgd i.y{background:#FFD27A}
 .gzb-a .bwf-xl .tr{padding:8px 10px}
 .gzb-a .bwf-xl .tr+.tr span:last-child{font-weight:700}
 
@@ -836,6 +893,18 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 .cp-ref li{font-size:11.5px;line-height:1.55;color:#C4C4C4;padding-left:12px;position:relative}
 .cp-ref li::before{content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--p2)}
 .cp-ref li b{color:#fff}
+/* 연말정산 검증·일정 띠 (카드 아래) */
+#cp-ye .cp-chain{margin-top:24px}
+#cp-ye .cp-yb{margin-top:18px}
+.cp-yl{display:flex;flex-direction:column;gap:8px;min-width:0}
+.cp-yl .cp-y4{flex:1}
+.cp-yl .cp-yc{padding:11px 16px;gap:4px 10px}
+.cp-yl .cp-yc>div{padding-top:6px}
+.cp-yv{background:var(--card);border-radius:14px;padding:10px 18px;display:grid;grid-template-columns:92px 1fr;gap:8px 12px;align-items:center}
+.cp-yv>small{font-size:11.5px;font-weight:700;color:var(--p2);white-space:nowrap}
+.cp-yv .cp-fl span{padding:5px 12px;font-size:11.5px}
+.cp-yv>p{margin:0;font-size:12px;line-height:1.5;color:#C4C4C4}
+.cp-yv>p b{color:#fff;font-weight:700}
 
 /* --- 6. 연말정산 DEMO --- */
 .cp-dz{border:1.5px dashed #C9C5FF;background:#FAFAFF;display:flex;align-items:center;gap:12px;padding:9px 10px}
@@ -978,6 +1047,15 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 .rc small .sf-n{width:17px;height:17px}
 .sf-did{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:24px}
 .sf-did p{margin:9px 0 0;font-size:12.5px;line-height:1.7;color:#C4C4C4}
+/* RESULT : 데이터 흐름 띠 */
+.sf-flow{position:relative;z-index:2;margin-top:20px;display:grid;grid-template-columns:118px 1fr;gap:12px 16px;align-items:center;background:var(--card);border-radius:18px;padding:22px 28px}
+.sf-flow>small{font-size:11.5px;font-weight:700;color:var(--p2)}
+.sf-flow>p{margin:0;font-size:12.5px;line-height:1.6;color:#C4C4C4}
+.sf-flow>p b{color:#fff;font-weight:700}
+.sf-fw{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
+.sf-fw span{background:#2A2A2A;border:1px solid #444;border-radius:99px;padding:7px 13px;font-size:12px;font-weight:600;white-space:nowrap}
+.sf-fw span.on{background:var(--pt);border-color:var(--pt);color:var(--ptx)}
+.sf-fw i{font-style:normal;color:var(--p2);font-size:12px}
 /* 2 verify console */
 .sf-pipe b{font-size:13px}
 .sf-pipe small{font-size:11px!important}
@@ -991,6 +1069,11 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 .sf-tbl .tr.cur{background:var(--pl2)}
 .sf-tbl .tr .sf-fx{color:var(--p);font-weight:700}
 .sf-neg{color:#D93A2B;font-weight:700}
+.sf-vres{display:flex;align-items:center;gap:10px;margin:16px 0 0;font-size:13.5px;color:#D4D4D4}
+.sf-vres .tag{background:var(--p);color:#fff}
+.sf-vres b{color:#fff;font-weight:800}
+#sf-verify .tagbox{margin-top:26px;gap:16px}
+#sf-verify .sf-act{margin-top:26px}
 .sf-mh2{display:flex;gap:8px;align-items:center}
 .sf-mh2 select.inp{width:132px;padding:6px 8px;font-size:11.5px}
 .sf-mh2 button.btn{padding:7px 12px}
@@ -1348,23 +1431,44 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 #dz-hero .dz-mn{gap:8px}
 #dz-hero .tr{padding:7px 12px}
 .dz-gr .tr>span{min-width:0}
-.dz-gr .tr.x-req{background:#FFFBEF}.dz-gr .tr.x-paid{background:#F3FBF6}.dz-gr .tr.x-fail{background:#FFF7F6}.dz-gr .tr.x-sel{background:#EEF6FF}
-.dz-gr .dz-st small{display:block;font-size:11px;color:#C23A2C;margin-top:1px}
+.dz-gr .tr.x-sel{background:#EEF6FF;box-shadow:inset 3px 0 0 #1C90FB}
+.dz-gr .dz-act{justify-self:start;white-space:nowrap}
+/* 상태 보기 레이어 : 미납 건별 처리 상태 조회 (조회 전용) */
+.dz-lay{position:absolute;left:0;right:0;top:28px;bottom:0;background:rgba(18,22,30,.32);display:flex;align-items:center;justify-content:center;z-index:3}
+.dz-lay[hidden]{display:none}
+.dz-dlg{width:440px;background:#fff;color:#4A4A4A;border:1px solid #D6D6D6;border-radius:4px;box-shadow:0 18px 40px rgba(0,0,0,.28);padding:0 0 14px;font-size:11.5px;letter-spacing:-0.02em}
+.dz-dh{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:2px solid #555;margin-bottom:10px}
+.dz-dh b{font-size:13.5px;color:#1C1C1C}
+.dz-x{border:0;background:none;font:400 18px/1 var(--f);color:#8D8D8D;cursor:pointer;padding:0 2px}
+.dz-dg{display:grid;grid-template-columns:72px 1fr;margin:0 14px;border-top:1px solid #E1E1E1}
+.dz-dg>span,.dz-dg>b{padding:6px 9px;border-bottom:1px solid #EBEBEB;display:flex;align-items:center;gap:6px;min-height:30px}
+.dz-dg>span{background:#F7F7F7;color:#555;font-weight:700;font-size:11px}
+.dz-dg>b{font-weight:500;color:#3A3A3A;line-height:1.45}
+.dz-dg>b .n{font-weight:700;color:#1C1C1C}
+.dz-mo-h{display:flex;align-items:center;justify-content:space-between;margin:12px 14px 6px}
+.dz-mo-h b{font-size:11.5px;color:#3A3A3A}.dz-mo-h small{font-size:11px;color:#8D8D8D}
+.dz-mo{display:grid;grid-template-columns:repeat(var(--m,6),1fr);gap:5px;margin:0 14px}
+.dz-mo>div{border:1px solid #E1E1E1;border-radius:4px;padding:5px 0 6px;text-align:center;background:#FAFAFA}
+.dz-mo small{display:block;font-size:11px;color:#8D8D8D}
+.dz-mo b{display:block;font-size:11.5px;color:#1F9A57;margin-top:2px}
+.dz-mo>div.due{border-color:#F8C4BE;background:#FFF5F4}.dz-mo>div.due b{color:#D93A2B}
+.dz-df2{display:flex;align-items:center;gap:10px;margin:12px 14px 0;font-size:11px;color:#707070;line-height:1.45}
+.dz-df2 span{flex:1}
 
 /* ---- STRUCTURE : 정산 6단계 ---- */
-.dz-flow{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:42px}
+.dz-flow{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:28px}
 .dz-flow .stp{position:relative;display:flex;flex-direction:column;align-items:center}
 .dz-flow .stp .lb{margin-bottom:12px;white-space:nowrap}
 .dz-flow .stp:not(:last-child)::after{content:'';position:absolute;right:-12px;top:39px;width:8px;height:8px;border-top:2px solid var(--p2);border-right:2px solid var(--p2);transform:rotate(45deg)}
 .dz-stc{background:var(--card);border-radius:16px;padding:18px 15px 16px;text-align:left;display:flex;flex-direction:column;gap:10px;align-self:stretch;flex:1}
-.dz-stc>p{margin:0;font-size:12px;line-height:1.65;color:#C4C4C4;min-height:60px}
+.dz-stc>p{margin:0;font-size:12px;line-height:1.65;color:#C4C4C4;min-height:40px}
 .dz-pn,.dz-ds{border-radius:10px;padding:10px 12px;font-size:12px;line-height:1.6}
 .dz-pn{background:#303030;color:#D6D6D6;min-height:102px}
 .dz-ds{background:var(--pt);color:#fff;font-weight:600;min-height:84px}
 .dz-pn em,.dz-ds em{display:block;font-style:normal;font-size:11px;font-weight:800;letter-spacing:.03em;margin-bottom:3px}
 .dz-pn em{color:#FF8A7E}.dz-ds em{color:var(--ptx)}
 .dz-go{margin-top:auto;align-self:flex-start;font-size:11px;font-weight:700;color:var(--p2);border:1px solid var(--pmid);border-radius:99px;padding:4px 10px}
-.dz-mon{margin-top:18px;background:var(--card);border-radius:10px;padding:13px 18px;display:flex;align-items:center;gap:14px;font-size:12.5px;color:#C4C4C4}
+.dz-mon{margin-top:14px;background:var(--card);border-radius:10px;padding:13px 18px;display:flex;align-items:center;gap:14px;font-size:12.5px;color:#C4C4C4}
 .dz-mon b{color:#fff;font-weight:600}
 
 /* ---- DEMO B : 정산 업로드 차이 검증 → 월 마감 → 회계처리 ---- */
@@ -1443,7 +1547,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 .end-hr{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
 .end-ctl{display:flex;align-items:center;gap:10px}
 .end-g5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
-.end-board{margin-top:36px;grid-template-rows:auto auto auto;row-gap:12px}
+.end-board{margin-top:30px;grid-template-rows:auto auto auto;row-gap:12px}
 .end-col{appearance:none;-webkit-appearance:none;margin:0;padding:0;border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;line-height:inherit;text-align:left;word-break:keep-all;cursor:pointer;display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:12px;min-width:0}
 .end-hd{position:relative;display:flex;align-items:center}
 .end-hd::after{content:"";position:absolute;left:0;right:-16px;top:50%;border-top:1px dashed #4A4A4A}
@@ -1460,7 +1564,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 .end-col.on .end-ai{border-color:rgba(var(--prgb),.8)}
 .end-col.on .end-me{background:linear-gradient(150deg,var(--p2),var(--p) 70%);border-color:transparent}
 .end-col.on .end-me small{color:rgba(255,255,255,.82)}
-.end-low{margin-top:18px}
+.end-low{margin-top:16px}
 .end-case{grid-column:span 3;background:#232323;border-radius:18px;padding:20px 22px}
 .end-ch{display:flex;align-items:center;gap:12px;white-space:nowrap;min-width:0}
 .end-ch b{font-size:15px}
@@ -1477,15 +1581,90 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 .end-in .end-f,.end-in .end-s{animation:end-up .35s ease both}
 .end-in .end-f.end-fme,.end-in .end-s.end-sme{animation-delay:.08s}.end-in .end-f.end-frs,.end-in .end-s.end-srs{animation-delay:.16s}
 @keyframes end-up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.end-real{appearance:none;-webkit-appearance:none;margin:0;font:inherit;letter-spacing:inherit;line-height:inherit;color:inherit;text-align:left;word-break:keep-all;cursor:pointer;background:transparent;border:1px solid #5A5A5A;border-radius:18px;padding:20px 20px 18px;display:flex;flex-direction:column;gap:8px;min-width:0;transition:border-color .2s,background .2s}
+/* 하단 오른쪽: 반영·기각 근거 2장 + 지엔터프라이즈 공통 성과 */
+.end-side{grid-column:span 2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr) auto;gap:10px 16px;min-width:0}
+.end-real{appearance:none;-webkit-appearance:none;margin:0;font:inherit;letter-spacing:inherit;line-height:inherit;color:inherit;text-align:left;word-break:keep-all;cursor:pointer;background:transparent;border:1px solid #5A5A5A;border-radius:16px;padding:13px 16px 12px;display:flex;flex-direction:column;gap:5px;min-width:0;transition:border-color .2s,background .2s}
 .end-real:hover{border-color:#8A8A8A}
 .end-real.end-hl{border-color:var(--p2);background:rgba(var(--prgb),.08)}
-.end-rt{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--p2)}
+.end-rt{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--p2);white-space:nowrap}
 .end-rt .chip{font-size:11px}
 .end-rt .chip.c-ok{background:rgba(124,219,92,.14);color:var(--ok)}
 .end-rt .chip.c-r{background:rgba(255,107,91,.14);color:var(--warn)}
-.end-real b{display:block;font-size:15px;line-height:1.4}
-.end-rd{display:block;font-size:12px;line-height:1.65;color:#C4C4C4}
+.end-real b{display:block;font-size:14px;line-height:1.4}
+.end-rd{display:block;font-size:12px;line-height:1.6;color:#C4C4C4}
+.end-gain{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;background:rgba(var(--prgb),.1);border:1px solid rgba(var(--prgb),.38);border-radius:14px;padding:11px 16px}
+.end-gain small{display:block;font-size:11px;font-weight:700;color:var(--p2);margin-bottom:3px}
+.end-gain span{display:block;font-size:12px;line-height:1.55;color:#E6E6E6}
+.end-gn{text-align:right}
+.end-gn b{display:block;font-size:23px;font-weight:800;line-height:1.1;letter-spacing:-0.03em;color:#fff;white-space:nowrap}
+.end-gn small{margin:4px 0 0;white-space:nowrap}
+
+/* --- HOW I SHIP : 두 트랙 스프린트 + 릴리즈 타임라인 + 단계별 할 일 + 릴리즈 관리 문서 --- */
+.end-shg{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:22px;margin-top:34px;min-height:430px}
+.end-trk{background:#232323;border-radius:18px;padding:20px 22px 20px;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.end-th{display:flex;justify-content:space-between;align-items:center;white-space:nowrap}
+.end-th b{font-size:15px}
+.end-th b small{margin-left:10px;font-size:12px;font-weight:600;color:var(--p2)}
+.end-lgd{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:600;color:#9A9A9A}
+.end-lgd i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.end-lgd i.a{background:rgba(var(--prgb),.22);box-shadow:inset 0 0 0 1px rgba(var(--prgb),.8)}
+.end-lgd i.b{background:#4A4A4A}
+.end-lgd i.d{width:8px;height:8px;border-radius:1px;background:var(--p2);transform:rotate(45deg);margin-right:7px}
+.end-gt{position:relative;display:grid;grid-template-columns:88px repeat(3,minmax(0,1fr));grid-template-rows:22px 46px 30px 46px 30px;column-gap:8px;margin-top:14px}
+.end-dv{position:absolute;top:0;bottom:6px;border-left:1px dashed #3C3C3C;pointer-events:none}
+.end-sp{position:relative;font-size:11px;font-weight:700;color:#8E8E8E;padding-left:2px}
+.end-sp b{color:#C4C4C4;font-weight:700}
+.end-rl{display:flex;flex-direction:column;justify-content:center;font-size:12.5px;font-weight:700;color:#EDEDED;line-height:1.3}
+.end-rl small{font-size:11px;font-weight:600;color:#8E8E8E}
+.end-bar{appearance:none;-webkit-appearance:none;margin:0;font:inherit;letter-spacing:inherit;color:#EDEDED;position:relative;display:flex;align-items:center;gap:8px;min-width:0;border:0;border-radius:10px;padding:0 14px;font-size:12.5px;font-weight:600;line-height:1.3;white-space:nowrap;text-align:left;transition:background .2s,box-shadow .2s,color .2s}
+button.end-bar{cursor:pointer}
+.end-bar i{font-style:normal;font-size:10.5px;font-weight:700;opacity:.7}
+.end-bar.pm{background:rgba(var(--prgb),.1);box-shadow:inset 0 0 0 1px rgba(var(--prgb),.55);color:#fff}
+.end-bar.dev{background:#3A3A3A}
+.end-bar.off{background:transparent;box-shadow:inset 0 0 0 1px #3A3A3A;color:#6A6A6A}
+button.end-bar:hover{box-shadow:inset 0 0 0 1px var(--p2)}
+.end-bar.on{background:linear-gradient(150deg,var(--p2),var(--p) 70%);box-shadow:none;color:#fff}
+.end-bar.ship::after{content:"";position:absolute;right:-6px;top:50%;width:9px;height:9px;margin-top:-6px;background:var(--p2);border:2px solid #232323;transform:rotate(45deg);z-index:1}
+.end-bar.off.ship::after{background:#5A5A5A}
+.end-hand{position:relative;grid-row:3;min-width:0;pointer-events:none;color:#555}
+.end-hand svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.end-hand.go{color:var(--p2)}
+.end-hand em{position:absolute;left:calc(63% + 14px);top:6px;font-style:normal;font-size:11px;font-weight:700;color:inherit;white-space:nowrap;transition:color .2s}
+.end-relw{grid-column:1/-1;grid-row:5;position:relative}
+.end-rel{appearance:none;-webkit-appearance:none;margin:0;font:inherit;letter-spacing:inherit;position:absolute;top:4px;height:24px;left:calc(104px + (100% - 112px) * .5);width:calc((100% - 112px) * .2167 + 8px);display:flex;align-items:center;justify-content:center;border:1px solid #5A5A5A;border-top:0;border-radius:0 0 8px 8px;background:transparent;color:#9A9A9A;font-size:11px;font-weight:700;white-space:nowrap;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.end-rel:hover{border-color:var(--p2)}
+.end-rel.on{border-color:var(--p2);background:rgba(var(--prgb),.14);color:var(--ptx)}
+.end-zm{display:block;width:100%;height:20px;color:#4A4A4A;transition:color .2s}
+.end-zm.on{color:var(--p2)}
+.end-tl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.end-nd{appearance:none;-webkit-appearance:none;margin:0;padding:0;border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;line-height:inherit;text-align:left;word-break:keep-all;cursor:pointer;display:flex;flex-direction:column;gap:9px;min-width:0}
+.end-tl .end-hd::after{right:-10px}
+.end-nd:last-child .end-hd::after{right:0}
+.end-ndc{display:block;flex:1;width:100%;background:var(--card);border:1px solid var(--card);border-radius:14px;padding:12px 14px;transition:background .2s,border-color .2s}
+.end-ndc b{display:block;font-size:14px;line-height:1.45}
+.end-ndc span{display:block;margin-top:3px;font-size:11.5px;line-height:1.55;color:#ADADAD}
+.end-nd:hover .end-ndc{border-color:#4A4A4A}
+.end-nd.on .end-pill{background:var(--p);color:#fff}
+.end-nd.on .end-ndc{background:linear-gradient(150deg,var(--p2),var(--p) 70%);border-color:transparent}
+.end-nd.on .end-ndc span{color:rgba(255,255,255,.86)}
+.end-shr{display:flex;flex-direction:column;gap:12px;min-width:0}
+.end-shr .end-dt{flex:1;gap:8px;padding:20px 22px}
+.end-todo{margin:2px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+.end-todo li{position:relative;padding-left:26px;font-size:13px;line-height:1.55;color:#E6E6E6}
+.end-todo li::before{content:"";position:absolute;left:0;top:2px;width:16px;height:16px;border-radius:5px;background:rgba(var(--prgb),.18);box-shadow:inset 0 0 0 1px rgba(var(--prgb),.7)}
+.end-todo li::after{content:"";position:absolute;left:5px;top:6px;width:6px;height:3px;border-left:2px solid var(--p2);border-bottom:2px solid var(--p2);transform:rotate(-45deg)}
+.end-in .end-todo li{animation:end-up .35s ease both}
+.end-in .end-todo li:nth-child(2){animation-delay:.06s}.end-in .end-todo li:nth-child(3){animation-delay:.12s}
+.end-doc{border:1px solid #5A5A5A;border-radius:18px;padding:16px 18px 16px;display:flex;flex-direction:column;gap:10px}
+.end-doch{display:flex;align-items:center;justify-content:space-between;white-space:nowrap}
+.end-doch b{font-size:14px}
+.end-doch small{font-size:11px;font-weight:700;color:var(--p2)}
+.end-dg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.end-di{background:#262626;border:1px solid #262626;border-radius:12px;padding:9px 12px;transition:background .2s,border-color .2s;min-width:0}
+.end-di b{display:block;font-size:12.5px;line-height:1.45;white-space:nowrap}
+.end-di span{display:block;margin-top:2px;font-size:11.5px;line-height:1.5;color:#ADADAD}
+.end-di.on{background:rgba(var(--prgb),.14);border-color:rgba(var(--prgb),.6)}
+.end-di.on b{color:var(--ptx)}
 
 /* --- CORE : 역량 × 경력 근거 매트릭스 + 문제→한 일→결과 패널 --- */
 .end-cg{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:22px;margin-top:34px}
@@ -1499,6 +1678,9 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 .end-ev{appearance:none;-webkit-appearance:none;margin:0;font:inherit;letter-spacing:inherit;line-height:inherit;color:inherit;word-break:keep-all;text-align:left;cursor:pointer;background:var(--card);border:1px solid var(--card);border-radius:14px;padding:13px 15px;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0;transition:background .2s,border-color .2s}
 .end-ev small{display:block;font-size:11px;font-weight:700;color:var(--p2)}
 .end-ev span{display:block;font-size:13px;line-height:1.5;font-weight:600;color:#EDEDED}
+.end-nw{font-style:normal;white-space:nowrap}
+.end-ev .end-evn{display:block;margin-top:2px;font-style:normal;white-space:nowrap;color:var(--ptx)}
+.end-ev.on .end-evn{color:#fff}
 .end-ev:hover{border-color:#4A4A4A}
 .end-ev.on{background:linear-gradient(150deg,var(--p2),var(--p) 70%);border-color:transparent}
 .end-ev.on small{color:rgba(255,255,255,.82)}
@@ -1574,9 +1756,9 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     <div class="ab-r">
       <h4>EXPERIENCES</h4>
       <div class="xp">
-        <span class="d n">2025.08 – 현재</span><b>지엔터프라이즈㈜ · PM</b><span><small>비즈넵 환급제품팀 · 케어프로 → 브릭스웍스 콘솔 기획</small></span>
+        <span class="d n">2025.08 – 현재</span><b>지엔터프라이즈㈜ · PM</b><span><small>비즈넵 · 케어프로 → 브릭스웍스 경정청구 콘솔 PM</small></span>
         <span class="d n">2024.12 – 2025.08</span><b>스마트푸드네트웍스㈜ · PM</b><span><small>Product 기획팀 · 차별화장부 1.0 정식 오픈</small></span>
-        <span class="d n">2022.03 – 2024.11</span><b>㈜세친구 · 선임연구원·팀장</b><span><small>R&amp;D팀 · 회계 자동화, 상권분석 앱 Sogul</small></span>
+        <span class="d n">2022.03 – 2024.11</span><b>㈜세친구 · 선임연구원·팀장</b><span><small>R&amp;D팀 · 서비스기획 · PM 시작 · 회계 자동화, Sogul</small></span>
         <span class="d n">2017.04 – 2022.02</span><b>㈜더존비즈온 · 과장</b><span><small>플랫폼사업부문 · WEHAGO 세무·급여·정산 기획</small></span>
         <span class="d n">2011.05 – 2016.12</span><b>세무사사무실 · 기업 재무팀</b><span><small>기장, 부가세·원천세·법인세·종소세 신고, 결산</small></span>
       </div>
@@ -1584,7 +1766,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       <div class="xp">
         <span class="d n">2021.02 – 2022.07</span><b>학점은행제</b><span><small>경영학과 졸업</small></span>
         <span class="d n">2009.02 – 2011.02</span><b>웅지세무대학</b><span><small>국제회계 졸업</small></span>
-        <span class="d n">2024.05 – 2024.11</span><b>데이터분석 준전문가 · GA4</b><span><small>데이터 분석·시각화, Google Analytics Certification</small></span>
+        <span class="d n">2024.05 – 2024.11</span><b>데이터분석 준전문가 교육과정 · GA4 교육과정</b><span><small>데이터 분석·시각화, Google Analytics Certification</small></span>
       </div>
       <h4>TOOLS</h4>
       <div class="tl">
@@ -1601,16 +1783,23 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   <p class="idx-hint">항목을 누르면 해당 프로젝트로 이동해요.<br><b>▶ 버튼</b>이나 안내 문구가 있는 화면은<br>직접 눌러 볼 수 있어요.</p>
   <div class="ilist">
     <div class="irow on idx-co">
-      <div class="idx-main" role="button" tabindex="0" data-go="gzi-hero" data-alt="gz-hero"><span class="no">01</span><div><b>지엔터프라이즈 · 비즈넵</b><small>개인사업자 환급·기장 대행 서비스 · 회계법인 실무자가 쓰는 업무 콘솔 기획</small></div><span class="tg">B2B WEB CONSOLE, PM<br>2025.08 – NOW</span></div>
+      <div class="idx-main" role="button" tabindex="0" data-go="gzi-hero" data-alt="gz-hero"><span class="no">01</span><div><b>지엔터프라이즈 · 비즈넵</b><small>개인사업자 환급·기장 대행 서비스 · 회계법인용 세무 업무 콘솔 기획·개선</small></div><span class="tg">B2B WEB CONSOLE, PM<br>2025.08 – NOW</span></div>
       <div class="idx-sub">
         <div class="idx-sr" role="button" tabindex="0" data-go="bwa-cover"><div><b>브릭스웍스 <i>·</i> 환급팀</b><small>종소세 경정청구 콘솔 · 재계산 누락 알림, 전자신고 대기열, 환급계좌 검증, 이슈 표시·최종 검수</small></div><span class="idx-pd n">2026.05 – NOW</span></div>
         <div class="idx-sr" role="button" tabindex="0" data-go="cp-cover"><div><b>케어프로 <i>·</i> 기장팀</b><small>기장 대행 콘솔 · 원천세 신고 자동화·납부서 재발급, 연말정산 신규 구축</small></div><span class="idx-pd n">2025.08 – 2026.05</span></div>
       </div>
     </div>
     <div class="irow" role="button" tabindex="0" data-go="sf-hero"><span class="no">02</span><div><b>스마트푸드 · 차별화장부 1.0</b><small>외식업 매출관리 · 프록시 계정 연결 수집, 배달 3사 매출 값 검증, 메뉴 통일화, 리뷰 답글</small></div><span class="tg">WEB·APP SERVICE, PM<br>2024.12 – 2025.08</span></div>
-    <div class="irow" role="button" tabindex="0" data-go="sc-hero"><span class="no">03</span><div><b>세친구 · 자동장부 · Sogul</b><small>소상공인 자동 분개, 상권분석·창업 입지 추천, 권리금 산정, 매장 실적관리, 제휴 제안</small></div><span class="tg">PLATFORM · APP, PM<br>2022.03 – 2024.11</span></div>
+    <div class="irow" role="button" tabindex="0" data-go="sc-hero"><span class="no">03</span><div><b>세친구 · 자동장부 · Sogul</b><small>소상공인 자동 분개, 상권분석·창업 입지 추천, 권리금 산정, 매장 실적관리, 제휴 제안</small></div><span class="tg">PLATFORM · APP, SERVICE PLANNING · PM<br>2022.03 – 2024.11</span></div>
     <div class="irow" role="button" tabindex="0" data-go="dz-hero"><span class="no">04</span><div><b>더존비즈온 · WEHAGO 정산</b><small>결제·PG 데이터·미납·월 마감을 잇는 정산 프로그램, 부가세 신고서, 앞선 세무·회계 실무 5년</small></div><span class="tg">CLOUD ERP, SERVICE PLANNING<br>2017.04 – 2022.02</span></div>
-    <div class="irow" role="button" tabindex="0" data-go="end-how"><span class="no">05</span><div><b>HOW I WORK · 핵심 역량</b><small>AI가 초안을 쓰고 판단은 제가 하는 방식, 회사·팀별 근거로 본 역량 4가지</small></div><span class="tg">AI-ASSISTED PM<br>PROCESS</span></div>
+    <div class="irow idx-co idx-wk">
+      <div class="idx-main" role="button" tabindex="0" data-go="end-how"><span class="no">05</span><div><b>HOW I WORK · 핵심 역량</b><small>기획·검증부터 일정·배포 관리까지, 일하는 방식과 회사·팀별 근거</small></div><span class="tg">AI-ASSISTED PM<br>SPRINT · RELEASE</span></div>
+      <div class="idx-sub idx-sub-h">
+        <div class="idx-sr" role="button" tabindex="0" data-go="end-how"><div><b>HOW I WORK</b><small>AI가 초안, 판단은 제가</small></div></div>
+        <div class="idx-sr" role="button" tabindex="0" data-go="end-ship" data-alt="end-how"><div><b>HOW I SHIP</b><small>2주 스프린트와 릴리즈</small></div></div>
+        <div class="idx-sr" role="button" tabindex="0" data-go="end-core"><div><b>CORE</b><small>역량 4가지와 근거</small></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1634,7 +1823,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     <span class="lbl p" style="left:900px;top:100px">비즈넵 케어</span>
     <div class="ttl">
       <h3>사장님 세금을 앱 하나로, 비즈넵</h3>
-      <p>지엔터프라이즈는 300만 사업자가 가입한 세무 앱 비즈넵을 운영합니다. 사장님은 앱에서 세금 환급, 세무 기장, AI 세무 상담을 받고, 신고 실무는 협업 회계법인이 맡습니다. 저는 회계법인 실무자가 쓰는 콘솔을 기획했습니다.</p>
+      <p>지엔터프라이즈는 300만 사업자가 가입한 세무 앱 비즈넵을 운영합니다. 사장님은 앱에서 세금 환급, 세무 기장, AI 세무 상담을 받고, 신고 실무는 협업 회계법인이 맡습니다. 저는 회계법인용 세무 업무 콘솔을 기획·개선하고, 지금은 브릭스웍스 경정청구 콘솔의 PM으로 운영·기능 개선을 담당합니다. 요구사항 협의부터 배포까지 2주 스프린트 단위로 일정과 릴리즈를 관리합니다.</p>
       <div class="gzi-team">
         <div><span class="n">2025.08 – 2026.05</span><span><b>기장팀 · 케어프로</b><br>원천세·연말정산</span></div>
         <div><span class="n">2026.05 – 현재</span><span><b>환급팀 · 브릭스웍스</b><br>종소세 경정청구</span></div>
@@ -1644,7 +1833,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   <span class="note">이미지: 비즈넵 공식 사이트(bznav.com) 앱 화면</span>
 </section>
 
-<section class="s" id="gzi-bg" style="padding-bottom:52px">
+<section class="s" id="gzi-bg" style="padding-bottom:44px">
   <p class="eb">BACKGROUND</p>
   <h2>개인사업자 세무 시장의 성장과 최근의 <em>환급 트렌드</em></h2>
   <p class="lead">종합소득세를 신고하는 사람은 5년 사이 절반 가까이 늘었고, 앱으로 놓친 세금을 찾는 경정청구가 빠르게 대중화됐어요.<br>비즈넵은 AI로 받을 수 있는 공제·감면을 빠짐없이 조회하고, 전문가 검증을 거쳐 환급까지 연결합니다.</p>
@@ -1693,7 +1882,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       </figure>
     </div>
   </div>
-  <p class="cc" style="margin-top:32px">신청은 앱에서 쉽게, 처리는 콘솔에서 정확하게.<br>늘어나는 신청을 감당할 회계법인 실무 콘솔이 필요했어요.</p>
+  <p class="cc" style="margin-top:24px">신청은 앱에서 쉽게, 처리는 콘솔에서 정확하게.<br>늘어나는 신청을 감당할 회계법인 실무 콘솔이 필요했어요.</p>
   <div class="glow" style="bottom:-165px"></div>
 </section>
 
@@ -1739,9 +1928,9 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       </div>
       <div class="gzi-rows">
         <div class="gzi-row"><small>경정청구</small><span class="gzi-c">분류</span><em>›</em><span class="gzi-c">예비검토</span><em>›</em><span class="gzi-c">사전작업</span><em>›</em><span class="gzi-c">본검토</span><em>›</em><span class="gzi-c">작성</span><em>›</em><span class="gzi-c gt">최종 검수</span><em>›</em><span class="gzi-c">전자신고</span><em>›</em><span class="gzi-c">결제</span><em>›</em><span class="gzi-c">추심</span></div>
-        <div class="gzi-chk"><i>✓</i><span>작성을 마친 건은 <b>모두 세무사·회계사가 최종 검수</b>해요.<br>확인이 필요한 건은 ‘이슈 있음’으로 표시해 검수할 때 먼저 보여요.</span></div>
+        <div class="gzi-chk"><i>✓</i><span>작성을 마친 건은 <b>모두 세무사·회계사가 최종 검수</b>해요.</span></div>
       </div>
-      <div class="gzi-my"><span class="tag">MY PART</span><p><b>경정청구 운영 전반</b>을 관리하고, 실무자 요청을 <b class="gzi-nw">재계산 누락 알림,</b> <b class="gzi-nw">전자신고 대기열,</b> <b class="gzi-nw">환급계좌 검증·동기화,</b> <b class="gzi-nw">이슈 표시</b> 기능으로 만들었어요.</p></div>
+      <div class="gzi-my"><span class="tag">MY PART</span><p><b>경정청구 운영 전반</b>을 관리하고, 실무자 요청 중 <b class="gzi-nw">재계산 누락 알림,</b> <b class="gzi-nw">전자신고 대기열,</b> <b class="gzi-nw">환급계좌 검증·동기화</b>를 기능으로 만들고, <b class="gzi-nw">이슈 표시</b>는 검수 화면 설계에 반영했어요.</p></div>
     </div>
   </div>
   <p class="cc">지금 맡고 있는 <em>브릭스웍스</em>를 먼저, 이어서 <em>케어프로</em>를 소개해요.</p>
@@ -1771,8 +1960,8 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   </div>
   <div class="side-t bwa-kvt">
     <h3>세무사·회계사가 검수에 집중하도록,<br>브릭스웍스</h3>
-    <p>분류부터 추심까지 경정청구 8단계를 다루는 회계법인 실무 콘솔이에요. 규칙으로 판단되는 건은 다음 단계로 자동 진행되고, 모든 건은 작성 후 <span style="white-space:nowrap">세무사·회계사</span>가 최종 검수해요. 확인이 필요한 건은 ‘이슈 있음’으로 표시돼 검수할 때 먼저 보여요.</p>
-    <p>환급팀에서 경정청구 운영 전반을 맡아, 회계법인 실무자의 요청을 기능으로 만들고 있어요.</p>
+    <p>분류부터 추심까지 경정청구 8단계를 다루는 회계법인 실무 콘솔이에요. 건마다 단계별로 저장하고 잠근 뒤 재계산해 다음 단계로 넘어가고, 작성을 마친 모든 건은 <span style="white-space:nowrap">세무사·회계사</span>가 최종 검수해요.</p>
+    <p>환급팀에서 브릭스웍스 PM으로 경정청구 운영 전반을 맡아, 회계법인 실무자의 요청을 기능으로 만들고 있어요.</p>
   </div>
   <div class="logo2 bwa-logo">BRICKS<br>WORKS</div>
   <span class="note bwa-kvn">화면은 이해를 돕기 위해 재구성했으며, 이름과 수치는 예시입니다.</span>
@@ -1835,7 +2024,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     <button type="button" class="bwa-pc" data-k="1" id="bwa-pc1">
       <span class="bwa-pch"><i class="bwa-m">1</i>본검토<span class="bwa-ev bwa-e1">운영 기록</span></span>
       <span class="bwa-pct">재계산 누락, <em>하루 5~10건</em></span>
-      <span class="bwa-pcp">값을 고친 뒤 재계산을 빠뜨린 채 신고돼, 회계법인이 매일 전수조사했어요.</span>
+      <span class="bwa-pcp">앞 단계 값을 고친 뒤 재계산을 빠뜨린 채 신고돼, 회계법인이 매일 전수조사했어요.</span>
     </button>
     <button type="button" class="bwa-pc" data-k="2" id="bwa-pc2">
       <span class="bwa-pch"><i class="bwa-m">2</i>전자신고<span class="bwa-ev bwa-e2">코드 확인</span></span>
@@ -1862,7 +2051,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       <p class="eb">CURRENT SERVICE</p>
       <h2>기존 콘솔은<br><em>어떤 점이 불편한지</em><br>분석했어요.</h2>
       <div class="pts bwa-pts">
-        <button type="button" class="bwa-pt" data-k="1" id="bwa-pt1"><small><i class="bwa-m">1</i>POINT 1 · 본검토</small><span class="bwa-pth">재계산 누락 → 금액이 틀린 신고</span><span class="bwa-ptp">값을 고친 뒤 재계산을 빠뜨려도 그대로 넘어가,<br>회계법인이 매일 전수조사했어요.</span></button>
+        <button type="button" class="bwa-pt" data-k="1" id="bwa-pt1"><small><i class="bwa-m">1</i>POINT 1 · 본검토</small><span class="bwa-pth">재계산 누락 → 금액이 틀린 신고</span><span class="bwa-ptp">앞 단계를 고친 뒤 재계산을 빠뜨려도 다시 계산하라는<br>신호가 없어, 회계법인이 매일 전수조사했어요.</span></button>
         <button type="button" class="bwa-pt" data-k="2" id="bwa-pt2"><small><i class="bwa-m">2</i>POINT 2 · 전자신고</small><span class="bwa-pth">홈택스 동시 접속 충돌 → 튕긴 신고</span><span class="bwa-ptp">같은 계정으로 겹치면 신고가 튕겼고,<br>다시 넣다가 중복 제출될 위험이 있었어요.</span></button>
         <button type="button" class="bwa-pt" data-k="3" id="bwa-pt3"><small><i class="bwa-m">3</i>POINT 3 · 작성</small><span class="bwa-pth">계좌 직접 입력 → 신고서 수기 정정</span><span class="bwa-ptp">은행명·계좌를 확인 없이 입력해, 틀리면<br>환급금이 고객에게 가지 않아 신고서를 수기 정정했어요.</span></button>
         <button type="button" class="bwa-pt" data-k="4" id="bwa-pt4"><small><i class="bwa-m">4</i>POINT 4 · 최종 검수</small><span class="bwa-pth">섞여 있는 확인 필요 건</span><span class="bwa-ptp">확인이 필요한 건도 목록에서 똑같이 보여,<br>검수할 때 하나씩 열어 봐야 했어요.</span></button>
@@ -1877,7 +2066,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
         <span class="bwa-js bwa-is-hot" data-k="2">전자신고<i class="bwa-m">2</i></span>
         <span class="bwa-js">결제</span><span class="bwa-js">추심</span>
       </div>
-      <span class="bwa-jcap">AS-IS 경정청구 여정 · 막히는 지점 4곳</span>
+      <span class="bwa-jcap">AS-IS 경정청구 여정 · 단계마다 저장 → 잠금 → 재계산 후 다음 단계로 · 막히는 지점 4곳</span>
 
       <div class="win asis" style="left:0;top:96px;width:430px">
         <div class="wbar"><i></i><i></i><i></i><span>bricksworks · 신고서 · 박○○</span></div>
@@ -1970,15 +2159,15 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       <div class="bwa-rr">
         <i class="bwa-m bwa-ml">1</i>
         <div class="bwa-rq-q">“신고 전에 알려만 줘도”<small>재계산 누락 · 매일 전수조사</small></div>
-        <div class="bwa-rq-f"><b>재계산 누락 알림</b><span>신고 직전에 빠진 단계를 감지 · 막지 않고 경고 · 무시한 건 기록</span></div>
-        <div class="bwa-rq-j"><i>위험</i><span>금액이 틀린 신고</span><i>빈도</i><span>매일, 하루 5~10건</span><i>제약</i><span>최종 판단은 전문가 몫</span></div>
+        <div class="bwa-rq-f"><b>재계산 누락 알림</b><span>신고·마감 때 재계산이 빠진 단계를 찾아 안내 · 전체 재계산 바로 실행</span></div>
+        <div class="bwa-rq-j"><i>위험</i><span>금액이 틀린 신고</span><i>빈도</i><span>매일, 하루 5~10건</span><i>제약</i><span>단계별 잠금·재계산 구조</span></div>
         <div class="bwa-tl"><b class="bwa-sh" style="left:40%;width:10%"><em>2주</em></b></div>
       </div>
       <div class="bwa-rr">
         <i class="bwa-m bwa-ml">2</i>
         <div class="bwa-rq-q">“요청만 넣으면 순서대로”<small>튕긴 신고 다시 제출</small></div>
-        <div class="bwa-rq-f"><b>전자신고 대기열</b><span>계정별 순차 처리(계정 4 · 워커 5) · 자동 재시도 없이 확인 후 해제</span></div>
-        <div class="bwa-rq-j"><i>위험</i><span>중복 제출</span><i>빈도</i><span>신고가 겹칠 때마다</span><i>제약</i><span>계정당 동시 접속 1건</span></div>
+        <div class="bwa-rq-f"><b>전자신고 대기열</b><span>계정별 줄서기 · 같은 계정만 순서대로 · 응답 없는 건은 확인 후 해제</span></div>
+        <div class="bwa-rq-j"><i>위험</i><span>튕긴 신고 · 중복 제출</span><i>빈도</i><span>신고 실패율 40%</span><i>제약</i><span>계정당 동시 접속 1건</span></div>
         <div class="bwa-tl"><b style="left:40%;width:60%">BE 2 · FE 1</b></div>
       </div>
       <div class="bwa-rr">
@@ -2016,28 +2205,28 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       <span class="bwa-no">01</span>
       <div class="bwa-pn"><small><i class="bwa-m">1</i>본검토</small><b>매일 하던 전수조사</b><span>재계산을 빠뜨린 신고가 하루 5~10건 나와 매일 전체 건을 확인</span></div>
       <div class="bwa-ar"><svg width="40" height="14" viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7 H34" stroke="#8C82FF" stroke-width="2"/><path d="M30 2 L37 7 L30 12" fill="none" stroke="#8C82FF" stroke-width="2"/></svg></div>
-      <div class="bwa-ft"><div class="bwa-fh"><span class="tag">ALERT</span><b>재계산 누락 알림</b></div><span>신고 직전에 빠진 단계를 감지해 경고하고, 무시한 건은 기록해요.</span></div>
-      <div class="bwa-sc"><small>FEATURE 01</small><span>2026.07 · 2주</span></div>
+      <div class="bwa-ft"><div class="bwa-fh"><span class="tag">ALERT</span><b>재계산 누락 알림</b></div><span>신고·마감 때 재계산이 빠진 단계를 안내하고, 전체 재계산을 바로 돌려요.</span></div>
+      <div class="bwa-sc"><small>FEATURE 01 · 배포 완료</small><span>2026.07 · 2주</span></div>
     </div>
     <div class="bwa-mr">
       <span class="bwa-no">02</span>
       <div class="bwa-pn"><small><i class="bwa-m">2</i>전자신고</small><b>튕긴 신고 다시 제출</b><span>계정당 동시 접속 1건이라 겹치면 튕기고, 중복 제출 위험</span></div>
       <div class="bwa-ar"><svg width="40" height="14" viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7 H34" stroke="#8C82FF" stroke-width="2"/><path d="M30 2 L37 7 L30 12" fill="none" stroke="#8C82FF" stroke-width="2"/></svg></div>
-      <div class="bwa-ft"><div class="bwa-fh"><span class="tag">E-FILING QUEUE</span><b>전자신고 대기열</b></div><span>계정별로 줄을 세워 순서대로 자동 제출하고, 중복 제출은 구조로 막아요.</span></div>
-      <div class="bwa-sc"><small>FEATURE 02</small><span>2026.07 – 09 · BE 2 · FE 1</span></div>
+      <div class="bwa-ft"><div class="bwa-fh"><span class="tag">E-FILING QUEUE</span><b>전자신고 대기열</b></div><span>계정별로 줄을 세워 같은 계정만 순서대로, 다른 계정은 동시에 신고해요.</span></div>
+      <div class="bwa-sc"><small>FEATURE 02 · 운영 적용</small><span>2026.07 – 09 · BE 2 · FE 1</span></div>
     </div>
     <div class="bwa-mr">
       <span class="bwa-no">03</span>
       <div class="bwa-pn"><small><i class="bwa-m">3</i>작성</small><b>계좌 오류 수기 정정</b><span>검증 없는 계좌가 틀리면 고객이 환급금을 못 받고, 신고서를 수기 정정</span></div>
       <div class="bwa-ar"><svg width="40" height="14" viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7 H34" stroke="#8C82FF" stroke-width="2"/><path d="M30 2 L37 7 L30 12" fill="none" stroke="#8C82FF" stroke-width="2"/></svg></div>
       <div class="bwa-ft"><div class="bwa-fh"><span class="tag">ACCOUNT</span><b>환급계좌 검증·동기화</b></div><span>예금주·계좌 확인을 통과한 계좌만 반영하고, 고객 앱과 양방향으로 맞춰요.</span></div>
-      <div class="bwa-sc"><small>FEATURE 03</small><span>2026.07 – 08 · BE 1 · FE 1</span></div>
+      <div class="bwa-sc"><small>FEATURE 03 · 배포 완료</small><span>2026.07 – 08 · BE 1 · FE 1</span></div>
     </div>
     <div class="bwa-mr">
       <span class="bwa-no">04</span>
       <div class="bwa-pn"><small><i class="bwa-m">4</i>최종 검수</small><b>이슈 있는 건 찾기</b><span>모든 건을 검수하는데 확인이 필요한 건이 목록에 섞여 있음</span></div>
       <div class="bwa-ar"><svg width="40" height="14" viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7 H34" stroke="#8C82FF" stroke-width="2"/><path d="M30 2 L37 7 L30 12" fill="none" stroke="#8C82FF" stroke-width="2"/></svg></div>
-      <div class="bwa-ft"><div class="bwa-fh"><span class="tag">REVIEW</span><b>이슈 표시·최종 검수</b></div><span>확인이 필요한 건을 ‘이슈 있음’으로 표시해, 세무사·회계사가 검수할 때 먼저 봐요.</span></div>
+      <div class="bwa-ft"><div class="bwa-fh"><span class="tag">REVIEW</span><b>이슈 표시·최종 검수</b></div><span>확인이 필요한 건이 ‘이슈 있음’으로 먼저 보이도록 검수 화면을 설계했어요.</span></div>
       <div class="bwa-sc"><small>FEATURE 04</small><span class="bwa-is-x">설계 반영</span></div>
     </div>
   </div>
@@ -2048,67 +2237,53 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     <p class="eb" style="color:#9A9A9A">BEFORE</p>
     <h2 style="color:#BDBDBD">매일 하던<br>전수조사</h2>
     <div class="tagbox bwf-st g">
-      <div><span class="tag">PROBLEM</span><p>재계산을 빠뜨려 금액이 틀린 신고가 하루 5~10건 나왔고, 회계법인은 매일 전체 건을 다시 확인했어요.</p></div>
-      <div><span class="tag">CAUSE</span><p>값을 고쳐도 세액은 저절로 다시 계산되지 않았고, 재계산을 빠뜨려도 신고 전에 알려주는 곳이 없었어요.</p></div>
+      <div><span class="tag">PROBLEM</span><p>값을 고친 뒤 재계산을 빠뜨려 금액이 틀린 신고가 하루 5~10건 나왔고, 회계법인은 매일 전체 건을 다시 확인했어요.</p></div>
+      <div><span class="tag">CAUSE</span><p>단계마다 저장·잠금·재계산을 거쳐 넘어가는데, 나중에 앞 단계를 고쳐도 다시 계산하라는 신호가 없었어요.</p></div>
     </div>
     <div class="win asis" style="position:relative;width:317px;margin-top:28px">
       <div class="wbar"><i></i><i></i><i></i><span>전수조사.xlsx</span></div>
       <div class="ui one"><div class="mn"><div class="tbl bwf-xl" style="--cols:.85fr 1fr .85fr 1fr">
-        <div class="tr"><span>신청자</span><span>수정 항목</span><span>재계산</span><span>확인</span></div>
-        <div class="tr"><span>김○○</span><span>수입금액</span><span>완료</span><span>일치</span></div>
-        <div class="tr"><span>이○○</span><span>필요경비</span><span>누락</span><span>금액 틀림</span></div>
+        <div class="tr"><span>신청자</span><span>수정 단계</span><span>재계산</span><span>확인</span></div>
+        <div class="tr"><span>김○○</span><span>본검토</span><span>완료</span><span>일치</span></div>
+        <div class="tr"><span>이○○</span><span>사전작업</span><span>누락</span><span>금액 틀림</span></div>
         <div class="tr"><span>박○○</span><span>-</span><span>-</span><span>일치</span></div>
-        <div class="tr"><span>최○○</span><span>수입금액</span><span>누락</span><span>금액 틀림</span></div>
+        <div class="tr"><span>최○○</span><span>본검토</span><span>누락</span><span>금액 틀림</span></div>
       </div></div></div>
     </div>
   </div>
   <div style="padding:96px 73px 60px 50px;display:grid;grid-template-columns:300px 1fr;gap:30px">
     <div>
       <p class="eb">FEATURE 01 · ALERT</p>
-      <h2>빠뜨린 재계산,<br><em>신고 직전에</em><br>알려드려요.</h2>
+      <h2>재계산 빠진 단계,<br><em>신고·마감 전에</em><br>짚어드려요.</h2>
       <div class="tagbox bwf-st">
-        <div><span class="tag">SOLUTION</span><p>신고 직전에 재계산을 거치지 않은 항목을 찾아 알려요. 최종 판단은 전문가 몫이라 막지 않고 경고만 하고, 넘긴 건은 기록해요.</p></div>
-        <div><span class="tag r">RESULT</span><p>넘긴 경고는 기록으로 남겨<br>자동 재계산 과제의 근거로 쌓아요.<span class="bwf-m">2026.07 · 2주 · 배포 완료</span></p></div>
+        <div><span class="tag">SOLUTION</span><p>작성 단계에서 신고·마감을 누르면 단계별 재계산 상태부터 확인해요. 빠진 단계가 있으면 그 단계에서 재계산하도록 안내하고, 전체 재계산도 바로 돌릴 수 있어요.</p></div>
+        <div><span class="tag r">RESULT</span><p>재계산이 빠진 건은 신고·마감 전에 걸러지고, 해당 단계나 전체 재계산으로 바로잡아요.<span class="bwf-m">2026.07 · 2주 · 배포 완료</span></p></div>
       </div>
-      <div class="gzb-ctl2"><button class="try" id="gzb-a-try" type="button">직접 눌러보기</button><p class="hint" id="gzb-a-hint" aria-live="polite">재계산하기 또는 그대로 신고를 눌러보세요</p></div>
+      <div class="gzb-ctl2"><button class="try" id="gzb-a-try" type="button">직접 눌러보기</button><p class="hint" id="gzb-a-hint" aria-live="polite">본검토로 이동 또는 전체 재계산을 눌러보세요</p></div>
     </div>
     <div style="position:relative">
-      <div class="win" style="left:0;top:20px;width:470px">
-        <div class="wbar"><i></i><i></i><i></i><span>bricksworks · 본검토 · 작성</span></div>
+      <div class="win bwf-aw">
+        <div class="wbar"><i></i><i></i><i></i><span>bricksworks · 경정청구 · 이○○</span></div>
         <div class="ui one gzb-ui" id="gzb-a-ui">
           <div class="mn">
-            <div class="mh"><b>신고서 작성 · <span id="gzb-a-nm">이○○</span></b><span class="chip c-ok" id="gzb-a-st">계산 완료</span></div>
-            <div class="gzb-2" style="gap:10px">
-              <label class="fld"><small>수입금액 <span class="chip c-y" id="gzb-a-mk1" hidden>수정됨</span></small><input class="inp n" id="gzb-a-rev" type="text" inputmode="numeric" maxlength="14" value="132,000,000" aria-label="수입금액"></label>
-              <label class="fld"><small>필요경비 <span class="chip c-y" id="gzb-a-mk2" hidden>수정됨</span></small><input class="inp n" id="gzb-a-exp" type="text" inputmode="numeric" maxlength="14" value="83,800,000" aria-label="필요경비"></label>
+            <div class="mh"><b>2023 귀속 종합소득세 · 이○○</b><span class="chip c-p" id="gzb-a-st">작성 중</span></div>
+            <div class="bwf-sb" id="gzb-a-sb">
+              <button class="bwf-sg" type="button" data-s="0" aria-pressed="false"><span class="bwf-sgh"><small>01</small><b>예비검토</b></span><span class="bwf-fl"><i>저장</i><i>잠금</i><i>재계산</i></span><span class="chip c-ok">최신</span></button>
+              <button class="bwf-sg" type="button" data-s="1" aria-pressed="false"><span class="bwf-sgh"><small>02</small><b>사전작업</b></span><span class="bwf-fl"><i>저장</i><i>잠금</i><i>재계산</i></span><span class="chip c-ok">최신</span></button>
+              <button class="bwf-sg" type="button" data-s="2" aria-pressed="false"><span class="bwf-sgh"><small>03</small><b>본검토</b></span><span class="bwf-fl"><i>저장</i><i>잠금</i><i>재계산</i></span><span class="chip c-ok">최신</span></button>
+              <button class="bwf-sg" type="button" data-s="3" aria-pressed="false"><span class="bwf-sgh"><small>04</small><b>작성</b></span><span class="bwf-fl"><i class="w">저장</i><i class="w">잠금</i><i class="w">재계산</i></span><span class="chip c-p">작성 중</span></button>
             </div>
-            <div class="k3" id="gzb-a-k3"><div><small>사업소득</small><b class="n" id="gzb-a-inc">48,200,000</b></div><div><small>공제세액</small><b class="n" id="gzb-a-cr">1,205,000</b></div><div><small>환급 예상</small><b class="n" id="gzb-a-rf">964,000</b></div></div>
-            <div class="box gzb-det" id="gzb-a-det"><span id="gzb-a-dett">✓ 모든 금액이 최신 계산이에요</span><small>예시 계산</small></div>
-            <div class="gzb-2" id="gzb-a-acts"><button class="btn g" id="gzb-a-re" type="button">재계산</button><button class="btn" id="gzb-a-file" type="button">신고하기</button></div>
-            <div class="toast" id="gzb-a-toast" hidden><span id="gzb-a-toastt">✓ 신고 완료</span><button class="btn g" id="gzb-a-next" type="button">다음 건</button></div>
+            <div class="bwf-pn" id="gzb-a-pn"></div>
           </div>
           <div class="gzb-modal" id="gzb-a-modal" role="dialog" aria-label="재계산 안내">
-            <b style="font-size:15px">재계산이 필요한 항목이 있어요</b>
-            <div class="box" style="background:#FFFBF0;border-color:#FFD27A;font-size:11.5px" id="gzb-a-mmsg">수입금액을 수정한 뒤 세액을 다시 계산하지 않았어요.</div>
-            <span style="font-size:11px;color:#8B8E99">그대로 신고하면 사유가 기록돼요.</span>
-            <select class="inp" id="gzb-a-reason" aria-label="그대로 신고하는 사유">
-              <option value="">그대로 신고하는 사유 선택</option>
-              <option>세무사·회계사 판단으로 유지</option>
-              <option>홈택스 계산값과 대조 완료</option>
-              <option>금액 변동 없는 단순 수정</option>
-            </select>
-            <span class="gzb-err" id="gzb-a-err" hidden>사유를 골라야 그대로 신고할 수 있어요.</span>
-            <div class="gzb-2"><button class="btn" id="gzb-a-mre" type="button">재계산하기</button><button class="btn g" id="gzb-a-mskip" type="button">그대로 신고</button></div>
+            <b style="font-size:15px" id="gzb-a-mt">신고 전에 확인해 주세요</b>
+            <div class="box bwf-mw" id="gzb-a-mmsg"><b>본검토</b> 단계 재계산이 빠졌어요.<br>해당 단계에서 재계산하고 오세요.</div>
+            <div class="bwf-mst" id="gzb-a-mst"></div>
+            <div class="gzb-2"><button class="btn g" id="gzb-a-go" type="button">본검토로 이동</button><button class="btn" id="gzb-a-all" type="button">전체 재계산</button></div>
           </div>
         </div>
       </div>
-      <div class="win" style="left:0;top:364px;width:470px">
-        <div class="wbar"><i></i><i></i><i></i><span>bricksworks · 경고 무시 기록</span></div>
-        <div class="ui one"><div class="mn">
-          <div class="mh"><b>경고 무시 기록</b><span class="chip c-p" id="gzb-a-logc">2건 · 자동 재계산 근거</span></div>
-          <div class="tbl gzb-log" style="--cols:.55fr .65fr .85fr 1.6fr" id="gzb-a-log"></div>
-        </div></div>
-      </div>
+      <div class="bwf-lgd"><span><i></i>저장 · 잠금 · 재계산 완료</span><span><i class="y"></i>고친 뒤 재계산 전 → 신고·마감 때 안내</span></div>
     </div>
   </div>
   <span class="note">화면은 이해를 돕기 위해 재구성했으며, 이름과 수치는 예시입니다.</span>
@@ -2117,9 +2292,9 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 <section class="s gzb-q" id="gzb-queue" style="padding-bottom:62px">
   <p class="eb">FEATURE 02 · E-FILING QUEUE</p>
   <div class="ivh">
-    <h2>튕기던 신고,<br><em>대기열이 순서대로</em> 보내드려요.</h2>
+    <h2>튕기던 신고,<br><em>계정별로 줄 세워</em> 보내드려요.</h2>
     <div class="gzb-hr">
-      <p class="lead" style="text-align:right;margin:0">기획서를 AI로 교차 검증해 ‘처리 중에 멈추면 아무도 풀 수 없다’는 허점을<br>개발에 들어가기 전에 찾아 보완했어요.</p>
+      <p class="lead" style="text-align:right;margin:0">기획서를 AI로 교차 검증해, 처리 중 멈춘 작업의 해제 주체·복구 조건이<br>빠진 것을 개발 착수 전에 찾아 보완했어요.</p>
       <div class="gzb-ctl"><span class="hint" id="gzb-q-hint" aria-live="polite">STEP 1부터 직접 신고해 볼 수 있어요</span><button class="try" id="gzb-q-try" type="button">직접 눌러보기</button><button class="try g" id="gzb-q-old" type="button">개선 전처럼 동시에 보내기</button></div>
     </div>
   </div>
@@ -2137,17 +2312,20 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
           <label class="gzb-it on"><input type="checkbox" id="gzb-q-c6" checked><b>윤○○</b><span class="chip c-g">계정 A</span></label>
           <label class="gzb-it on"><input type="checkbox" id="gzb-q-c7" checked><b>한○○</b><span class="chip c-g">계정 C</span></label>
         </div>
+        <small class="gzb-s1n">요청만 넣으면 끝, 앞 작업이 끝나길 기다리지 않아요</small>
         <button class="btn" id="gzb-q-send" type="button">전자신고 요청 · 8건</button>
       </div></div></div></div>
     <div class="stp" id="gzb-q-s2"><small>STEP 2</small><span class="lb">계정별 대기열</span>
       <div class="win"><div class="wbar"><i></i><i></i><i></i></div><div class="ui one"><div class="mn">
         <div class="mh"><b>대기열</b><span class="chip c-p">계정 4 · 워커 5</span></div>
-        <div class="lane"><span>계정 A</span><div class="bar" id="gzb-q-bA"></div><span class="n" id="gzb-q-nA">0</span></div>
-        <div class="lane"><span>계정 B</span><div class="bar" id="gzb-q-bB"></div><span class="n" id="gzb-q-nB">0</span></div>
-        <div class="lane"><span>계정 C</span><div class="bar" id="gzb-q-bC"></div><span class="n" id="gzb-q-nC">0</span></div>
-        <div class="lane"><span>계정 D</span><div class="bar" id="gzb-q-bD"></div><span class="n" id="gzb-q-nD">0</span></div>
+        <div class="gzb-lanes">
+          <div class="lane"><span>계정 A</span><div class="bar" id="gzb-q-bA"></div><span class="n" id="gzb-q-nA">0</span></div>
+          <div class="lane"><span>계정 B</span><div class="bar" id="gzb-q-bB"></div><span class="n" id="gzb-q-nB">0</span></div>
+          <div class="lane"><span>계정 C</span><div class="bar" id="gzb-q-bC"></div><span class="n" id="gzb-q-nC">0</span></div>
+          <div class="lane"><span>계정 D</span><div class="bar" id="gzb-q-bD"></div><span class="n" id="gzb-q-nD">0</span></div>
+        </div>
         <div class="gzb-wk">워커 <span id="gzb-q-dots"><i></i><i></i><i></i><i></i><i></i></span><b class="n" id="gzb-q-wk">0 / 5 사용 중</b></div>
-        <div class="box gzb-rule">같은 계정은 한 번에 한 건씩 순서대로</div>
+        <div class="box gzb-rule">같은 계정만 줄 서고, 다른 계정은 동시에 나가요</div>
       </div></div></div></div>
     <div class="stp" id="gzb-q-s3"><small>STEP 3</small><span class="lb">순차 자동 제출</span>
       <div class="win"><div class="wbar"><i></i><i></i><i></i></div><div class="ui one"><div class="mn">
@@ -2182,8 +2360,8 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   <div class="bwf-strip">
     <div><span class="tag">PROBLEM</span><p>홈택스는 계정당 동시 접속이 1건이라, 여러 담당자가 같은 계정으로 보내면 신고가 튕기고 중복 제출 위험이 있었어요.</p></div>
     <div><span class="tag">CAUSE</span><p>홈택스 계정이 신고 파일에 고정돼 다른 계정으로 돌려 보낼 수 없다는 제약을 코드에서 확인했어요.</p></div>
-    <div><span class="tag">SOLUTION</span><p>계정별 대기열로 한 건씩 순서대로 제출해요. 자동 재시도는 빼고, 응답 없는 제출은 담당자 확인 후 풀어요.</p></div>
-    <div><span class="tag r">RESULT</span><p>요청만 넣으면 순서대로 자동 처리되고, 충돌과 중복 제출은 구조로 막았어요.<span class="bwf-m">2026.07~09 · BE 2 · FE 1</span></p></div>
+    <div><span class="tag">SOLUTION</span><p>요청은 계정별 대기열에 쌓여요. 같은 계정만 줄 서서 앞 건의 검증·신고가 끝나면 다음 건이 나가고, 응답 없는 제출은 자동 재시도 없이 담당자 확인 후 풀어요.</p></div>
+    <div><span class="tag r">RESULT</span><p>같은 계정 동시 접속 충돌로 튕기던 신고를 줄여 <b class="bwf-k">신고 실패율 40% → 3%(37%p 감소)</b><span class="bwf-m">2026.07~09 · BE 2 · FE 1 · 운영 적용</span></p></div>
   </div>
   <span class="note">화면은 이해를 돕기 위해 재구성했으며, 이름과 수치는 예시입니다.</span>
 </section>
@@ -2260,8 +2438,8 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       <div class="tagbox bwf-st">
         <div><span class="tag">PROBLEM</span><p>모든 건을 세무사·회계사가 최종 검수하는데, 판단이 필요한 건이 섞여 있어 하나씩 열어 찾아야 했어요.</p></div>
         <div><span class="tag">CAUSE</span><p>공제·감면 6종에는 규칙만으로 끝나지 않는 회색지대가 있는데, 목록에서는 구분되지 않았어요.</p></div>
-        <div><span class="tag">SOLUTION</span><p>규칙으로 판단되는 건은 자동으로 다음 단계로 가고, 확인이 필요한 건은 <span style="white-space:nowrap">‘이슈 있음’으로</span> 표시해 검수 목록 맨 위에 올려요.</p></div>
-        <div><span class="tag r">RESULT</span><p>최종 검수는 모두 세무사·회계사가 하고, 이슈 건은 인정·불인정·증빙요청 중 하나로 바로 결정해요.<span class="bwf-m">공제·감면 6종 기준 · 검수 화면 설계에 반영</span></p></div>
+        <div><span class="tag">SOLUTION</span><p>규칙으로 판단되는 건은 순서대로 넘기고, 확인이 필요한 건은 <span style="white-space:nowrap">‘이슈 있음’으로</span> 표시해 검수 목록 맨 위에 올리도록 검수 화면을 설계했어요.</p></div>
+        <div><span class="tag r">RESULT</span><p>최종 검수는 모두 세무사·회계사가 하고, 이슈 건은 인정·불인정·증빙요청 중 하나로 결정하도록 판단 흐름을 정리했어요.<span class="bwf-m">공제·감면 6종 기준 · 검수 화면 설계 반영</span></p></div>
       </div>
     </div>
     <div class="panel" style="height:572px;margin-top:20px">
@@ -2270,7 +2448,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
         <button class="try g" id="gza-r-reset" type="button">다시 하기</button>
       </div>
       <div class="win" style="left:40px;top:60px;width:820px">
-        <div class="wbar"><i></i><i></i><i></i><span>bricksworks · 최종 검수</span></div>
+        <div class="wbar"><i></i><i></i><i></i><span>bricksworks · 최종 검수 (설계안)</span></div>
         <div class="ui gza-rui" style="grid-template-columns:142px 262px 1fr">
           <div class="side"><b>BRICKSWORKS</b><span>분류</span><span>예비검토</span><span>사전작업</span><span>본검토</span><span>작성 <em class="n" id="gza-s-cls">6</em></span><span class="on bwf-sub">최종 검수 <em class="n" id="bwf-s-rv">6</em></span><span>전자신고 <em class="n" id="bwf-s-ef">0</em></span><span>결제</span><span>추심</span></div>
           <div class="mn gza-lcol" style="border-right:1px solid #E6E8F0;background:#fff">
@@ -2296,11 +2474,11 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 
 <section class="s bwf-res" id="bwf-result">
   <p class="eb">BRICKSWORKS · RESULT</p>
-  <h2>실무자가 꼽은 불편 4가지를<br><em>하나씩 기능으로</em> 풀었어요.</h2>
+  <h2>실무자가 꼽은 불편 4가지를<br><em>하나씩 기능으로</em> 풀고 있어요.</h2>
   <p class="lead">동작하는 프로토타입으로 개발팀·회계법인과 먼저 화면을 맞추고, 기획서는 AI로 교차 검증해 개발 전에 허점을 보완했어요.</p>
   <div class="res">
-    <div class="rc"><small>FEATURE 01 · 재계산 누락 알림</small><div class="bn">경고·기록</div><b>매일 전수조사하던 재계산 누락을,<br>신고 직전에 경고</b><p>개선 전 하루 5~10건, 넘긴 건은 기록<br>2026.07 · 2주 · 배포 완료</p></div>
-    <div class="rc"><small>FEATURE 02 · 전자신고 대기열</small><div class="bn">순차 처리</div><b>튕기던 신고를, 요청만 넣으면<br>순서대로 자동 제출</b><p>계정 4 · 워커 5, 충돌과 중복 제출을 구조로 차단<br>2026.07~09 · BE 2 · FE 1</p></div>
+    <div class="rc"><small>FEATURE 01 · 재계산 누락 알림</small><div class="bn">빠진 단계 안내</div><b>매일 전수조사하던 재계산 누락을,<br>신고·마감 전에 걸러냄</b><p>개선 전 하루 5~10건<br>해당 단계 재계산 · 전체 재계산<br>2026.07 · 2주 · 배포 완료</p></div>
+    <div class="rc"><small>FEATURE 02 · 전자신고 대기열</small><div class="bn n">40% → 3%</div><b>같은 계정 충돌로 튕기던 신고를,<br>계정별 대기열로 순서대로</b><p>신고 실패율 37%p 감소<br>계정 4 · 워커 5 · 중복 제출 방지<br>2026.07~09 · BE 2 · FE 1 · 운영 적용</p></div>
     <div class="rc"><small>FEATURE 03 · 환급계좌 검증·동기화</small><div class="bn">양방향</div><b>수기로 고치던 계좌를,<br>확인된 계좌만 반영</b><p>예금주·계좌 확인, 은행명 코드 정규화, 고객 앱 동기화<br>2026.07~08 · BE 1 · FE 1 · 배포 완료</p></div>
     <div class="rc"><small>FEATURE 04 · 이슈 표시·최종 검수</small><div class="bn">이슈 먼저</div><b>찾아야 했던 판단 건을,<br>검수 목록 맨 위에</b><p>최종 검수는 모두 세무사·회계사<br>검수 화면 설계에 반영</p></div>
   </div>
@@ -2413,7 +2591,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       <div class="cp-grp">
         <div class="cp-gl">자료·등록<small>STEP 1–2</small></div>
         <div>
-          <div class="cp-mr"><i class="cp-pn">1</i><p>앱 자료를 콘솔에 건별로 다시 입력</p><span class="cp-ar">→</span><div><b>고객 자료 자동 불러오기</b><small>사장님이 앱에 올린 자료가 그대로 급여 등록으로 들어와요</small></div></div>
+          <div class="cp-mr"><i class="cp-pn">1</i><p>앱 자료를 콘솔에 건별로 다시 입력</p><span class="cp-ar">→</span><div><b>고객 자료 자동 불러오기</b><small>앱에 올린 급여·소득 자료를 다시 입력하지 않고 급여 등록에 써요</small></div></div>
           <div class="cp-mr"><i class="cp-pn">2</i><p>귀속월·지급월이 한 값에 섞임</p><span class="cp-ar">→</span><div><b>귀속·지급 분리</b><small>두 달을 따로 저장하고, 신고 기한은 지급월로 정해요</small></div></div>
           <div class="cp-mr"><i class="cp-pn">3</i><p>4대보험 고지액을 EDI에서 따로 확인</p><span class="cp-ar">→</span><div><b>4대보험 EDI 연동</b><small>고지된 보험료를 급여 등록의 공제 항목으로 받아요</small></div></div>
         </div>
@@ -2430,7 +2608,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
         <div class="cp-gl">납부·전달<small>STEP 6–7</small></div>
         <div>
           <div class="cp-mr"><i class="cp-pn">7</i><p>기한이 바뀌면 납부서를 지우고 다시 작성</p><span class="cp-ar">→</span><div><b>납부서 자동 생성·재발급</b><small>기존 납부서는 취소하고, 바뀐 기한으로 새로 발행해요</small></div></div>
-          <div class="cp-mr"><i class="cp-pn">8</i><p>결과 파일을 내려받아 따로 전달</p><span class="cp-ar">→</span><div><b>고객 앱 결과 조회</b><small>신고가 끝나면 사장님이 앱에서 결과를 바로 확인해요</small></div></div>
+          <div class="cp-mr"><i class="cp-pn">8</i><p>결과 파일을 내려받아 따로 전달</p><span class="cp-ar">→</span><div><b>고객 앱 결과 조회</b><small>사장님이 앱에서 결과를 직접 조회해 파일 전달이 줄어요</small></div></div>
         </div>
       </div>
     </div>
@@ -2541,11 +2719,19 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     </div>
   </div>
   <div class="cp-yb">
+    <div class="cp-yl">
     <div class="cp-y4">
       <div class="cp-yc"><i class="cp-pn">1</i><p>간소화 PDF 금액을 항목마다 손으로 입력</p><div><b>간소화 PDF 추출·항목 인식</b><small>PDF를 올리면 항목별 금액으로 읽어 공제 칸에 채워요</small></div></div>
       <div class="cp-yc"><i class="cp-pn">2</i><p>같은 카드 자료가 두 번 올라와 공제가 부풀려짐</p><div><b>카드 중복 업로드 감지</b><small>이미 올린 내역과 같으면 계산 전에 표시하고 제외해요</small></div></div>
       <div class="cp-yc"><i class="cp-pn">3</i><p>공제 순서·한도를 콘솔 밖에서 따로 계산</p><div><b>세액 계산</b><small>근로소득공제부터 결정세액까지 단계별로 계산해요</small></div></div>
       <div class="cp-yc"><i class="cp-pn">4</i><p>기한에 맞춰 신고 파일을 따로 작성</p><div><b>전자신고 파일 생성</b><small>계산 결과로 신고 파일을 만들어 기한 안에 제출해요</small></div></div>
+    </div>
+    <div class="cp-yv">
+      <small>VERIFY · 일정</small>
+      <div class="cp-fl"><span>공제 순서·한도·계산 결과 검증 항목 정리</span><i>→</i><span class="on">개발팀과 오류 수정·재검증 일정 조율</span></div>
+      <small>EXCEPTION</small>
+      <p>초기 오류·미지원 예외 사례는 <b>더존과 병행 처리</b>했어요.</p>
+    </div>
     </div>
     <div class="cp-ref">
       <small>REFERENCE · 실무 프로그램과 현장</small>
@@ -2616,10 +2802,10 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   <h2>다시 입력하던 원천세는 <em>한 흐름</em>으로,<br>없던 연말정산은 <em>실제 신고</em>까지 만들었어요.</h2>
   <p class="lead">고객 자료가 들어온 뒤 신고 결과가 고객 앱에 보일 때까지, 콘솔 안에서 이어지게 했어요.</p>
   <div class="res">
-    <div class="rc"><small>WITHHOLDING TAX</small><div class="bn">재입력 제거</div><b>고객 앱 자료로<br>급여 등록부터 신고까지</b><p>건별 재입력·결과 전달 업무 제거<br>귀속·지급 분리 재설계 · FE·BE 4명</p></div>
-    <div class="rc"><small>CUSTOMER APP</small><div class="bn">앱에서 조회</div><b>신고 결과를<br>사장님이 직접 확인</b><p>홈택스에서 내려받아 따로 전달하던 일을<br>고객 앱 결과 조회로 바꿨어요</p></div>
-    <div class="rc"><small>PAYMENT SLIP</small><div class="bn">취소 → 재발급</div><b>기한이 바뀌어도<br>수기 정정 없이</b><p>신고 서류 자동 생성,<br>기존 납부서 취소 → 신규 발행</p></div>
-    <div class="rc"><small>YEAR-END SETTLEMENT</small><div class="bn">신규 구축</div><b>없던 연말정산을<br>실제 신고에 적용</b><p>간소화 PDF 추출 → 세액 계산 →<br>전자신고 파일 · 신고 기한에 맞춰 적용</p></div>
+    <div class="rc"><small>WITHHOLDING TAX</small><div class="bn">15분 → 9분</div><b>재입력을 없애<br>조회 → 검토 → 반영으로</b><p>건당 처리시간 40% 단축 · 고객 앱 자료 재사용<br>귀속·지급 분리 재설계 · FE·BE 4명</p></div>
+    <div class="rc"><small>CUSTOMER APP</small><div class="bn">앱에서 조회</div><b>신고 결과를<br>사장님이 직접 확인</b><p>홈택스에서 내려받아 보내던<br>개별 파일 전달 업무를 줄였어요</p></div>
+    <div class="rc"><small>PAYMENT SLIP</small><div class="bn">취소 → 재발급</div><b>인쇄한 납부서 수기 정정을<br>시스템 흐름으로</b><p>신고 서류 자동 생성,<br>기존 납부서 취소 → 새 기한으로 발행</p></div>
+    <div class="rc"><small>YEAR-END SETTLEMENT</small><div class="bn">신규 구축</div><b>신고 기한에 맞춰<br>실제 신고에 적용</b><p>검증 항목 정리 · 오류 수정·재검증 일정 조율<br>초기 오류·미지원 예외는 더존과 병행 처리</p></div>
   </div>
   <div class="cp-flow">
     <small>원천세 · 콘솔 안</small>
@@ -2635,7 +2821,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   <div class="hstage">
     <div class="pd">
       <h3>PROJECT DETAIL</h3>
-      <dl><dt>TOOL</dt><dd>JIRA, CONFLUENCE, SLACK</dd><dt>PERIOD</dt><dd>2024.12 – 2025.08</dd><dt>SERVICE</dt><dd>WEB · APP SERVICE</dd><dt>TEAM</dt><dd>Product 기획팀</dd></dl>
+      <dl><dt>TOOL</dt><dd>JIRA, CONFLUENCE, SLACK</dd><dt>PERIOD</dt><dd>2024.12 – 2025.08</dd><dt>SERVICE</dt><dd>WEB · APP SERVICE</dd><dt>TEAM</dt><dd>Product 기획팀 · PM</dd></dl>
       <div class="pills"><span>SALES DATA</span><span>DATA CHECK</span></div>
     </div>
     <!-- 웹 장부 -->
@@ -2675,7 +2861,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     </div>
     <div class="ttl">
       <h3>흩어진 매출을 한 장부로, 차별화장부</h3>
-      <p>스마트푸드네트웍스는 외식업 사장님을 위한 매출관리 서비스 차별화장부를 운영합니다. <b style="color:#fff">차별화장부 1.0</b>에서 설치 없는 계정 연결 수집, 배달앱 실매출과 맞춰보는 값 검증, 메뉴 통일화, 매장 운영을 돕는 기능을 기획했습니다.</p>
+      <p>스마트푸드네트웍스는 외식업 사장님을 위한 매출관리 서비스 차별화장부를 운영합니다. <b style="color:#fff">차별화장부 1.0</b>의 PM으로 설치 없는 계정 연결 수집, 배달앱 실매출과 맞춰보는 값 검증, 메뉴 통일화, 매장 운영을 돕는 기능을 기획하고 정식 오픈에 참여했습니다.</p>
     </div>
   </div>
   <span class="note">화면은 이해를 돕기 위해 재구성했으며, 이름과 수치는 예시입니다.</span>
@@ -2755,7 +2941,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       <h2>기존 장부에서<br><em>막히는 지점</em>을<br>짚어봤어요.</h2>
       <div class="pts">
         <div><small>POINT 1</small><h5>설치해야 시작되고, 꺼지면 멈추는 수집</h5><p>매장 PC나 POS기에 수집 프로그램을 깔아야 했고,<br>기기가 꺼지면 그동안의 매출이 비었어요.</p></div>
-        <div><small>POINT 2</small><h5>맞는지 알 수 없는 수집값</h5><p>배달앱 실제 매출과 같은지 확인할 기준이 없어<br>차이를 고객 문의로 알게 됐어요.</p></div>
+        <div><small>POINT 2</small><h5>맞는지 알 수 없는 수집값</h5><p>배달앱 실제 매출과 자동으로 맞춰 볼 기준이 없어<br>차이를 고객 문의로 뒤늦게 알게 됐어요.</p></div>
         <div><small>POINT 3</small><h5>앱마다 다른 메뉴 이름</h5><p>같은 메뉴도 배달앱마다 이름·옵션 표기가 달라<br>실적을 합쳐 볼 수 없었어요.</p></div>
         <div><small>POINT 4</small><h5>앱마다 따로 챙기는 가게 일</h5><p>리뷰 답글과 입금 확인은 여전히<br>배달앱 사장님 사이트마다 따로 해야 했어요.</p></div>
       </div>
@@ -2782,8 +2968,8 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
           <div class="mh"><b>07.06 채널별 매출</b><span class="chip c-g">수집값만 표시</span></div>
           <div class="tbl" style="--cols:1fr 1fr .9fr">
             <div class="tr"><span>채널</span><span>수집 매출</span><span>실제 매출</span></div>
-            <div class="tr"><span>배달의민족</span><span class="n">1,284,000</span><span>확인 불가</span></div>
-            <div class="tr"><span>쿠팡이츠</span><span class="n">618,500</span><span>확인 불가</span></div>
+            <div class="tr"><span>배달의민족</span><span class="n">1,284,000</span><span>자동 대조 없음</span></div>
+            <div class="tr"><span>쿠팡이츠</span><span class="n">618,500</span><span>자동 대조 없음</span></div>
           </div>
           <div class="toast">차이는 고객 문의로 알게 돼요</div>
         </div></div>
@@ -2830,7 +3016,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   <p class="eb"><i class="sf-n">1</i>COLLECT · 수집 구조 전환</p>
   <div class="ivh">
     <h2>설치형 수집을<br><em>계정 연결 수집</em>으로 바꿨어요.</h2>
-    <p class="lead" style="text-align:right;margin:0">매장 기기에 기대던 수집 구조를 바꾸는 방안을 직접 주도해 구체적으로 제안했어요.<br>프록시(VPN)를 거쳐 사장님 계정으로 접속해 모으는 구조예요.</p>
+    <p class="lead" style="text-align:right;margin:0">매장 기기에 기대던 수집 구조를 바꾸는 방안을 직접 제안하고 전환을 주도했어요.<br>프록시(VPN)를 거쳐 사장님 계정으로 접속해 모으는 구조예요.</p>
   </div>
   <div class="sf-arch">
     <div class="sf-row">
@@ -2863,8 +3049,8 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     </div>
   </div>
   <div class="sf-did">
-    <div><span class="tag">PROPOSE</span><p>설치형 대신 프록시 기반 계정 연결로 바꾸는 방안을<br>구체적인 수집 흐름까지 그려 직접 제안했어요.</p></div>
-    <div><span class="tag">WHERE · HOW</span><p>스크래핑 개발자들과 계속 논의하며 채널마다<br>어느 화면에서 어떤 값을 가져올지 정했어요.</p></div>
+    <div><span class="tag">PROPOSE</span><p>설치형 대신 프록시 기반 계정 연결로 바꾸는 방안을<br>구체적인 수집 흐름까지 그려 제안했어요.</p></div>
+    <div><span class="tag">WHERE · HOW</span><p>스크래핑 개발자와 반복 협의하며 채널마다<br>어느 화면에서 어떤 값을 어떻게 가져올지 정했어요.</p></div>
     <div><span class="tag">ONBOARDING</span><p>사장님은 계정만 연결하면 끝나도록<br>온보딩 흐름과 데이터 수집 요건을 설계했어요.</p></div>
   </div>
 </section>
@@ -2961,9 +3147,10 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       <p class="eb"><i class="sf-n">2</i>VERIFY · 값 검증</p>
       <h2>수집한 매출,<br><em>배달앱 실제 매출</em>과<br>맞춰봤어요.</h2>
       <p class="lead">가장 중요하게 본 건 값이 맞는지였어요. 배달 3사 사장님 사이트의 실제 매출을 따로 가져와 수집값과 비교하고, 차이가 나면 담당자에게 먼저 알리는 흐름을 만들었어요.</p>
+      <p class="sf-vres"><span class="tag">RESULT</span><span>일일 대조시간 <b>60분 → 20분</b>(약 67% 단축)</span></p>
       <div class="tagbox">
         <div><span class="tag">SITE vs COLLECTED</span><p>사이트 실매출과 수집값을 같은 매장·날짜·채널로<br>맞춰 비교하는 대조 기준을 정했어요.</p></div>
-        <div><span class="tag">ALERT · GUIDE</span><p>차이가 난 건은 Slack으로 보내 담당자가 먼저<br>확인하고, 문제가 있으면 안내해요.</p></div>
+        <div><span class="tag">ALERT · GUIDE</span><p>차이가 난 건은 Slack으로 보내 담당자가 확인하고,<br>문제가 있으면 안내해요.</p></div>
       </div>
       <div class="sf-act">
         <button class="try" id="sf-v-try">직접 눌러보기 · 검증 실행</button>
@@ -3119,11 +3306,17 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   <p class="lead">수집 구조 전환부터 값 검증, 메뉴 통일화, 매장 도움 기능까지 차별화장부 1.0의 데이터 흐름을 설계했어요.</p>
   <div class="res">
     <div class="rc"><small><i class="sf-n">1</i>COLLECT</small><div class="bn">정식 오픈</div><b>설치·기기 가동 없이<br>계정 연결만으로 수집</b><p>프록시(VPN) 계정 연결 방식 제안·주도, 온보딩 흐름과 수집 요건 설계</p></div>
-    <div class="rc"><small><i class="sf-n">2</i>VERIFY</small><div class="bn">먼저 확인</div><b>수집 차이를 고객 문의 전에<br>담당자가 알림으로 확인</b><p>배달 3사 사이트 실매출 ↔ 수집값 대조 기준, 차이 건 Slack 알림·안내</p></div>
+    <div class="rc"><small><i class="sf-n">2</i>VERIFY</small><div class="bn">60분 → 20분</div><b>수집 차이를 고객 문의 전에<br>담당자가 먼저 확인</b><p>외부 매출 자동 대조·차액 알림으로<br>일일 대조시간 약 67% 단축</p></div>
     <div class="rc"><small><i class="sf-n">3</i>MENU</small><div class="bn">한 화면</div><b>채널별 메뉴 실적을<br>한 화면에서 비교</b><p>유사도·키워드 패턴 기반 그룹화 기준과 리더보드 반영</p></div>
     <div class="rc"><small><i class="sf-n">4</i>STORE CARE</small><div class="bn">가게 일까지</div><b>모은 데이터를<br>리뷰 답글·입금 확인에</b><p>배달 3사 리뷰 답글 초안, 관심 리뷰 알림,<br>배달앱별 입금 예정액 기획</p></div>
   </div>
-  <div class="glow" style="bottom:-330px"></div>
+  <div class="sf-flow">
+    <small>데이터 흐름</small>
+    <div class="sf-fw"><span>채널 계정 연결</span><i>→</i><span class="on">프록시(VPN) 경유 수집</span><i>→</i><span class="on">사이트 실매출 대조</span><i>→</i><span class="on">차액 Slack 알림</span><i>→</i><span class="on">메뉴 그룹화·리더보드</span><i>→</i><span>리뷰·입금 예정액</span></div>
+    <small>우선순위</small>
+    <p>수집 매출이 실제 매출과 맞는지를 서비스의 핵심으로 보고, <b>값 검증을 최우선 과제</b>로 진행했어요.</p>
+  </div>
+  <div class="glow" style="bottom:-210px"></div>
 </section>
 
 <section class="s hero th-sc" id="sc-hero">
@@ -3174,7 +3367,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     </div>
     <div class="ttl">
       <h3>사장님의 장부부터 창업 입지까지, 세친구</h3>
-      <p>세친구는 소상공인을 위한 회계·세무 자동화와 상권분석 서비스를 만듭니다. R&amp;D팀 선임연구원·팀장으로 이곳에서 PM을 시작해 <b style="color:#fff">AI 자동장부</b>, 상권분석 <b style="color:#fff">Sogul</b>, 매장·투자자 실적관리를 기획부터 출시·운영까지 맡았습니다.</p>
+      <p>세친구는 소상공인을 위한 회계·세무 자동화와 상권분석 서비스를 만듭니다. 이곳에서 서비스 기획을 맡으며 R&amp;D팀 팀장으로 <b style="color:#fff;white-space:nowrap">PM 역할을 시작</b>해, <b style="color:#fff">AI 자동장부</b>, 상권분석 <b style="color:#fff">Sogul</b>, 매장·투자자 실적관리를 기획부터 출시·운영까지 담당했습니다.</p>
     </div>
   </div>
   <span class="note">화면은 이해를 돕기 위해 재구성했으며, 이름과 수치는 예시입니다.</span>
@@ -3391,7 +3584,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       <div class="tagbox">
         <div><span class="tag">SIMPLE AUTH</span><p>간편인증으로 홈택스를 연결하고 사업장을 고르면<br>개업일부터 지금까지의 매출을 불러와요.</p></div>
         <div><span class="tag">COST BASIS</span><p>순수 창업비는 같은 프랜차이즈 데이터로, 없으면<br>매출이 ±5% 비슷한 매장들의 평균으로 잡아요.</p></div>
-        <div><span class="tag">REPORT → 양도양수</span><p>손익분기까지 남은 기간과 수익레벨을 보여주고,<br>자동 권리금 산정 시스템과 연동했어요.</p></div>
+        <div><span class="tag">REPORT → 양도양수</span><p>손익분기까지 남은 기간과 수익레벨을 보여주고,<br>자동 권리금 산정 시스템 연동 요건을 정의했어요.</p></div>
       </div>
     </div>
     <div class="panel" style="height:612px">
@@ -3560,7 +3753,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 <section class="s th-sc" id="sc-res">
   <p class="eb">RESULT</p>
   <h2>사장님의 장부부터 창업 입지까지,<br><em>데이터로 잇는 서비스</em>를 만들었어요.</h2>
-  <p class="lead">세친구에서 PM을 시작해 회계 자동화, 상권분석, 매장 실적관리를 기획부터 출시·운영까지 맡고, 외부 제휴 모델도 제안했어요.</p>
+  <p class="lead">세친구에서 서비스 기획을 맡으며 R&amp;D팀 팀장으로 PM 역할을 시작했어요.<br>회계 자동화, 상권분석, 매장 실적관리를 기획부터 출시·운영까지 담당하고, 외부 제휴 모델도 제안했어요.</p>
   <div class="res">
     <div class="rc"><small>AUTO LEDGER · 2022.03–12</small><div class="bn">자동 분개</div><b>거래 건별 입력·분개<br>작업을 줄였어요</b><p>홈택스·은행·카드 자동 수집, 계정과목 추천 규칙, 일일 마감·직원 관리·전자근로계약 · 5명</p></div>
     <div class="rc"><small>SOGUL · 2022–2023.07</small><div class="bn">웹·앱</div><b>상권 지표 대시보드와<br>입지 추천을 제공했어요</b><p>매출 우수동 → ±20% 후보동 → RATIO 추천 로직, 권리금 간편조회·수익성 보고서 · 4–5명</p></div>
@@ -3618,7 +3811,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     </div>
     <div class="ttl">
       <h3>결제 뒤의 돈 흐름, WEHAGO 정산</h3>
-      <p>더존비즈온은 세무·회계 ERP 기업입니다. 클라우드 WEHAGO의 <b style="color:#fff">관리자 정산 프로그램</b>에서 결제·미납·PG사 데이터부터 월 마감·회계처리까지 기획했고, 그 전에는 <b style="color:#fff">부가세 신고서</b>를 설계했습니다. PM 역할도 함께 맡았습니다.</p>
+      <p>더존비즈온은 세무·회계 ERP 기업입니다. 클라우드 WEHAGO의 <b style="color:#fff">관리자 정산 프로그램</b>에서 결제·미납·PG사 데이터부터 월 마감·회계처리까지 기획했고, 그 전에는 <b style="color:#fff">부가세 신고서</b>를 설계했습니다. <span style="white-space:nowrap">PM 역할도</span> 함께 맡았습니다.</p>
     </div>
   </div>
   <span class="note">화면은 이해를 돕기 위해 재구성했으며, 이름과 수치는 예시입니다.</span>
@@ -3694,7 +3887,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   <p class="eb">BACKGROUND</p>
   <h2>설치형 Smart A에서 <em>클라우드 WEHAGO</em>로</h2>
   <p class="lead">더존비즈온은 세무회계사무소와 중소기업이 쓰는 세무·회계 ERP를 만들어 왔어요.<br>PC에 설치하던 Smart A를 클라우드 WEHAGO로 옮기면서, 고객사는 플랜을 골라 정기 결제하게 됐어요.</p>
-  <div class="c3" style="margin-top:36px">
+  <div class="c3" style="margin-top:22px">
     <div class="cd">
       <h4>세무회계사무소 대부분이<br><em>더존 프로그램을 사용</em></h4>
       <p>전국 세무회계사무소 1만여 곳 중<br>약 9,000곳에 더존 제품이 공급됐어요.</p>
@@ -3740,7 +3933,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       </figure>
     </div>
   </div>
-  <p class="cc" style="margin-top:38px">고객사마다 플랜·결제수단·납부주기가 다른 결제가 매달 쌓였어요.<br>결제부터 회계처리까지 이어 주는 관리자 정산 프로그램이 필요했어요.</p>
+  <p class="cc" style="margin-top:22px">고객사마다 플랜·결제수단·납부주기가 다른 결제가 매달 쌓였어요.<br>결제부터 회계처리까지 이어 주는 관리자 정산 프로그램이 필요했어요.</p>
   <div class="glow" style="bottom:-175px"></div>
 </section>
 
@@ -3802,16 +3995,16 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     <div>
       <p class="eb">PAYMENT · STEP 1–2</p>
       <h2>흩어진 결제와 미납,<br><em>한 화면에서</em><br>관리해요.</h2>
-      <p class="lead">고객사·플랜·결제수단이 제각각인 정기 결제를 조건으로 좁혀 보고, 결제가 실패한 미납은 추이 그래프와 처리 상태로 관리하게 했어요.</p>
+      <p class="lead">고객사·플랜·결제수단이 제각각인 정기 결제를 조건으로 좁혀 보고, 결제가 실패한 미납은 미납내역 조회와 추이 그래프로 관리하게 했어요.</p>
       <div class="tagbox">
         <div><span class="tag">SEARCH</span><p>서비스·납부주기로 좁히고,<br>테스트 회사는 빼고 봐요.</p></div>
         <div><span class="tag">TREND</span><p>미납금액 추이를 월별 그래프로 보여 줘<br>쌓이는 미납을 바로 알 수 있어요.</p></div>
-        <div><span class="tag">STATUS</span><p>미납 건마다 재결제 요청·납부 완료·실패<br>처리 상태를 남겨요.</p></div>
+        <div><span class="tag">STATUS</span><p>미납 건마다 정기 결제 내역과<br>처리 상태를 함께 조회해요.</p></div>
       </div>
     </div>
     <div class="panel" style="height:612px">
       <div class="dz-top">
-        <span class="hint">▶ 조건을 바꾸고, 미납 건을 골라 재결제를 요청해 보세요.</span>
+        <span class="hint">▶ 조건을 바꿔 보고, 미납 건의 [상태 보기]를 눌러 보세요.</span>
         <span><button class="try g" id="dz-p-reset">다시 하기</button></span>
       </div>
       <div class="win" style="left:30px;top:62px;width:834px">
@@ -3843,11 +4036,21 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
                 <span class="dz-sl">납부주기</span><span class="dz-sv"><select class="inp" id="dz-p-cy" aria-label="납부주기"><option value="all">전체</option><option value="월납">월납</option><option value="연납">연납</option></select></span>
                 <span class="dz-sl">조회 조건</span><span class="dz-sv"><label><input type="checkbox" id="dz-p-test"> 테스트 회사 제외</label></span>
               </div>
-              <div class="tbl dz-gr" id="dz-p-rows" style="--cols:14px 1.3fr .95fr .6fr .85fr .85fr .9fr 1.2fr">
-                <div class="tr"><span></span><span>회사이름</span><span>사용플랜</span><span>납부주기</span><span>결제수단</span><span>미납금액</span><span>미납월</span><span>상태</span></div>
+              <div class="tbl dz-gr" id="dz-p-rows" style="--cols:1.25fr .9fr .55fr .8fr .8fr .95fr .8fr 66px">
+                <div class="tr"><span>회사이름</span><span>사용플랜</span><span>납부주기</span><span>결제수단</span><span>미납금액</span><span>미납월</span><span>상태</span><span>상세</span></div>
               </div>
-              <div class="dz-foot"><span id="dz-p-msg">미납 건을 골라 재결제를 요청하면, 결과는 PG 데이터로 들어와 상태가 바뀌어요.</span><button class="btn g" id="dz-p-retry" disabled>재결제 요청</button><button class="btn" id="dz-p-pg" disabled>PG 결과 반영</button></div>
+              <div class="dz-foot"><span id="dz-p-msg">미납 건의 [상태 보기]를 누르면 정기 결제 내역과 함께 건별 처리 상태를 보여 줘요.</span></div>
             </div>
+          </div>
+        </div>
+        <!-- 상태 보기 레이어 (조회 전용) -->
+        <div class="dz-lay" id="dz-p-lay" hidden>
+          <div class="dz-dlg" role="dialog" aria-labelledby="dz-p-dt">
+            <div class="dz-dh"><b id="dz-p-dt">미납 상태</b><button type="button" class="dz-x" id="dz-p-x" aria-label="닫기">×</button></div>
+            <div class="dz-dg" id="dz-p-dg"></div>
+            <div class="dz-mo-h"><b>정기 결제 내역</b><small id="dz-p-mop">2020.01 – 06</small></div>
+            <div class="dz-mo" id="dz-p-mo"></div>
+            <div class="dz-df2"><span id="dz-p-dnote"></span><button type="button" class="btn g" id="dz-p-close">닫기</button></div>
           </div>
         </div>
       </div>
@@ -3926,11 +4129,11 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       <p class="lead">세무사사무실에서 직접 쓰던 부가세 신고서를 WEHAGO 화면으로 옮겼어요. 서비스기획으로 직무를 바꾼 첫 프로젝트로, 4명이 함께했어요.</p>
       <div class="tagbox">
         <div><span class="tag">SKETCH · 기능설명서</span><p>Sketch로 화면과 기능을 구체화하고,<br>칸마다 동작을 기능설명서로 정리했어요.</p></div>
-        <div><span class="tag">DB · 조회 로직</span><p>전표 테이블 구조를 이해하고, 어떤 전표를<br>어느 칸으로 불러올지 조회 조건을 정했어요.</p></div>
+        <div><span class="tag">DB · 조회 로직</span><p>전표 테이블 구조를 파악해 칸마다 불러올<br>전표의 조회 조건을 정하고, 플로우차트로 정리했어요.</p></div>
         <div><span class="tag">CHECK</span><p>전표와 신고서 금액이 다르면<br>‘신고서와의 차이’로 작성 중에 보여 줘요.</p></div>
       </div>
     </div>
-    <div class="panel" style="height:624px">
+    <div class="panel" style="height:612px">
       <div class="dz-top">
         <span class="hint">▶ 1번 칸 금액을 고쳐 보세요. 전표와의 차이를 바로 다시 계산해요.</span>
         <span><button class="try g" id="dz-v-reset">다시 하기</button></span>
@@ -3995,7 +4198,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     <div class="rc"><small>SETTLEMENT</small><div class="bn">자동 검증</div><b>파일로 직접 대조하던 결산을<br>업로드 기반 자동 검증으로</b><p><span class="n">2019.01 – 2020.06 · 7명</span><br>주문·매출·수수료와 PG사 데이터 차이 검증</p></div>
     <div class="rc"><small>PAYMENT ADMIN</small><div class="bn">결제·미납</div><b>결제내역·플랜·정기 결제·미납을<br>관리자 화면에서 조회</b><p>미납금액 추이 그래프, 결제 취소·환불 처리<br>PG사 데이터 교환 모니터링</p></div>
     <div class="rc"><small>CLOSING</small><div class="bn">월 마감</div><b>차이 검증에서 월 마감,<br>회계처리까지 한 흐름으로</b><p>PG 프로세스 정의<br>월 마감·회계처리 시스템 기획</p></div>
-    <div class="rc"><small>VAT RETURN</small><div class="bn">작성 중 확인</div><b>부가세 신고서를 WEHAGO로,<br>오류는 작성 중에 확인·수정</b><p><span class="n">2017.04 – 2018.12 · 4명</span><br>Sketch 화면 설계, 기능설명서, 조회 로직</p></div>
+    <div class="rc"><small>VAT RETURN</small><div class="bn">작성 중 확인</div><b>부가세 신고서를 WEHAGO로,<br>오류는 작성 중에 확인·수정</b><p><span class="n">2017.04 – 2018.12 · 4명</span><br>Sketch 화면 설계, 기능설명서, 조회 로직 플로우차트</p></div>
   </div>
   <div class="glow" style="bottom:-330px"></div>
 </section>
@@ -4005,7 +4208,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   <div class="ivh">
     <h2>AI가 초안을 쓰고,<br><em>판단은 제가</em> 해요.</h2>
     <div class="end-hr">
-      <p class="lead" style="margin:0;text-align:right">발견부터 배포까지, 단계마다 AI가 맡을 일과 제가 판단할 일을 나눠요.<br>사례는 지금 맡고 있는 브릭스웍스(환급팀)에서 가져왔어요.</p>
+      <p class="lead" style="margin:0;text-align:right">발견부터 배포까지, 단계마다 AI가 맡을 일과 제가 판단할 일을 나눠요.<br>사례는 브릭스웍스(환급팀)에서, 배포는 지엔터프라이즈 공통 방식에서 가져왔어요.</p>
       <div class="end-ctl"><span class="hint">단계를 누르면 실제 사례가 나와요</span><button class="try" id="end-next" type="button">다음 단계</button><button class="try g" id="end-reset" type="button">다시 하기</button></div>
     </div>
   </div>
@@ -4047,16 +4250,84 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
         <div class="end-f end-frs"><small>결과</small><span id="end-c-rs">회계법인 팀장단과 주간 미팅을 정례화해 상시 관리 구조로 바꿨어요.</span></div>
       </div>
     </div>
-    <button class="end-real" id="end-real-1" type="button">
-      <span class="end-rt"><span class="chip c-ok">반영</span>교차 검증 · 전자신고 대기열</span>
-      <b>AI가 잡아낸 허점</b>
-      <span class="end-rd">대기열 기획서에서 ‘처리 중에 멈추면 아무도 풀 수 없다’는 허점을 개발 착수 전에 보완했어요.</span>
-    </button>
-    <button class="end-real" id="end-real-2" type="button">
-      <span class="end-rt"><span class="chip c-r">기각</span>원문 대조</span>
-      <b>표만 본 지적은 기각</b>
-      <span class="end-rd">본문의 예외를 놓친 AI 지적은 받지 않았어요. 지적은 원문과 대조한 뒤에만 반영해요.</span>
-    </button>
+    <div class="end-side">
+      <button class="end-real" id="end-real-1" type="button">
+        <span class="end-rt"><span class="chip c-ok">반영</span>교차 검증 · 전자신고 대기열</span>
+        <b>AI가 잡아낸 허점</b>
+        <span class="end-rd">‘처리 중에 멈추면 아무도 풀 수 없다’는 허점을 착수 전에 보완했어요.</span>
+      </button>
+      <button class="end-real" id="end-real-2" type="button">
+        <span class="end-rt"><span class="chip c-r">기각</span>원문 대조</span>
+        <b>표만 본 지적은 기각</b>
+        <span class="end-rd">본문의 예외를 놓친 지적은 원문과 대조해 받지 않았어요.</span>
+      </button>
+      <div class="end-gain">
+        <div><small>성과 · 지엔터프라이즈 공통</small><span>개발 착수 전 코드↔기획서 대조로 누락 조건을 보완했어요.</span></div>
+        <div class="end-gn"><b class="n">10건 → 6건</b><small>스프린트당 재작업 · 40% 감소</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s end-ship" id="end-ship">
+  <p class="eb">HOW I SHIP</p>
+  <div class="ivh">
+    <h2>기획은 한 스프린트 앞서,<br><em>배포는 확인까지</em> 챙겨요.</h2>
+    <div class="end-hr">
+      <p class="lead" style="margin:0;text-align:right">요구사항 협의부터 개발·QA·배포까지 2주 스프린트 단위로 일정과 릴리즈를 관리해요.<br>지엔터프라이즈 · 비즈넵에서 일하는 방식이에요.</p>
+      <div class="end-ctl"><span class="hint">단계를 누르면 그 단계의 할 일이 나와요</span><button class="try" id="end-sh-next" type="button">다음 단계</button><button class="try g" id="end-sh-reset" type="button">다시 하기</button></div>
+    </div>
+  </div>
+
+  <div class="end-shg">
+    <div class="end-trk">
+      <div class="end-th"><b>두 트랙이 겹쳐 돌아가요<small>2주 스프린트</small></b><span class="end-lgd"><span><i class="a"></i>PM · 기획</span><span><i class="b"></i>개발팀 · 구현</span><span><i class="d"></i>배포</span></span></div>
+      <div class="end-gt" id="end-gt">
+        <span class="end-dv" style="left:calc(100px + (100% - 112px) / 3)"></span>
+        <span class="end-dv" style="left:calc(108px + (100% - 112px) * 2 / 3)"></span>
+        <span></span><span class="end-sp n"><b>스프린트 1</b> · 2주</span><span class="end-sp n"><b>스프린트 2</b> · 2주</span><span class="end-sp n"><b>스프린트 3</b> · 2주</span>
+        <span class="end-rl">PM<small>기획</small></span>
+        <button class="end-bar pm on" type="button" data-s="0" aria-pressed="true"><i>A</i>기획안 구체화 · 범위 협의</button>
+        <button class="end-bar pm" type="button" data-s="1" aria-pressed="false"><i>B</i>차기 기획 · 개발 중 조율</button>
+        <span class="end-bar off"><i>C</i>차기 기획</span>
+        <span class="end-hand go" style="grid-column:2/4" aria-hidden="true"><svg viewBox="0 0 459 30" preserveAspectRatio="none"><path d="M178 1 C178 17 290 11 290 27" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"/><path d="M285 22 L290 28 L295 22" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg><em>협의한 범위</em></span>
+        <span class="end-hand" style="grid-column:3/5" aria-hidden="true"><svg viewBox="0 0 459 30" preserveAspectRatio="none"><path d="M178 1 C178 17 290 11 290 27" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"/><path d="M285 22 L290 28 L295 22" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg></span>
+        <span class="end-rl" style="grid-row:4">개발팀<small>구현</small></span>
+        <span class="end-bar off ship" style="grid-row:4">이전 범위 구현</span>
+        <button class="end-bar dev ship" type="button" data-s="1" aria-pressed="false" style="grid-row:4"><i>A</i>기획안 구현</button>
+        <span class="end-bar off ship" style="grid-row:4"><i>B</i>기획안 구현</span>
+        <span class="end-relw"><button class="end-rel" id="end-rel" type="button" data-s="2">릴리즈 · D-5 → D+1</button></span>
+      </div>
+      <svg class="end-zm" id="end-zm" viewBox="0 0 788 20" preserveAspectRatio="none" aria-hidden="true"><path d="M442 0 L0 20 L788 20 L596.5 0 Z" fill="currentColor" fill-opacity=".07"/><path d="M442 0 L1 20 M596.5 0 L787 20" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"/></svg>
+      <div class="end-tl" id="end-tl">
+        <button class="end-nd" type="button" data-s="2" aria-pressed="false"><span class="end-hd"><span class="end-pill"><i>D-5</i>확정</span></span><span class="end-ndc"><b>대상 티켓·버전 확정</b><span>운영 환경 차이와 미검증 항목 점검</span></span></button>
+        <button class="end-nd" type="button" data-s="3" aria-pressed="false"><span class="end-hd"><span class="end-pill"><i>D-1</i>동결</span></span><span class="end-ndc"><b>코드 동결 · 사전 공지</b><span>추가 건은 이월, 롤백 조건·담당자 확정</span></span></button>
+        <button class="end-nd" type="button" data-s="4" aria-pressed="false"><span class="end-hd"><span class="end-pill"><i>D-day</i>배포</span></span><span class="end-ndc"><b>배포 직후 15분 확인</b><span>이상이 있으면 롤백 여부 판단</span></span></button>
+        <button class="end-nd" type="button" data-s="5" aria-pressed="false"><span class="end-hd"><span class="end-pill"><i>D+1</i>종료</span></span><span class="end-ndc"><b>릴리즈 종료</b><span>결과 공지 후 대상 티켓까지 마무리</span></span></button>
+      </div>
+    </div>
+
+    <div class="end-shr">
+      <div class="end-dt" id="end-sh-dt" aria-live="polite">
+        <div class="end-dh"><span class="tag" id="end-sh-k">01 · 기획·개발 준비</span><span class="end-dn n" id="end-sh-n">단계 1 / 6</span></div>
+        <p class="end-dorg"><b id="end-sh-w">선행 스프린트 · 2주</b><span>지엔터프라이즈 · 비즈넵</span></p>
+        <h4 id="end-sh-t">다음 범위는 한 스프린트 앞서 협의해요</h4>
+        <ul class="end-todo" id="end-sh-l">
+          <li>요청사항과 운영 이슈를 정리해 기획안 구체화</li>
+          <li>개발팀과 구현 방식·공수·의존성 검토</li>
+          <li>다음 스프린트의 개발 범위·일정 협의</li>
+        </ul>
+      </div>
+      <div class="end-doc">
+        <div class="end-doch"><b>릴리즈 관리 문서로 정리했어요</b><small>RELEASE DOC</small></div>
+        <div class="end-dg" id="end-dg">
+          <div class="end-di" data-s="2"><b>버전 규칙</b><span>D-5에 대상 티켓과 버전을 확정</span></div>
+          <div class="end-di" data-s="3 4"><b>배포 공지 양식</b><span>사전 공지와 결과 공지를 같은 틀로</span></div>
+          <div class="end-di" data-s=""><b>핫픽스 등급·최소 검증</b><span>급해도 최소 검증은 빼지 않게</span></div>
+          <div class="end-di" data-s="3 4"><b>롤백 판단 기준</b><span>D-1에 조건·담당자, 배포 후 판단</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -4075,37 +4346,37 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       <div class="end-row on">
         <div class="end-rh"><span class="end-pill"><i>01</i>TRANSLATE</span><b>세무 규칙을 제품 요건으로</b><span class="end-rx">공제·감면·귀속월·세액 조건을 검증 기준으로 옮겨요</span></div>
         <button class="end-ev on" id="end-ev-1" type="button" data-i="0" aria-pressed="true"><small>브릭스웍스 · 환급팀</small><span>확인 필요 건 ‘이슈 있음’ 표시</span></button>
-        <button class="end-ev" id="end-ev-2" type="button" data-i="1" aria-pressed="false"><small>케어프로 · 기장팀</small><span>원천세 귀속·지급 분리 재설계</span></button>
+        <button class="end-ev" id="end-ev-2" type="button" data-i="1" aria-pressed="false"><small>케어프로 · 기장팀</small><span>원천세 귀속·지급 분리<em class="end-evn">건당 15분 → 9분</em></span></button>
         <button class="end-ev" id="end-ev-3" type="button" data-i="2" aria-pressed="false"><small>세친구 · R&amp;D팀</small><span>거래처·적요 기반 자동 분개 규칙</span></button>
       </div>
       <div class="end-row">
         <div class="end-rh"><span class="end-pill"><i>02</i>CONSTRAINT</span><b>외부 제약을 구조로</b><span class="end-rx">바꿀 수 없는 조건을 먼저 확인하고 실패 대응까지 설계해요</span></div>
-        <button class="end-ev" id="end-ev-4" type="button" data-i="3" aria-pressed="false"><small>브릭스웍스 · 환급팀</small><span>동시 접속 1건 → 계정별 순차 처리</span></button>
+        <button class="end-ev" id="end-ev-4" type="button" data-i="3" aria-pressed="false"><small>브릭스웍스 · 환급팀</small><span>계정별 대기열<em class="end-evn">실패율 40% → 3%</em></span></button>
         <button class="end-ev" id="end-ev-5" type="button" data-i="4" aria-pressed="false"><small>브릭스웍스 · 환급팀</small><span>예금주 확인을 통과한 계좌만 반영</span></button>
         <button class="end-ev" id="end-ev-6" type="button" data-i="5" aria-pressed="false"><small>스마트푸드 · 차별화장부</small><span>POS 설치 대신 프록시 계정 연결</span></button>
       </div>
       <div class="end-row">
         <div class="end-rh"><span class="end-pill"><i>03</i>AI PROTOTYPING</span><b>AI로 만들고 검증</b><span class="end-rx">AI로 먼저 만들어 합의하고, 지적은 원문과 대조해요</span></div>
         <button class="end-ev" id="end-ev-7" type="button" data-i="6" aria-pressed="false"><small>브릭스웍스 · 환급팀</small><span>미처리 오류 700여 건 AI 분류</span></button>
-        <button class="end-ev" id="end-ev-8" type="button" data-i="7" aria-pressed="false"><small>지엔터프라이즈 · 비즈넵</small><span>동작 프로토타입으로 먼저 합의</span></button>
+        <button class="end-ev" id="end-ev-8" type="button" data-i="7" aria-pressed="false"><small>지엔터프라이즈 · 비즈넵</small><span>프로토타입 합의·코드 대조<em class="end-evn">재작업 10건 → 6건</em></span></button>
         <button class="end-ev" id="end-ev-9" type="button" data-i="8" aria-pressed="false"><small>브릭스웍스 · 환급팀</small><span>교차 검증으로 기획서 허점 보완</span></button>
       </div>
       <div class="end-row">
-        <div class="end-rh"><span class="end-pill"><i>04</i>DELIVERY</span><b>파트너·개발팀 실행 관리</b><span class="end-rx">범위·일정을 조율해 신고 기한에 맞춰 배포해요</span></div>
+        <div class="end-rh"><span class="end-pill"><i>04</i>DELIVERY</span><b>스프린트·릴리즈 관리</b><span class="end-rx">범위는 한 스프린트 앞서 협의하고, <em class="end-nw">D-1 동결</em>·15분 확인으로 배포해요</span></div>
         <button class="end-ev" id="end-ev-10" type="button" data-i="9" aria-pressed="false"><small>케어프로 · 기장팀</small><span>연말정산 신규 구축, 기한 내 적용</span></button>
-        <button class="end-ev" id="end-ev-11" type="button" data-i="10" aria-pressed="false"><small>브릭스웍스 · 환급팀</small><span>주간 미팅 요청 → 기능 일정</span></button>
+        <button class="end-ev" id="end-ev-11" type="button" data-i="10" aria-pressed="false"><small>지엔터프라이즈 · 비즈넵</small><span>2주 스프린트·릴리즈 운영</span></button>
         <button class="end-ev" id="end-ev-12" type="button" data-i="11" aria-pressed="false"><small>더존비즈온 · WEHAGO 정산</small><span>정산·PG·월 마감 설계 · 7명</span></button>
       </div>
     </div>
 
     <div class="end-dt" id="end-dt" aria-live="polite">
       <div class="end-dh"><span class="tag" id="end-d-k">01 · TRANSLATE</span><span class="end-dn n" id="end-d-n">근거 01 / 12</span></div>
-      <p class="end-dorg"><b id="end-d-org">브릭스웍스 · 환급팀</b><span id="end-d-sub">종소세 경정청구 · 검수 구조</span></p>
-      <h4 id="end-d-t">확인 필요 건이 검수 때 먼저 보여요</h4>
+      <p class="end-dorg"><b id="end-d-org">브릭스웍스 · 환급팀</b><span id="end-d-sub">종소세 경정청구 · 검수 화면 설계 반영</span></p>
+      <h4 id="end-d-t">확인 필요 건이 먼저 보이게 설계했어요</h4>
       <div class="end-sl" id="end-sl">
         <div class="end-s"><small>문제</small><span id="end-d-p">판단이 필요한 건을 실무자가 직접 찾아야 했어요.</span></div>
-        <div class="end-s end-sme"><small>한 일</small><span id="end-d-d">공제·감면 요건을 검증 기준으로 정리하고, 규칙으로 판단되는 건은 자동으로 다음 단계로 넘겼어요.</span></div>
-        <div class="end-s end-srs"><small>결과</small><span id="end-d-r">확인이 필요한 건은 ‘이슈 있음’으로 표시돼요. 최종 검수는 모두 세무사&#8288;·&#8288;회계사가 해요.</span></div>
+        <div class="end-s end-sme"><small>한 일</small><span id="end-d-d">공제·감면 요건을 검증 기준으로 정리하고, 규칙으로 판단되는 건은 자동으로 다음 단계로 넘기도록 검수 화면을 설계했어요.</span></div>
+        <div class="end-s end-srs"><small>결과</small><span id="end-d-r">확인이 필요한 건은 ‘이슈 있음’으로 표시하고, 모든 건의 최종 검수는 세무사&#8288;·&#8288;회계사가 하는 원칙을 화면 설계에 담았어요.</span></div>
       </div>
     </div>
   </div>
@@ -4169,145 +4440,215 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
 </script>
 <script>
 (function(){
-  var RM=false;
-  try{RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
   function pad(n){return (n<10?'0':'')+n;}
   function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
-  function later(list, fn, ms){ var t = setTimeout(fn, RM ? 0 : ms); list.push(t); return t; }
+  /* 데모의 순서·대기 시간은 내용이라 움직임 줄이기 설정에서도 유지한다. 그 설정에서는 공통 스타일이 전환 효과만 끈다. */
+  function later(list, fn, ms){ var t = setTimeout(fn, ms); list.push(t); return t; }
 
-  /* ================= ① ALERT : 재계산 누락 알림 ================= */
+  /* ================= ① ALERT : 재계산 누락 알림 =================
+     단계마다 저장 → 잠금 → 재계산 후 다음 단계로 넘어간다.
+     앞 단계를 고치고 그 단계 재계산을 다시 돌리지 않은 채 작성 단계에서 신고·마감을 누르면,
+     재계산이 빠진 단계를 짚어 "해당 단계에서 재계산하고 오세요" 안내 + [그 단계로 이동] [전체 재계산]을 띄운다. */
   (function(){
     var root=document.getElementById('gzb-alert'); if(!root) return;
     function $(id){return document.getElementById(id);}
-    var PEOPLE=[['이○○',132000000,83800000],['박○○',96500000,61300000],['최○○',74000000,40200000],['한○○',158000000,102600000]];
-    var LOG0=[['09:42','김○○','필요경비','세무사·회계사 판단으로 유지'],['09:15','정○○','수입금액','홈택스 계산값과 대조 완료']];
-    var ui=$('gzb-a-ui'), rev=$('gzb-a-rev'), exp=$('gzb-a-exp'), st=$('gzb-a-st'), k3=$('gzb-a-k3'),
-        det=$('gzb-a-det'), dett=$('gzb-a-dett'), reBtn=$('gzb-a-re'), fileBtn=$('gzb-a-file'), acts=$('gzb-a-acts'),
-        toast=$('gzb-a-toast'), toastT=$('gzb-a-toastt'), nextBtn=$('gzb-a-next'), sel=$('gzb-a-reason'), err=$('gzb-a-err'),
-        mmsg=$('gzb-a-mmsg'), mre=$('gzb-a-mre'), mskip=$('gzb-a-mskip'), logEl=$('gzb-a-log'), logc=$('gzb-a-logc'),
-        tryBtn=$('gzb-a-try'), hint=$('gzb-a-hint'), nm=$('gzb-a-nm'), mk1=$('gzb-a-mk1'), mk2=$('gzb-a-mk2');
-    var A, tmr=null;
+    var NM=['예비검토','사전작업','본검토','작성'];
+    var T0=['09:41','09:52','09:58'];
+    var REV=132000000, EXP=[83800000,86300000,81900000];
+    var ui=$('gzb-a-ui'), st=$('gzb-a-st'), pn=$('gzb-a-pn'),
+        mt=$('gzb-a-mt'), mmsg=$('gzb-a-mmsg'), mst=$('gzb-a-mst'), goBtn=$('gzb-a-go'), allBtn=$('gzb-a-all'),
+        tryBtn=$('gzb-a-try'), hintEl=$('gzb-a-hint');
+    var cells=[].slice.call(root.querySelectorAll('.bwf-sg'));
+    var A, tq=[];
 
-    function parse(s){ var d=String(s).replace(/[^\d]/g,'').slice(0,10); return d?parseInt(d,10):0; }
+    /* 단계별 재계산 순서가 내용이라, 움직임 줄이기 설정에서도 시간 간격은 유지한다(전환 효과만 꺼짐) */
+    function wait(fn,ms){ tq.push(setTimeout(fn, ms)); }
     function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
-    function comp(c){ var inc=Math.max(0,c.rev-c.exp), cr=Math.floor(inc*25/1e6)*1000, rf=Math.floor(cr*8/1e4)*1000; return {inc:inc,cr:cr,rf:rf}; }
-    function cur(){ return {rev:parse(rev.value),exp:parse(exp.value)}; }
-    function diff(){ var c=cur(), r=[]; if(c.rev!==A.calc.rev) r.push('수입금액'); if(c.exp!==A.calc.exp) r.push('필요경비'); return r; }
-    function tm(n){ var m=624+7*n; return pad(Math.floor(m/60))+':'+pad(m%60); }
-    function setHint(t){ hint.textContent=t; }
+    function comp(exp){ var inc=Math.max(0,REV-exp), cr=Math.floor(inc*25/1e6)*1000, rf=Math.floor(cr*8/1e4)*1000; return {inc:inc,cr:cr,rf:rf}; }
+    function clock(){ var m=620+A.n++; return pad(Math.floor(m/60))+':'+pad(m%60); }
+    function ro(nm){ var c=nm.charCodeAt(nm.length-1)-0xAC00, j=c%28; return nm+((c<0||j===0||j===8)?'로':'으로'); }
+    function stale(){ var r=[]; for(var i=0;i<3;i++) if(A.s[i].stale) r.push(i); return r; }
+    function names(r){ return r.map(function(i){ return NM[i]; }).join('·'); }
+    function hint(t){ hintEl.textContent=t; }
+    function chip(el,c){ el.className='chip '+c[0]; el.textContent=c[1]; }
 
-    function load(pi){
-      var p=PEOPLE[pi]; A.pi=pi; A.calc={rev:p[1],exp:p[2]}; A.filed=0; A.modal=false; A.rc=false;
-      rev.value=fmt(p[1]); exp.value=fmt(p[2]);
-    }
     function init(snap){
-      clearTimeout(tmr); tmr=null;
-      A={pi:0,calc:null,filed:0,modal:false,busy:false,rc:false,log:LOG0.map(function(r){return r.slice();}),n:0,fresh:false,started:!snap};
-      load(0);
-      if(snap){ rev.value=fmt(140000000); A.modal=true; }
-      k3.classList.remove('gzb-flash');
-      sel.value=''; sel.classList.remove('err'); err.hidden=true;
+      tq.forEach(clearTimeout); tq=[];
+      A={s:T0.map(function(t){ return {sv:t,rc:t,stale:false,busy:false}; }), w:{busy:false,rc:false},
+         sel:snap?3:2, exp:EXP[0], calc:EXP[0], ei:0, n:0, modal:false, act:'신고', filed:'',
+         running:false, flagged:false, checked:snap, touched:snap, started:!snap, flash:false};
+      if(snap){ edit(2); A.modal=true; A.flagged=true; }
       render();
-      setHint(snap?'재계산하기 또는 그대로 신고를 눌러보세요':'수입금액을 고친 뒤 바로 신고하기를 눌러보세요');
+      hint(snap?'본검토로 이동 또는 전체 재계산을 눌러보세요':'본검토 값을 고쳐 저장만 해 보세요. 재계산은 건너뛰고요');
     }
 
+    function edit(i){
+      if(A.filed||A.running) return;
+      var s=A.s[i]; s.sv=clock(); s.stale=true; A.touched=true;
+      if(i===2){ A.ei=(A.ei+1)%EXP.length; A.exp=EXP[A.ei]; }
+    }
+
+    /* ---- 그리기 ---- */
     function render(){
-      var d=diff(), stale=d.length>0, c=comp(A.calc);
-      nm.textContent=PEOPLE[A.pi][0];
-      $('gzb-a-inc').textContent=fmt(c.inc); $('gzb-a-cr').textContent=fmt(c.cr); $('gzb-a-rf').textContent=fmt(c.rf);
-      k3.classList.toggle('gzb-stale',stale);
-      var r1=d.indexOf('수입금액')>=0, r2=d.indexOf('필요경비')>=0;
-      rev.classList.toggle('gzb-dirty',r1); exp.classList.toggle('gzb-dirty',r2); mk1.hidden=!r1; mk2.hidden=!r2;
-      var s;
-      if(A.filed===1) s=['c-p','신고 완료'];
-      else if(A.filed===2) s=['c-y','신고 완료 · 사유 기록'];
-      else if(A.busy) s=['c-g','계산 중'];
-      else if(stale) s=['c-y','재계산 필요'];
-      else s=['c-ok','계산 완료'];
-      st.className='chip '+s[0]; st.textContent=s[1];
-      det.className='box gzb-det'+(stale?' y':'');
-      dett.textContent=stale?'⚠ '+d.join('·')+' 수정 후 아직 재계산 전이에요':'✓ 모든 금액이 최신 계산이에요';
-      rev.disabled=exp.disabled=!!A.filed||A.busy||A.modal;
-      reBtn.disabled=fileBtn.disabled=!!A.filed||A.busy||A.modal;
-      reBtn.textContent=A.busy?'계산 중…':'재계산';
-      fileBtn.classList.toggle('gzb-pulse',A.started&&!A.filed&&!A.modal&&!A.busy&&(stale||A.rc));
-      rev.classList.toggle('gzb-pulse',A.started&&!A.filed&&!A.modal&&!stale&&!A.rc);
-      acts.hidden=!!A.filed; toast.hidden=!A.filed;
-      toastT.textContent=A.filed===1?'✓ 신고 완료 · 환급 예상 '+fmt(c.rf)+'원':'✓ 신고 접수 · 무시 사유를 기록했어요';
-      ui.classList.toggle('gzb-mo',A.modal);
-      var last=d.length?d[d.length-1]:'';
-      mmsg.textContent=(d.length?d.join('·')+(last==='필요경비'?'를':'을'):'값을')+' 수정한 뒤 세액을 다시 계산하지 않았어요.';
-      /* LOG */
-      logEl.innerHTML='<div class="tr"><span>시각</span><span>신청자</span><span>수정 항목</span><span>사유</span></div>';
-      A.log.slice(0,3).forEach(function(r,i){
-        var el=document.createElement('div'); el.className='tr'+(i===0&&A.fresh?' in':'');
-        r.forEach(function(v,j){ var sp=document.createElement('span'); if(j===0) sp.className='n'; sp.textContent=v; el.appendChild(sp); });
-        logEl.appendChild(el);
+      var r=stale(), c=comp(A.calc), live=A.started&&!A.modal&&!A.running&&!A.filed;
+      cells.forEach(function(el,i){
+        var on=i===A.sel, fl=el.querySelectorAll('.bwf-fl i'), ch=el.querySelector('.chip'), s=i<3?A.s[i]:null;
+        el.classList.toggle('on',on); el.setAttribute('aria-pressed',on?'true':'false');
+        el.disabled=A.running;
+        if(s){
+          el.classList.toggle('y',s.stale&&!s.busy);
+          fl[0].className=''; fl[1].className='';
+          fl[2].className=s.busy?'run':(s.stale?'y':'');
+          chip(ch,s.busy?['c-g','계산 중']:(s.stale?['c-y','재계산 필요']:['c-ok','최신']));
+        } else {
+          var d=!!A.filed;
+          fl[0].className=d?'':'w'; fl[1].className=d?'':'w';
+          fl[2].className=A.w.busy?'run':((d||A.w.rc)?'':'w');
+          chip(ch,A.w.busy?['c-g','계산 중']:(A.filed?['c-ok',A.filed+' 완료']:['c-p','작성 중']));
+        }
+        el.classList.toggle('gzb-pulse', live&&i===3&&A.sel!==3&&A.touched&&(!r.length||!A.flagged));
       });
-      A.fresh=false;
-      logc.textContent=A.log.length+'건 · 자동 재계산 근거';
+      /* 머리 상태 */
+      if(A.filed) chip(st,['c-ok',A.filed+' 완료']);
+      else if(A.running) chip(st,['c-g','전체 재계산 중']);
+      else if(A.flagged&&r.length) chip(st,['c-y','재계산 필요']);
+      else chip(st,['c-p','작성 중']);
+      /* 단계 화면 */
+      var h, i=A.sel;
+      if(i<3){
+        var s=A.s[i], cs=s.busy?['c-g','계산 중']:(s.stale?['c-y','재계산 필요']:['c-ok','잠금 · 최신']);
+        h='<div class="bwf-pnh"><b>'+NM[i]+'</b><span class="chip '+cs[0]+'">'+cs[1]+'</span></div>';
+        if(i===2){
+          h+='<div class="gzb-2" style="gap:10px"><div class="fld"><small>수입금액</small><div class="inp n">'+fmt(REV)+'</div></div>'+
+             '<div class="fld"><small>필요경비'+(s.stale?' <span class="chip c-y">수정됨</span>':'')+'</small><div class="inp n'+(s.stale?' y':'')+'">'+fmt(A.exp)+'</div></div></div>';
+        } else {
+          h+='<div class="box bwf-nt">검토를 마치고 잠근 단계예요. 값을 고쳤다면 이 단계 재계산을 다시 돌려야 다음 단계 금액에 반영돼요.</div>';
+        }
+        h+='<div class="tbl bwf-stt" style="--cols:1fr .8fr 1.2fr"><div class="tr"><span>저장</span><span>잠금</span><span>재계산</span></div>'+
+           '<div class="tr"><span class="n">'+s.sv+(s.stale?' · 수정':'')+'</span><span>✓ 잠김</span><span class="n'+(s.stale?' y':'')+'">'+(s.busy?'계산 중…':(s.stale?'⚠ '+s.rc+' · 수정 전':'✓ '+s.rc))+'</span></div></div>';
+        var pe=live&&!A.touched, pr=live&&s.stale&&A.flagged;
+        h+='<div class="gzb-2 bwf-acts"><button class="btn g'+(pe?' gzb-pulse':'')+'" type="button" data-a="edit"'+(A.filed||A.running||s.busy?' disabled':'')+'>값 고치고 저장</button>'+
+           '<button class="btn'+(pr?' gzb-pulse':'')+'" type="button" data-a="rc"'+(!s.stale||s.busy||A.filed||A.running?' disabled':'')+'>'+(s.stale||s.busy?'재계산':'✓ 재계산 완료')+'</button></div>';
+      } else {
+        var grey=A.flagged&&r.indexOf(2)>=0;
+        h='<div class="bwf-pnh"><b>작성 · 신고서</b><span class="chip c-g">예시 계산</span></div>'+
+          '<div class="k3'+(grey?' gzb-stale':'')+(A.flash?' gzb-flash':'')+'"><div><small>사업소득</small><b class="n">'+fmt(c.inc)+'</b></div><div><small>공제세액</small><b class="n">'+fmt(c.cr)+'</b></div><div><small>환급 예상</small><b class="n">'+fmt(c.rf)+'</b></div></div>';
+        /* 신고·마감을 누를 때 확인하는 단계별 재계산 상태 */
+        h+='<div class="box bwf-ck'+(A.checked&&r.length?' y':'')+'">'+
+           (A.checked&&r.length?'<span class="bwf-ckw">⚠ '+names(r)+' 재계산 전이라 금액이 최신이 아니에요</span>':'<small>신고·마감 때 단계별 재계산 확인</small>')+
+           '<div class="bwf-mst">'+
+           [0,1,2].map(function(k){
+             if(!A.checked) return '<span class="chip c-g">'+NM[k]+' · 확인 전</span>';
+             return A.s[k].stale?'<span class="chip c-y">'+NM[k]+' · 재계산 필요</span>':'<span class="chip c-ok">'+NM[k]+' ✓</span>';
+           }).join('')+'</div></div>';
+        if(A.filed){
+          h+='<div class="toast">✓ '+(A.filed==='신고'?'신고했어요 · 환급 예상 '+fmt(c.rf)+'원':'마감했어요 · 모든 단계 최신 계산')+'</div>';
+        } else {
+          var pf=live&&A.touched;
+          h+='<div class="gzb-2 bwf-acts"><button class="btn g'+(pf?' gzb-pulse':'')+'" type="button" data-a="close"'+(A.running?' disabled':'')+'>마감</button>'+
+             '<button class="btn'+(pf?' gzb-pulse':'')+'" type="button" data-a="file"'+(A.running?' disabled':'')+'>신고</button></div>';
+        }
+      }
+      pn.innerHTML=h; A.flash=false;
+      /* 안내 창 */
+      ui.classList.toggle('gzb-mo',A.modal);
+      if(r.length){
+        mt.textContent=A.act+' 전에 확인해 주세요';
+        mmsg.innerHTML='<b>'+names(r)+'</b> 단계 재계산이 빠졌어요.<br>해당 단계에서 재계산하고 오세요.';
+        mst.innerHTML=[0,1,2].map(function(k){ return A.s[k].stale?'<span class="chip c-y">'+NM[k]+' · 재계산 필요</span>':'<span class="chip c-ok">'+NM[k]+' ✓</span>'; }).join('');
+        goBtn.textContent=ro(NM[r[0]])+' 이동';
+      }
+      goBtn.disabled=allBtn.disabled=!A.modal;
     }
 
-    function flash(){ if(RM) return; k3.classList.remove('gzb-flash'); void k3.offsetWidth; k3.classList.add('gzb-flash'); }
-    function recalc(){
-      if(A.filed||A.busy) return;
-      A.busy=true; A.started=true; render();
-      if(!RM) setHint('입력한 값으로 세액을 다시 계산하고 있어요');
-      var fin=function(){
-        tmr=null; A.busy=false; A.calc=cur(); A.rc=true;
-        rev.value=fmt(A.calc.rev); exp.value=fmt(A.calc.exp);
-        render(); flash(); setHint('재계산을 마쳤어요. 이제 신고하기를 눌러보세요');
-      };
-      if(RM) fin(); else tmr=setTimeout(fin,380);
+    /* ---- 동작 ---- */
+    function select(i){
+      if(A.running||A.modal) return;
+      A.sel=i; render();
+      if(A.filed) return;
+      var s=A.s[i];
+      if(i===3) hint(stale().length?'신고나 마감을 눌러보세요':(A.touched?'모든 단계가 최신이에요. 신고나 마감을 눌러보세요':'신고·마감 전에 앞 단계 값을 고쳐 보세요'));
+      else if(s.stale) hint(A.flagged?NM[i]+'에서 재계산을 눌러보세요':'재계산하지 말고 작성 단계로 가서 신고나 마감을 눌러보세요');
+      else hint(NM[i]+' 값을 고쳐 저장해 보세요');
     }
-    function file(){
-      if(A.filed||A.busy) return;
-      A.started=true;
-      if(diff().length){
-        A.modal=true; sel.value=''; sel.classList.remove('err'); err.hidden=true; render();
-        setHint('재계산하거나, 사유를 골라 그대로 신고할 수 있어요');
+    function doEdit(){
+      var i=A.sel; if(i>2||A.filed||A.running||A.s[i].busy) return;
+      A.started=true; edit(i); render();
+      hint('저장만 했어요. 재계산하지 말고 작성 단계로 가서 신고나 마감을 눌러보세요');
+    }
+    function recalc(i){
+      var s=A.s[i]; if(!s||!s.stale||s.busy||A.filed||A.running) return;
+      s.busy=true; render(); hint(NM[i]+' 단계를 다시 계산하고 있어요');
+      wait(function(){
+        s.busy=false; s.stale=false; s.rc=clock();
+        if(i===2){ A.calc=A.exp; A.flash=true; }
+        var r=stale();
+        if(!r.length) A.flagged=false;
+        render();
+        hint(r.length?(A.flagged?'아직 '+names(r)+' 재계산이 남았어요':'작성 단계로 가서 신고나 마감을 눌러보세요'):'재계산을 마쳤어요. 작성 단계로 돌아가 신고나 마감을 눌러보세요');
+      },420);
+    }
+    function submit(act){
+      if(A.filed||A.running||A.modal) return;
+      A.started=true; A.act=act; A.checked=true;
+      var r=stale();
+      if(r.length){
+        A.modal=true; A.flagged=true; render();
+        hint(ro(NM[r[0]])+' 이동하거나 전체 재계산을 눌러보세요');
       } else {
-        A.filed=1; render(); setHint('재계산을 거친 신고는 기록 없이 바로 접수돼요');
+        A.filed=act; render();
+        hint(A.touched?'재계산이 빠진 단계가 없어 바로 '+act+'됐어요':'빠진 재계산이 없으면 바로 '+act+'돼요');
       }
     }
-    function skip(){
+    function goStage(){
       if(!A.modal) return;
-      if(!sel.value){ sel.classList.add('err'); err.hidden=false; setHint('막지는 않지만, 사유는 꼭 남겨요'); return; }
-      var d=diff();
-      A.log.unshift([tm(A.n++),PEOPLE[A.pi][0],d.join('·')||'-',sel.value]); A.fresh=true;
-      A.modal=false; A.filed=2; A.started=true; render();
-      setHint('넘긴 경고는 기록으로 쌓여 자동 재계산 과제의 근거가 돼요');
+      var r=stale(); A.modal=false; A.started=true; A.sel=r[0]; render();
+      hint(NM[r[0]]+'에서 재계산을 눌러보세요');
     }
-    function onEdit(){
-      if(A.filed) return;
-      A.started=true; render();
-      setHint(diff().length?'재계산 없이 신고하기를 누르면 경고가 떠요':'수입금액을 고친 뒤 바로 신고하기를 눌러보세요');
+    function recalcAll(){
+      if(!A.modal) return;
+      A.modal=false; A.started=true; A.running=true; render();
+      hint('예비검토부터 작성까지 순서대로 다시 계산하고 있어요');
+      var k=0;
+      (function step(){
+        if(k<3){ var s=A.s[k]; s.busy=true; render();
+          wait(function(){ s.busy=false; s.stale=false; s.rc=clock(); k++; render(); step(); },150); return; }
+        A.w.busy=true; render();
+        wait(function(){
+          A.w.busy=false; A.w.rc=true; A.calc=A.exp; A.flash=true;
+          A.running=false; A.flagged=false; A.checked=true; A.sel=3; render();
+          hint('모든 단계가 최신이에요. 신고나 마감을 눌러보세요');
+        },150);
+      })();
     }
 
-    [rev,exp].forEach(function(inp){
-      inp.addEventListener('input',onEdit);
-      inp.addEventListener('change',function(){ inp.value=fmt(parse(inp.value)); onEdit(); });
+    root.addEventListener('click',function(e){
+      var b=e.target.closest?e.target.closest('button'):null;
+      if(!b||!root.contains(b)||b.disabled) return;
+      if(b.classList.contains('bwf-sg')) select(+b.getAttribute('data-s'));
+      else if(b.getAttribute('data-a')==='edit') doEdit();
+      else if(b.getAttribute('data-a')==='rc') recalc(A.sel);
+      else if(b.getAttribute('data-a')==='file') submit('신고');
+      else if(b.getAttribute('data-a')==='close') submit('마감');
+      else if(b===goBtn) goStage();
+      else if(b===allBtn) recalcAll();
+      else if(b===tryBtn){ init(false); tryBtn.textContent='다시 하기'; tryBtn.classList.add('g'); }
     });
-    reBtn.addEventListener('click',recalc);
-    fileBtn.addEventListener('click',file);
-    mre.addEventListener('click',function(){ A.modal=false; render(); recalc(); });
-    mskip.addEventListener('click',skip);
-    sel.addEventListener('change',function(){ if(sel.value){ sel.classList.remove('err'); err.hidden=true; } });
-    nextBtn.addEventListener('click',function(){
-      load((A.pi+1)%PEOPLE.length); A.started=true; k3.classList.remove('gzb-flash'); render();
-      setHint('수입금액을 고친 뒤 바로 신고하기를 눌러보세요');
-    });
-    tryBtn.addEventListener('click',function(){ init(false); tryBtn.textContent='다시 하기'; tryBtn.classList.add('g'); });
     init(true);
   })();
 
-  /* ================= ② E-FILING QUEUE : 전자신고 대기열 ================= */
+  /* ================= ② E-FILING QUEUE : 전자신고 대기열 =================
+     요청은 계정별 대기열(레인)에 쌓인다. 레인마다 맨 앞(오른쪽) 건만 검증 → 신고 → 완료를 거치고,
+     완료되면 빠져나가며 뒤 건이 앞으로 당겨진다. 같은 계정만 줄을 서고, 다른 계정 레인은 동시에 움직인다. */
   (function(){
     var root=document.getElementById('gzb-queue'); if(!root) return;
     function $(id){return document.getElementById(id);}
     var IT=[['김○○','A'],['이○○','B'],['박○○','C'],['최○○','A'],['정○○','D'],['강○○','B'],['윤○○','A'],['한○○','C']];
-    var AC=['A','B','C','D'], D=RM?0:560;
-    var CH={sub:['c-p','제출 중'],ok:['c-ok','접수 완료'],nr:['c-y','응답 없음'],chk:['c-ok','접수 확인'],rq:['c-g','다시 대기']};
+    var SUBT=[1,2,1,1,2,1,1,1];                 /* 신고에 걸리는 틱 수(예시) — 레인마다 속도가 달라 병렬로 보이게 */
+    /* 줄이 앞으로 당겨지는 순서 자체가 보여줄 내용이라, 움직임 줄이기 설정에서도 틱 간격은 유지한다(미끄러지는 전환만 꺼짐) */
+    var AC=['A','B','C','D'], D=620;
+    var PL={wait:'대기',ver:'검증 중',sub:'신고 중',ok:'✓ 완료',nr:'응답 없음'};
+    var CH={ver:['c-g','검증 중'],sub:['c-p','신고 중'],ok:['c-ok','접수 완료'],nr:['c-y','응답 없음'],chk:['c-ok','접수 확인'],rq:['c-g','다시 대기']};
     var steps=$('gzb-q-steps'), stp=[$('gzb-q-s1'),$('gzb-q-s2'),$('gzb-q-s3'),$('gzb-q-s4')],
         sendBtn=$('gzb-q-send'), selc=$('gzb-q-selc'), dots=$('gzb-q-dots').children, wk=$('gzb-q-wk'),
         logEl=$('gzb-q-log'), cnt=$('gzb-q-cnt'), card=$('gzb-q-card'), nrc=$('gzb-q-nrc'),
@@ -4319,19 +4660,30 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     function later2(f,ms){ if(!D){ f(); return; } T.push(setTimeout(f,ms)); }
     function clearT(){ T.forEach(clearTimeout); T=[]; }
     function tm(c){ var m=600+c; return pad(Math.floor(m/60))+':'+pad(m%60); }
-    function fresh(){ return {ph:'ready',sel:IT.map(function(){return true;}),q:{A:[],B:[],C:[],D:[]},busy:{},hold:null,clk:0,log:[],tries:{},nr:-1,done:0,total:0,res:null,pending:false,frozen:false,quiet:false,cue:false,hintText:''}; }
-    function anyBusy(){ return AC.some(function(a){ return S.busy[a]!=null; }); }
+    function fresh(){ return {ph:'ready',sel:IT.map(function(){return true;}),q:{A:[],B:[],C:[],D:[]},pst:{},sc:{},hold:null,clk:0,log:[],tries:{},nr:-1,done:0,total:0,res:null,pending:false,frozen:false,quiet:false,cue:false,hintText:''}; }
+    function laneLive(a){ return !(S.hold&&S.hold.ac===a)&&S.q[a].length>0; }
+    function anyLive(){ return AC.some(laneLive); }
+    function nWork(){ var n=0; AC.forEach(function(a){ var id=S.q[a][0]; if(id!=null&&!(S.hold&&S.hold.ac===a)&&(S.pst[id]==='ver'||S.pst[id]==='sub')) n++; }); return n; }
     function lastRow(id){ for(var k=S.log.length-1;k>=0;k--) if(S.log[k].id===id) return S.log[k]; return {}; }
     function sched(ms){ if(S.pending||S.frozen) return; S.pending=true; later2(function(){ S.pending=false; tick(); }, ms); }
 
     function seg(id){
       var el=segs[id];
       if(!el){
-        el=document.createElement('i'); el.textContent=IT[id][0];
-        if(!S.quiet&&D){ el.className='in'; el.addEventListener('animationend',function(){ el.classList.remove('in'); }); }
+        el=document.createElement('i'); el.innerHTML='<b>'+IT[id][0]+'</b><em></em>';
+        if(!S.quiet&&D){ el.classList.add('in'); el.addEventListener('animationend',function(e){ if(e.animationName==='gzbIn') el.classList.remove('in'); }); }
         segs[id]=el;
       }
       return el;
+    }
+    /* 맨 앞 건이 오른쪽으로 빠져나간다 */
+    function exitSeg(id,label){
+      var el=segs[id]; delete segs[id];
+      if(!el) return;
+      if(label){ el.className='ok'; el.querySelector('em').textContent=label; }
+      if(S.quiet||!D){ if(el.parentNode) el.parentNode.removeChild(el); return; }
+      el.classList.add('out'); el.style.right='-40%';
+      T.push(setTimeout(function(){ if(el.parentNode) el.parentNode.removeChild(el); }, 420));
     }
 
     function request(){
@@ -4343,39 +4695,45 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       render();
       var n=0;
       (function next(){
-        if(n<ids.length){ var i=ids[n++]; S.q[IT[i][1]].push(i); render(); later2(next,75); }
-        else later2(function(){ S.ph='run'; tick(); },260);
+        if(n<ids.length){ var i=ids[n++]; S.q[IT[i][1]].push(i); S.pst[i]='wait'; render(); later2(next,110); }
+        else later2(function(){ S.ph='run'; tick(); },360);
       })();
     }
 
+    /* 한 틱: 레인마다 맨 앞 건을 한 칸씩 진행 (대기 → 검증 → 신고 → 완료 → 빠져나감) */
     function tick(){
       AC.forEach(function(a){
-        var id=S.busy[a]; if(id==null) return;
-        S.busy[a]=null;
-        var r=lastRow(id);
-        if(id===S.nr&&S.tries[id]===1){ r.st='nr'; S.hold={id:id,ac:a,t:r.t}; }
-        else { r.st='ok'; S.q[a].shift(); S.done++; }
+        if(S.hold&&S.hold.ac===a) return;
+        var q=S.q[a], id=q[0]; if(id==null) return;
+        var p=S.pst[id]||'wait';
+        if(p==='ok'){ q.shift(); exitSeg(id); id=q[0]; if(id==null) return; p=S.pst[id]||'wait'; }
+        if(p==='wait'){
+          S.pst[id]='ver'; S.sc[id]=0; S.tries[id]=(S.tries[id]||0)+1;
+          S.log.push({id:id,ac:a,t:tm(S.clk),st:'ver',nw:!S.quiet});
+        } else if(p==='ver'){
+          S.pst[id]='sub'; S.sc[id]=1; lastRow(id).st='sub';
+        } else if(p==='sub'){
+          if(S.sc[id]<SUBT[id]){ S.sc[id]++; return; }
+          var r=lastRow(id);
+          if(id===S.nr&&S.tries[id]===1){ S.pst[id]='nr'; r.st='nr'; S.hold={id:id,ac:a,t:r.t}; }
+          else { S.pst[id]='ok'; r.st='ok'; S.done++; }
+        }
       });
       S.clk++;
-      AC.forEach(function(a){
-        if((S.hold&&S.hold.ac===a)||S.busy[a]!=null||!S.q[a].length) return;
-        var id=S.q[a][0]; S.busy[a]=id; S.tries[id]=(S.tries[id]||0)+1;
-        S.log.push({id:id,ac:a,t:tm(S.clk),st:'sub',nw:!S.quiet});
-      });
-      if(anyBusy()){ S.ph='run'; render(); sched(D); }
+      if(anyLive()){ S.ph='run'; render(); sched(D); }
       else { S.ph=S.hold?'hold':'done'; render(); }
     }
 
     function resolve(kind){
       if(!S.hold||oldOn) return;
-      var h=S.hold, r=lastRow(h.id);
-      S.hold=null; S.q[h.ac].shift();
-      if(kind==='ack'){ r.st='chk'; S.done++; }
-      else { r.st='rq'; S.q[h.ac].push(h.id); }
+      var h=S.hold, r=lastRow(h.id), q=S.q[h.ac];
+      S.hold=null; q.shift();
+      if(kind==='ack'){ r.st='chk'; S.done++; S.pst[h.id]='chk'; exitSeg(h.id,'✓ 확인'); }
+      else { r.st='rq'; q.push(h.id); S.pst[h.id]='wait'; }
       S.res={id:h.id,ac:h.ac,k:kind};
       S.ph='run'; S.frozen=false;
       render();
-      sched(Math.round(D*0.5));
+      sched(Math.round(D*0.6));
     }
 
     function render(){
@@ -4394,21 +4752,20 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       } else {
         sendBtn.className='btn g'; sendBtn.disabled=true; sendBtn.textContent='✓ '+S.total+'건 대기열 등록';
       }
-      /* STEP 2 */
-      var nb=0;
+      /* STEP 2 : 레인 */
       AC.forEach(function(a){
-        var bar=$('gzb-q-b'+a), ids=S.q[a], want=ids.map(seg), k;
-        Array.prototype.slice.call(bar.children).forEach(function(c){ if(want.indexOf(c)<0) bar.removeChild(c); });
-        var same=bar.children.length===want.length;
-        for(k=0;same&&k<want.length;k++) if(bar.children[k]!==want[k]) same=false;
-        if(!same) want.forEach(function(w){ bar.appendChild(w); });
-        want.forEach(function(w,j){
-          var id=ids[j], h=!!(j===0&&S.hold&&S.hold.ac===a), r=S.busy[a]===id;
-          w.classList.toggle('h',h); w.classList.toggle('run',r); w.classList.toggle('l',!h&&!r);
+        var bar=$('gzb-q-b'+a), ids=S.q[a], want=ids.map(seg);
+        Array.prototype.slice.call(bar.children).forEach(function(c){ if(want.indexOf(c)<0&&!c.classList.contains('out')) bar.removeChild(c); });
+        want.forEach(function(el,k){
+          if(el.parentNode!==bar) bar.appendChild(el);
+          el.style.right='calc(2px + '+k+' * ((100% - 12px) / 3 + 4px))';
+          var p=k===0?(S.pst[ids[k]]||'wait'):'wait';
+          ['ver','sub','ok','nr'].forEach(function(c){ el.classList.toggle(c,p===c); });
+          el.querySelector('em').textContent=PL[p]||'대기';
         });
         $('gzb-q-n'+a).textContent=ids.length;
-        if(S.busy[a]!=null) nb++;
       });
+      var nb=nWork();
       for(var d=0;d<dots.length;d++) dots[d].classList.toggle('on',d<nb);
       wk.textContent=nb+' / 5 사용 중';
       /* STEP 3 */
@@ -4433,7 +4790,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       } else if(rs){
         var isAck=rs.k==='ack', fin=S.ph==='done';
         card.className='box gzb-card '+(isAck?'ok':'p');
-        card.innerHTML='<span class="chip '+(isAck?'c-ok">접수 확인':'c-p">다시 대기열로')+'</span><b>'+IT[rs.id][0]+' · 계정 '+rs.ac+'</b><small>'+(isAck?'담당자 확인으로 해제했어요.':'계정 '+rs.ac+' 대기열에 다시 넣었어요.')+'</small><small>'+(fin?(isAck?'뒤에 있던 건까지 모두 접수됐어요.':'다시 제출한 건도 접수됐어요.'):'계정 '+rs.ac+' 대기열이 다시 움직여요.')+'</small>';
+        card.innerHTML='<span class="chip '+(isAck?'c-ok">접수 확인':'c-p">다시 대기열로')+'</span><b>'+IT[rs.id][0]+' · 계정 '+rs.ac+'</b><small>'+(isAck?'담당자 확인으로 해제했어요.':'계정 '+rs.ac+' 대기열 맨 뒤로 다시 넣었어요.')+'</small><small>'+(fin?(isAck?'뒤에 있던 건까지 모두 접수됐어요.':'다시 제출한 건도 접수됐어요.'):'계정 '+rs.ac+' 대기열이 다시 움직여요.')+'</small>';
         nrc.className='chip c-g'; nrc.textContent='0건';
       } else {
         card.className='box gzb-card';
@@ -4442,24 +4799,25 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       }
       ack.disabled=back.disabled=!h;
       ack.classList.toggle('gzb-pulse',!!h&&S.ph==='hold'); back.classList.toggle('gzb-pulse',!!h&&S.ph==='hold');
-      /* highlight + hint */
-      var on=[ready,S.ph==='enq',S.ph==='run'&&anyBusy(),!!h];
+      /* 강조 + 안내 */
+      var on=[ready,S.ph==='enq',S.ph==='run'&&nb>0,!!h];
       stp.forEach(function(s,i){ s.classList.toggle('gzb-on',on[i]); });
       var t;
       if(S.ph==='snap') t='STEP 1부터 직접 신고해 볼 수 있어요';
       else if(ready) t=nSel?'신고할 건을 고르고 전자신고 요청을 눌러보세요':'한 건 이상 골라주세요';
-      else if(S.ph==='enq') t='계정별 대기열에 넣고 있어요';
-      else if(S.ph==='run') t=h?'응답 없는 계정 '+h.ac+'만 멈추고, 나머지는 계속 나가요':'계정마다 한 건씩 순서대로 제출하고 있어요';
+      else if(S.ph==='enq') t='요청이 계정별 대기열에 쌓이고 있어요';
+      else if(S.ph==='run') t=h?'응답 없는 계정 '+h.ac+'만 멈추고, 다른 계정은 계속 나가요':'맨 앞 건이 검증 → 신고를 마치면 다음 건이 앞으로 와요';
       else if(S.ph==='hold') t='STEP 4에서 접수 여부를 골라주세요';
       else t=S.total+'건 모두 접수됐어요';
       S.hintText=t; if(!oldOn) hint.textContent=t;
     }
 
+    /* 처음 화면: 몇 틱 진행한 모습 (계정 A 검증 중 · B·D 완료 · C 응답 없음) */
     function snapshot(){
       S=fresh(); S.frozen=true; S.quiet=true;
-      [0,1,2,3,4,5,6,7].forEach(function(i){ S.q[IT[i][1]].push(i); });
+      [0,1,2,3,4,5,6,7].forEach(function(i){ S.q[IT[i][1]].push(i); S.pst[i]='wait'; });
       S.total=8; S.nr=2; S.ph='run';
-      tick(); tick();
+      tick(); tick(); tick(); tick();
       S.ph='snap'; S.quiet=false;
       render();
     }
@@ -4490,7 +4848,7 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       if(oldOn){
         setOld(false); hint.textContent='개선 전: 세 명이 같은 계정으로 동시에 보내요';
         var fin=function(){ setOld(true); hint.textContent='1건만 나가고 2건은 접속 충돌로 튕겨요'; };
-        if(RM) fin(); else oldT.push(setTimeout(fin,900));
+        oldT.push(setTimeout(fin,900));
       } else hint.textContent=S.hintText;
     }
 
@@ -5887,33 +6245,32 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   function fmt(n){if(n==null||isNaN(n))return '';var a=Math.abs(Math.round(n)).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');return (n<0?'-':'')+a;}
   var RM=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
-  /* ---------- A. 결제·미납·정기 결제 관리 ---------- */
+  /* ---------- A. 결제·미납 조회 · 미납 건별 처리 상태 보기 (조회 전용) ---------- */
   (function(){
     var root=document.getElementById('dz-pay'); if(!root) return;
     var HIST={acc:[38,41,45,43,40,44,39,46,48,42,45],hr:[9,12,10,14,11,9,13,10,12,11,10]}; /* 지난 11개월, 만원 단위 예시 */
     var MON=['07월','08월','09월','10월','11월','12월','01월','02월','03월','04월','05월','06월'];
+    /* due: 정기 결제가 되지 않아 미납으로 남은 회차 (월납은 월, 연납은 연도) */
     var D=[
-      {co:'○○세무회계',sv:'acc',pl:'회계 기본',cy:'월납',pm:'카드',amt:55000,mon:'2020.06',ok:1},
-      {co:'△△상사',sv:'hr',pl:'인사·급여',cy:'월납',pm:'계좌(CMS)',amt:66000,mon:'2020.05–06',ok:0,why:'잔액 부족'},
-      {co:'□□물산',sv:'acc',pl:'회계 확장',cy:'연납',pm:'카드',amt:528000,mon:'2020.06',ok:1},
-      {co:'테스트회사(QA)',sv:'acc',pl:'회계 기본',cy:'월납',pm:'카드',amt:55000,mon:'2020.06',ok:1,test:1},
-      {co:'◇◇테크',sv:'hr',pl:'인사·급여',cy:'월납',pm:'카드',amt:33000,mon:'2020.06',ok:1},
-      {co:'☆☆건설',sv:'acc',pl:'회계 기본',cy:'월납',pm:'계좌(CMS)',amt:55000,mon:'2020.06',ok:1}
+      {co:'○○세무회계',sv:'acc',pl:'회계 기본',cy:'월납',pm:'카드',amt:55000,mon:'2020.06',due:['06']},
+      {co:'△△상사',sv:'hr',pl:'인사·급여',cy:'월납',pm:'계좌(CMS)',amt:66000,mon:'2020.05–06',due:['05','06']},
+      {co:'□□물산',sv:'acc',pl:'회계 확장',cy:'연납',pm:'카드',amt:528000,mon:'2020.06',due:['2020']},
+      {co:'테스트회사(QA)',sv:'acc',pl:'회계 기본',cy:'월납',pm:'카드',amt:55000,mon:'2020.06',due:['06'],test:1},
+      {co:'◇◇테크',sv:'hr',pl:'인사·급여',cy:'월납',pm:'카드',amt:33000,mon:'2020.06',due:['06']},
+      {co:'☆☆건설',sv:'acc',pl:'회계 기본',cy:'월납',pm:'계좌(CMS)',amt:55000,mon:'2020.06',due:['06']}
     ];
-    var ST={due:['미납','c-r',''],req:['재결제 요청','c-y','x-req'],paid:['납부 완료','c-ok','x-paid'],fail:['재결제 실패','c-r','x-fail']};
+    var INTRO='미납 건의 [상태 보기]를 누르면 정기 결제 내역과 함께 건별 처리 상태를 보여 줘요.';
     var tb=q(root,'#dz-p-rows'),head=tb.firstElementChild.outerHTML,svS=q(root,'#dz-p-sv'),cyS=q(root,'#dz-p-cy'),tsC=q(root,'#dz-p-test');
-    var rb=q(root,'#dz-p-retry'),pb=q(root,'#dz-p-pg'),msg=q(root,'#dz-p-msg'),sum=q(root,'#dz-p-sum');
-    var st,sel,tries;
-    function init(){st=D.map(function(){return 'due';});sel=D.map(function(){return false;});tries=D.map(function(){return 0;});svS.value='all';cyS.value='all';tsC.checked=false;}
+    var msg=q(root,'#dz-p-msg'),sum=q(root,'#dz-p-sum'),lay=q(root,'#dz-p-lay');
+    var cur=-1;
+    function stat(r){return r.due.length>1?['연속 미납','c-r']:['미납','c-r'];}
     function vis(i){var r=D[i];return (svS.value==='all'||r.sv===svS.value)&&(cyS.value==='all'||r.cy===cyS.value)&&!(tsC.checked&&r.test);}
     function inChart(i){var r=D[i];return (svS.value==='all'||r.sv===svS.value)&&!(tsC.checked&&r.test);}
-    function open(i){return st[i]!=='paid';}
-    function canRetry(i){return st[i]==='due'||st[i]==='fail';}
     function X(i){return 58+i*52;} function Y(v){return 8+(1-Math.min(v,1e6)/1e6)*58;}
     function chart(){
       var h=svS.value==='all'?HIST.acc.map(function(v,i){return v+HIST.hr[i];}):HIST[svS.value];
       var vals=h.map(function(v){return v*10000;}),last=0;
-      D.forEach(function(r,i){if(inChart(i)&&open(i))last+=r.amt;});
+      D.forEach(function(r,i){if(inChart(i))last+=r.amt;});
       vals=vals.concat([last]);
       var pts=vals.map(function(v,i){return X(i)+','+Y(v).toFixed(1);});
       q(root,'#dz-p-line').setAttribute('points',pts.join(' '));
@@ -5922,48 +6279,64 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       var lt=q(root,'#dz-p-last');lt.setAttribute('y',Math.max(Math.min(Y(last),Y(vals[10]))-8,11).toFixed(1));lt.setAttribute('x',X(11)-6);lt.textContent='6월 '+fmt(last)+'원';
     }
     function paint(){
-      var html=head.replace('<span></span>','<span><input type="checkbox" id="dz-p-all" aria-label="전체 선택"></span>'),n=0,tot=0,anyVis=false,allOn=true;
+      var html=head,n=0,tot=0,anyVis=false;
       D.forEach(function(r,i){
-        if(!vis(i))return; anyVis=true;
-        var s=ST[st[i]],cls=sel[i]?'x-sel':s[2];
-        if(open(i)){n++;tot+=r.amt;}
-        if(canRetry(i)&&!sel[i])allOn=false;
-        html+='<div class="tr '+cls+'"><span><input type="checkbox" class="dz-pc" id="dz-p-c'+(i+1)+'" data-i="'+i+'"'+(sel[i]?' checked':'')+(canRetry(i)?'':' disabled')+' aria-label="'+r.co+' 선택"></span>'+
-          '<span>'+r.co+'</span><span>'+r.pl+'</span><span>'+r.cy+'</span><span>'+r.pm+'</span><span class="n">'+fmt(r.amt)+'</span><span class="n">'+r.mon+'</span>'+
-          '<span class="dz-st"><span class="chip '+s[1]+'">'+s[0]+'</span>'+(st[i]==='fail'?'<small>'+r.why+(tries[i]>1?' · 고객 안내':'')+'</small>':'')+'</span></div>';
+        if(!vis(i))return; anyVis=true; n++; tot+=r.amt;
+        var s=stat(r);
+        html+='<div class="tr'+(i===cur?' x-sel':'')+'"><span>'+r.co+'</span><span>'+r.pl+'</span><span>'+r.cy+'</span><span>'+r.pm+'</span><span class="n">'+fmt(r.amt)+'</span><span class="n">'+r.mon+'</span>'+
+          '<span><span class="chip '+s[1]+'">'+s[0]+'</span></span>'+
+          '<span><button type="button" class="dz-act" id="dz-p-v'+(i+1)+'" data-i="'+i+'" aria-label="'+r.co+' 상태 보기">상태 보기</button></span></div>';
       });
-      if(!anyVis)html+='<div class="tr"><span></span><span class="dz-mu" style="grid-column:2/-1">조건에 맞는 미납 건이 없어요.</span></div>';
+      if(!anyVis)html+='<div class="tr"><span class="dz-mu" style="grid-column:1/-1">조건에 맞는 미납 건이 없어요.</span></div>';
       tb.innerHTML=html;
-      var all=q(root,'#dz-p-all'),elig=D.some(function(_,i){return vis(i)&&canRetry(i);});
-      all.checked=elig&&allOn; all.disabled=!elig;
       sum.className='chip '+(n?'c-r':'c-ok'); sum.textContent=n?'미납 '+n+'건 · '+fmt(tot)+'원':'미납 0건';
-      rb.disabled=!D.some(function(_,i){return sel[i]&&vis(i)&&canRetry(i);});
-      pb.disabled=!st.some(function(s){return s==='req';});
       chart();
+    }
+    function cells(r){
+      if(r.cy==='연납') return ['2018','2019','2020'].map(function(y){return {k:y+'.06',due:r.due.indexOf(y)>=0};});
+      return ['01','02','03','04','05','06'].map(function(m){return {k:m+'월',due:r.due.indexOf(m)>=0};});
+    }
+    function openLay(i){
+      var r=D[i],s=stat(r),c=cells(r),nd=r.due.length;
+      cur=i;
+      q(root,'#dz-p-dt').textContent='미납 상태 · '+r.co;
+      var how=r.cy==='연납'?'2020.06 연납 결제가 실패해 미납으로 남아 있어요.':(nd>1?'05월부터 '+nd+'개월째 정기 결제가 실패해 미납이 이어지고 있어요.':'06월 정기 결제가 실패해 미납으로 남아 있어요.');
+      q(root,'#dz-p-dg').innerHTML=
+        '<span>사용플랜</span><b>'+r.pl+'</b>'+
+        '<span>결제</span><b>'+r.cy+' · '+r.pm+'</b>'+
+        '<span>미납</span><b><span class="n">'+fmt(r.amt)+'원</span> · '+r.mon+(r.cy==='연납'?' (연납 1회)':' ('+nd+'개월)')+'</b>'+
+        '<span>처리 상태</span><b><span class="chip '+s[1]+'">'+s[0]+'</span>'+how+'</b>';
+      q(root,'#dz-p-mop').textContent=r.cy==='연납'?'연납 · 매년 06월 결제':'월납 · 2020.01 – 06';
+      var mo=q(root,'#dz-p-mo');mo.style.setProperty('--m',c.length);
+      mo.innerHTML=c.map(function(x){return '<div class="'+(x.due?'due':'')+'"><small>'+x.k+'</small><b>'+(x.due?'미납':'결제 완료')+'</b></div>';}).join('');
+      q(root,'#dz-p-dnote').textContent=r.test?'테스트 회사예요. [테스트 회사 제외]를 켜면 미납 합계와 그래프에서 빠져요.':'이 건의 미납금액은 6월 미납 합계와 추이 그래프에 함께 잡혀요.';
+      lay.hidden=false;
+      var d=q(root,'.dz-dlg');d.classList.remove('dz-pop');void d.offsetWidth;if(!RM)d.classList.add('dz-pop');
+      msg.textContent=r.co+' 건의 처리 상태를 열었어요. '+(r.cy==='연납'?'연납 회차':'정기 결제 월')+' 중 미납인 곳이 빨갛게 보여요.';
+      paint();
+      try{q(root,'#dz-p-x').focus({preventScroll:true});}catch(_){}
+    }
+    function closeLay(){
+      if(lay.hidden)return; lay.hidden=true; var i=cur; cur=-1; paint();
+      var b=i>=0&&q(root,'#dz-p-v'+(i+1)); if(b){try{b.focus({preventScroll:true});}catch(_){}}
     }
     root.addEventListener('change',function(e){
       var t=e.target;
-      if(t.classList.contains('dz-pc')){sel[+t.getAttribute('data-i')]=t.checked;paint();return;}
-      if(t.id==='dz-p-all'){D.forEach(function(_,i){if(vis(i)&&canRetry(i))sel[i]=t.checked;});paint();return;}
-      if(t===svS||t===cyS||t===tsC){D.forEach(function(_,i){if(!vis(i))sel[i]=false;});
+      if(t===svS||t===cyS||t===tsC){
+        lay.hidden=true;cur=-1;
         var nv=D.filter(function(_,i){return vis(i);}).length;
-        msg.textContent=nv===D.length?'전체 미납 건을 보여 줘요.':(nv?'조건에 맞는 '+nv+'건만 보여 줘요.':'조건에 맞는 미납 건이 없어요.')+(t===svS?' 그래프도 선택한 서비스 기준으로 다시 그려요.':(t===tsC&&tsC.checked?' 그래프에서도 테스트 회사 금액을 빼요.':''));
+        msg.textContent=(nv===D.length?'전체 미납 건을 보여 줘요.':(nv?'조건에 맞는 '+nv+'건만 보여 줘요.':'조건에 맞는 미납 건이 없어요.'))+(t===svS?' 그래프도 선택한 서비스 기준으로 다시 그려요.':(t===tsC&&tsC.checked?' 그래프에서도 테스트 회사 금액을 빼요.':''));
         paint();}
     });
-    rb.addEventListener('click',function(){
-      var c=0;D.forEach(function(_,i){if(sel[i]&&vis(i)&&canRetry(i)){st[i]='req';tries[i]++;c++;}sel[i]=false;});
-      if(c)msg.textContent=c+'건을 PG사에 재결제 요청했어요. 결과가 들어오면 [PG 결과 반영]을 눌러 보세요.';
-      paint();
+    root.addEventListener('click',function(e){
+      var b=e.target.closest('#dz-p-rows .dz-act');
+      if(b){openLay(+b.getAttribute('data-i'));return;}
+      if(e.target.closest('#dz-p-x')||e.target.closest('#dz-p-close')||e.target===lay){closeLay();msg.textContent=INTRO;}
     });
-    pb.addEventListener('click',function(){
-      var ok=0,f=0;D.forEach(function(r,i){if(st[i]==='req'){if(r.ok){st[i]='paid';ok++;}else{st[i]='fail';f++;}}});
-      var p=[];if(ok)p.push('납부 완료 '+ok+'건');if(f)p.push('재결제 실패 '+f+'건');
-      msg.textContent='PG 결과 반영 · '+p.join(', ')+(f?'. 실패 건은 미납으로 남기고 고객 안내 대상으로 표시해요.':'. 미납 합계와 그래프가 함께 줄었어요.');
-      paint(); var c=q(root,'.dz-cb');c.classList.remove('dz-pop');void c.offsetWidth;if(!RM)c.classList.add('dz-pop');
-    });
-    q(root,'#dz-p-reset').addEventListener('click',function(){init();msg.textContent='미납 건을 골라 재결제를 요청하면, 결과는 PG 데이터로 들어와 상태가 바뀌어요.';paint();});
+    root.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lay.hidden){closeLay();msg.textContent=INTRO;}});
+    q(root,'#dz-p-reset').addEventListener('click',function(){svS.value='all';cyS.value='all';tsC.checked=false;lay.hidden=true;cur=-1;msg.textContent=INTRO;paint();});
     q(root,'#dz-p-mon').innerHTML=MON.map(function(m,i){return '<text x="'+X(i)+'" y="81">'+m+'</text>';}).join('');
-    init();paint();
+    svS.value='all';cyS.value='all';tsC.checked=false;paint();
   })();
 
   /* ---------- B. 업로드 차이 검증 → 월 마감 → 회계처리 ---------- */
@@ -6086,10 +6459,12 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   /* 단어 사이 가운뎃점(·)에서 줄이 갈리지 않게 word joiner 삽입 */
   var NB_RE = new RegExp('([0-9A-Za-z\\uAC00-\\uD7A3])\\u00B7(?=[0-9A-Za-z\\uAC00-\\uD7A3])', 'g'), NB_TO = '$1' + String.fromCharCode(0x2060, 0xB7, 0x2060);
-  var nb = function(t){ return String(t).replace(NB_RE, NB_TO); };
+  /* 숫자 사이 화살표(40% → 3%)도 한 줄로 */
+  var AR_RE = new RegExp('([0-9][%A-Za-z\uAC00-\uD7A3]*) \u2192 (?=[0-9])', 'g'), AR_TO = '$1' + String.fromCharCode(0xA0, 0x2192, 0xA0);
+  var nb = function(t){ return String(t).replace(NB_RE, NB_TO).replace(AR_RE, AR_TO); };
   var replay = function(el){ if(!el||reduce) return; el.classList.remove('end-in'); void el.offsetWidth; el.classList.add('end-in'); };
 
-  /* ---------- HOW I WORK : 단계 선택 (사례는 모두 브릭스웍스 · 환급팀) ---------- */
+  /* ---------- HOW I WORK : 단계 선택 (01~04 사례는 브릭스웍스 · 환급팀, 05 배포는 지엔터프라이즈 공통) ---------- */
   var how = document.getElementById('end-how');
   if(how){
     var S = [
@@ -6100,19 +6475,19 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
       {tag:'STEP 02 · 정의', d:'PRD에 목표·비목표·성공 지표·예외 정의', c:'브릭스웍스 · 환급팀 · 검수 구조',
        ai:'스킬 파일로 PRD 초안을 쓰고, 미확인 항목은 ‘확인 필요’로 남겼어요.',
        me:'규칙으로 판단되는 건은 자동 진행, 확인이 필요한 건은 ‘이슈 있음’ 표시로 정했어요.',
-       rs:'최종 검수는 모두 세무사·회계사가 하고, 이슈 있는 건이 먼저 보여요.'},
+       rs:'최종 검수는 모두 세무사·회계사가 하고, 이슈 있는 건이 먼저 보이게 검수 화면을 설계했어요.'},
       {tag:'STEP 03 · 프로토타입', d:'동작 화면과 케이스 카탈로그로 먼저 합의', c:'브릭스웍스 · 환급팀 · 재계산 누락 알림',
        ai:'Gemini·Claude로 실제로 눌러 볼 수 있는 화면을 먼저 만들었어요.',
-       me:'막지 않고 경고만 하기로 범위를 정하고, 자동 재계산은 다음 과제로 남겼어요.',
-       rs:'개발팀·회계법인과 화면을 먼저 맞추고, 2026.07에 2주 일정으로 배포했어요.'},
+       me:'작성 단계에서 신고·마감할 때 검사해, 재계산이 빠진 단계를 알리고 전체 재계산도 바로 돌리게 정했어요.',
+       rs:'2026.07에 2주 일정으로 배포했어요. 재계산이 빠진 건은 신고·마감 전에 걸러져요.'},
       {tag:'STEP 04 · 검증', d:'코드 대조와 교차 검증', c:'브릭스웍스 · 환급팀 · 전자신고 대기열',
        ai:'Claude Code로 코드와 기획서를 대조하고, 다른 AI로 기획서를 공격하게 했어요.',
        me:'계정이 신고 파일에 고정된다는 걸 코드에서 확인하고, 자동 재시도는 빼기로 했어요.',
-       rs:'계정별 순차 처리로 설계해 충돌·중복 제출을 구조로 막았어요.'},
-      {tag:'STEP 05 · 배포·개선', d:'정기 배포, 배포 후 QA, 운영 기록으로 다음 과제', c:'브릭스웍스 · 환급팀 · 배포 후 개선',
-       ai:'MCP로 Jira·Confluence·Slack을 연결해 배포 체크리스트와 공지 초안을 만들어요.',
-       me:'배포 여부와 공지 최종 발송은 제가 직접 정해요.',
-       rs:'경고를 넘긴 재계산 누락 기록을 자동 재계산 과제의 근거로 쌓고 있어요.'}
+       rs:'같은 계정 충돌로 튕기던 신고를 줄였어요. 신고 실패율 40% → 3%(37%p\u00A0감소).'},
+      {tag:'STEP 05 · 배포·개선', d:'2주 스프린트 배포(D-5 확정·D-1 동결·배포 후 15분 확인)', c:'지엔터프라이즈 공통',
+       ai:'MCP로 Jira·Confluence·Slack의 배포 체크리스트·공지 초안 작성을 도왔어요.',
+       me:'배포 대상 확정, 이상 시 롤백 여부, 공지 최종 발송은 제가 정해요.',
+       rs:'2주마다 같은 절차로 배포하고, 운영 이슈는 다음 스프린트 기획안으로 이어요.'}
     ];
     var cols = how.querySelectorAll('.end-col');
     var reals = how.querySelectorAll('.end-real');
@@ -6139,27 +6514,83 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
     how.querySelector('#end-reset').addEventListener('click', function(){ setStage(0); });
   }
 
+  /* ---------- HOW I SHIP : 단계 선택 → 도식 강조 + 그 단계의 할 일 + 관련 문서 ---------- */
+  var ship = document.getElementById('end-ship');
+  if(ship){
+    var H = [
+      {k:'01 · 기획·개발 준비', w:'선행 스프린트 · 2주', t:'다음 범위는 한 스프린트 앞서 협의해요',
+       l:['요청사항과 운영 이슈를 정리해 기획안 구체화','개발팀과 구현 방식·공수·의존성 검토','다음 스프린트의 개발 범위·일정 협의']},
+      {k:'02 · 개발·병행 기획', w:'다음 스프린트 · 2주', t:'개발팀이 구현하는 동안 차기 기획을 해요',
+       l:['개발팀은 앞서 협의한 기획안을 구현','그동안 저는 차기 기획을 진행','개발 중 질문·예외 조건·일정 변경 조율']},
+      {k:'03 · QA·릴리즈 준비', w:'D-5 · 배포 5일 전부터', t:'배포 대상과 운영 환경 차이를 확정해요',
+       l:['대상 티켓·버전 확정','운영 환경과의 데이터·설정·권한 차이 점검','미검증 항목 점검']},
+      {k:'03 · QA·릴리즈 준비', w:'D-1 · 배포 전날', t:'코드를 동결하고 롤백 조건을 정해요',
+       l:['코드 동결, 이후 추가 건은 다음 배포로 이월','사전 공지','롤백 조건과 담당자 확정']},
+      {k:'04 · 배포·확인·종료', w:'D-day · 배포 당일', t:'배포 직후 15분은 핵심 흐름을 봐요',
+       l:['최소 15분간 오류·응답·배치와 핵심 흐름 확인','미검증 항목부터 우선 검증','이상 시 롤백 가능 여부를 판단하고 결과 공지']},
+      {k:'04 · 배포·확인·종료', w:'D+1 · 배포 다음 날', t:'다음 날 티켓과 릴리즈를 닫아요',
+       l:['결과 공지 후 대상 티켓 종료','릴리즈 종료']}
+    ];
+    var shBtns = ship.querySelectorAll('[data-s]');
+    var shDocs = ship.querySelectorAll('.end-di');
+    var shRel = ship.querySelector('#end-rel'), shZm = ship.querySelector('#end-zm');
+    var shHand = ship.querySelector('.end-hand.go');
+    var shDt = ship.querySelector('#end-sh-dt'), shL = ship.querySelector('#end-sh-l');
+    var SV = {k:ship.querySelector('#end-sh-k'), n:ship.querySelector('#end-sh-n'), w:ship.querySelector('#end-sh-w'), t:ship.querySelector('#end-sh-t')};
+    var sat = 0;
+    var shSet = function(i){
+      sat = i;
+      for(var b=0;b<shBtns.length;b++){
+        var el = shBtns[b];
+        if(el.classList.contains('end-di')) continue;
+        var on = (+el.getAttribute('data-s') === i) || (el === shRel && i >= 2);
+        el.classList.toggle('on', on);
+        if(el.hasAttribute('aria-pressed')) el.setAttribute('aria-pressed', on ? 'true' : 'false');
+      }
+      for(var d=0;d<shDocs.length;d++){
+        var ks = (shDocs[d].getAttribute('data-s') || '').split(' ');
+        shDocs[d].classList.toggle('on', ks.indexOf(String(i)) >= 0);
+      }
+      shZm.classList.toggle('on', i >= 2);
+      shHand.classList.toggle('go', i <= 1);
+      var h = H[i];
+      SV.k.textContent = h.k; SV.n.textContent = '단계 ' + (i+1) + ' / ' + H.length;
+      SV.w.textContent = h.w; SV.t.textContent = nb(h.t);
+      shL.innerHTML = '';
+      for(var j=0;j<h.l.length;j++){ var li = document.createElement('li'); li.textContent = nb(h.l[j]); shL.appendChild(li); }
+      replay(shDt);
+    };
+    for(var sb=0;sb<shBtns.length;sb++){
+      (function(el){
+        if(el.tagName !== 'BUTTON') return;
+        el.addEventListener('click', function(){ shSet(+el.getAttribute('data-s')); });
+      })(shBtns[sb]);
+    }
+    ship.querySelector('#end-sh-next').addEventListener('click', function(){ shSet((sat+1) % H.length); });
+    ship.querySelector('#end-sh-reset').addEventListener('click', function(){ shSet(0); });
+  }
+
   /* ---------- CORE : 근거 선택 → 문제 · 한 일 · 결과 ---------- */
   var core = document.getElementById('end-core');
   if(core){
     var K = ['01 · TRANSLATE','02 · CONSTRAINT','03 · AI PROTOTYPING','04 · DELIVERY'];
     var D = [
-      {k:0, org:'브릭스웍스 · 환급팀', sub:'종소세 경정청구 · 검수 구조', t:'확인 필요 건이 검수 때 먼저 보여요',
+      {k:0, org:'브릭스웍스 · 환급팀', sub:'종소세 경정청구 · 검수 화면 설계 반영', t:'확인 필요 건이 먼저 보이게 설계했어요',
        p:'판단이 필요한 건을 실무자가 직접 찾아야 했어요.',
-       d:'공제·감면 요건을 검증 기준으로 정리하고, 규칙으로 판단되는 건은 자동으로 다음 단계로 넘겼어요.',
-       r:'확인이 필요한 건은 ‘이슈 있음’으로 표시돼요. 최종 검수는 모두 세무사·회계사가 해요.'},
-      {k:0, org:'케어프로 · 기장팀', sub:'원천세 신고 자동화 · FE·BE 4명', t:'앱 자료가 신고서까지 이어져요',
-       p:'고객이 앱에 올린 소득 자료를 담당자가 다시 입력하고, 결과도 따로 전달했어요.',
+       d:'공제·감면 요건을 검증 기준으로 정리하고, 규칙으로 판단되는 건은 자동으로 다음 단계로 넘기도록 검수 화면을 설계했어요.',
+       r:'확인이 필요한 건은 ‘이슈 있음’으로 표시하고, 모든 건의 최종 검수는 세무사·회계사가 하는 원칙을 화면 설계에 담았어요.'},
+      {k:0, org:'케어프로 · 기장팀', sub:'원천세 신고 자동화 · FE·BE 4명', t:'재입력 없이 신고서까지 이어져요',
+       p:'고객이 앱에 올린 소득 자료를 담당자가 다시 입력하고, 결과도 파일로 따로 전달했어요.',
        d:'귀속·지급 분리 구조를 개발팀과 재설계해 급여 등록 → 세액 계산 → 이행상황신고서로 이었어요.',
-       r:'건별 재입력·결과 전달 업무가 없어지고, 고객 앱에서 신고 결과를 조회해요.'},
+       r:'조회부터 검토·반영까지 한 흐름이 되어 건당 처리시간 15분 → 9분(40%\u00A0단축). 신고 결과는 고객 앱에서 조회해 파일 전달 업무를 줄였어요.'},
       {k:0, org:'세친구 · R&D팀', sub:'AI 자동장부 · 2022.03–12 · 5명', t:'거래마다 계정과목이 자동으로 붙어요',
        p:'사장님이 거래를 한 건씩 입력·분개하고, 신고 자료를 따로 모아야 했어요.',
        d:'홈택스·은행·카드 자료를 자동 수집하고, 거래처명·적요·과거 내역으로 계정과목을 추천했어요.',
        r:'거래 건별 입력·분개 작업이 줄었어요.'},
-      {k:1, org:'브릭스웍스 · 환급팀', sub:'전자신고 대기열 · 2026.07–09 · BE 2 · FE 1', t:'신고 충돌과 중복 제출을 구조로 막았어요',
+      {k:1, org:'브릭스웍스 · 환급팀', sub:'전자신고 대기열 · 2026.07–09 · BE 2 · FE 1 · 운영 적용', t:'같은 계정 충돌을 줄여 실패율을 낮췄어요',
        p:'홈택스는 계정당 동시 접속 1건이라, 여러 담당자가 같은 계정을 쓰면 신고가 튕겼어요.',
-       d:'계정이 신고 파일에 고정된다는 제약을 확인해 계정별 순차 처리로 설계했어요.',
-       r:'요청만 넣으면 순서대로 처리돼요. 응답 없는 제출은 재시도 대신 담당자 확인 후 풀어요.'},
+       d:'신고 파일에 계정이 고정되는 제약을 코드에서 확인했어요. 같은 계정 건은 계정별 대기열에서 앞 건이 끝난 뒤 차례로 검증·신고하고, 다른 계정은 동시에 진행해요.',
+       r:'신고 실패율 40% → 3%(37%p\u00A0감소). 응답 없는 제출은 자동 재시도 없이 담당자 확인 후 풀어요.'},
       {k:1, org:'브릭스웍스 · 환급팀', sub:'환급계좌 검증·동기화 · 2026.07–08 · BE 1 · FE 1', t:'검증된 계좌만 신고서에 들어가요',
        p:'계좌를 검증 없이 입력해, 틀리면 환급금이 가지 않고 신고서를 수기로 정정했어요.',
        d:'전용 입력 화면으로 분리해 예금주·계좌 확인을 통과한 계좌만 반영하고, 은행명은 코드로 맞췄어요.',
@@ -6172,22 +6603,22 @@ button.btn.cp-next{box-shadow:0 0 0 4px rgba(94,80,250,.22)}
        p:'콘솔 도입 초기 미처리 오류가 700여 건 쌓여 있었어요.',
        d:'AI로 일괄 분류해 공통 원인을 묶고, 무엇을 먼저 풀지는 직접 정했어요.',
        r:'공통 원인과 고위험 건부터 처리했어요.'},
-      {k:2, org:'지엔터프라이즈 · 비즈넵', sub:'동작 프로토타입 · 케이스 카탈로그', t:'눌러 보는 화면으로 먼저 합의해요',
-       p:'문서만으로는 개발팀·회계법인과 같은 화면을 그리기 어려웠어요.',
-       d:'Gemini·Claude로 동작하는 화면과 케이스 카탈로그를 먼저 만들어 보여줬어요.',
-       r:'화면을 먼저 맞추고, 범위와 1차 제외 항목을 정한 뒤 개발에 들어가요.'},
-      {k:2, org:'브릭스웍스 · 환급팀', sub:'전자신고 대기열 · 기획서 교차 검증', t:'개발 전에 기획서 허점을 막았어요',
+      {k:2, org:'지엔터프라이즈 · 비즈넵', sub:'공통 기획·검증 방식', t:'먼저 맞추고 대조해 재작업을 줄였어요',
+       p:'문서만으로는 개발팀·회계법인과 같은 화면을 그리기 어렵고, 빠진 조건은 개발 중에야 드러났어요.',
+       d:'Gemini·Claude 동작 프로토타입으로 화면·구현 범위를 협의하고, Claude Code로 코드와 PRD의 데이터·권한·예외 처리를 대조했어요.',
+       r:'개발 착수 전에 누락 조건을 보완해 스프린트당 재작업 10건 → 6건(40%\u00A0감소).'},
+      {k:2, org:'브릭스웍스 · 환급팀', sub:'전자신고 대기열 · 기획서 교차 검증', t:'개발 전에 기획서 허점을 보완했어요',
        p:'두 번 제출되는 사고는 기다리는 불편보다 커서, 개발 전에 빈틈을 찾아야 했어요.',
        d:'다른 AI로 기획서를 공격하게 하고, 지적은 원문과 대조해 받을지 정했어요.',
-       r:'‘처리 중에 멈추면 아무도 풀 수 없다’는 허점을 착수 전에 보완했어요.'},
+       r:'처리 중 멈춘 작업의 해제 주체·복구 조건이 빠진 걸 찾아 개발 착수 전에 보완했어요.'},
       {k:3, org:'케어프로 · 기장팀', sub:'연말정산 신규 구축', t:'없던 연말정산을 신고 기한에 맞췄어요',
        p:'케어프로에는 연말정산 기능 자체가 없었어요.',
-       d:'간소화 PDF 추출 → 항목 인식 → 세액 계산 → 전자신고 파일을 잇고, 카드 중복 업로드를 감지했어요.',
-       r:'신고 기한에 맞춰 실제 신고에 적용했어요.'},
-      {k:3, org:'브릭스웍스 · 환급팀', sub:'회계법인 팀장단 주간 미팅', t:'실무자 요청이 기능 일정이 돼요',
-       p:'오류와 요청을 그때그때 일회성으로 처리했어요.',
-       d:'회계법인 팀장단과 주간 미팅을 정례화하고, 요청을 우선순위와 일정으로 정리했어요.',
-       r:'요청은 재계산 누락 알림, 전자신고 대기열, 환급계좌 검증 일정으로 이어졌어요.'},
+       d:'간소화 PDF 추출부터 전자신고 파일까지 잇고, 공제 순서·한도·계산 결과 검증 항목을 정리해 개발팀과 오류 수정·재검증 일정을 조율했어요.',
+       r:'신고 기한에 맞춰 실제 신고에 적용했어요. 초기 오류·미지원 예외는 더존과 병행 처리했어요.'},
+      {k:3, org:'지엔터프라이즈 · 비즈넵', sub:'2주 스프린트·릴리즈 운영 · 공통', t:'배포 5일 전부터 다음 날까지 챙겨요',
+       p:'신고 기한이 정해진 세무 콘솔이라, 배포가 밀리거나 배포 뒤 오류가 나면 실무자의 신고 업무에 바로 영향을 줘요.',
+       d:'2주 스프린트로 다음 범위·일정을 한 스프린트 앞서 협의하고, 배포 5일 전 대상 확정 → 전날 코드 동결 → 배포 직후 15분 확인·롤백 판단까지 릴리즈를 관리해요.',
+       r:'버전 규칙, 배포 공지 양식, 핫픽스 등급과 최소 검증, 롤백 판단 기준을 릴리즈 관리 문서로 정리했어요.'},
       {k:3, org:'더존비즈온 · 플랫폼사업부문', sub:'WEHAGO 정산 프로그램 · 2019.01–2020.06 · 7명', t:'파일 대조를 업로드 검증으로 바꿨어요',
        p:'주문·매출·수수료 자료를 파일로 직접 대조해 결산 차이·누락을 찾았어요.',
        d:'결제·PG 데이터 교환·월 마감 프로세스와 업로드 기반 차이 검증을 설계하고, 일정·QA는 Jira 스프린트로 운영했어요.',
